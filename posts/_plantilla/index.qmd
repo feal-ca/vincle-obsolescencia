@@ -1,0 +1,15 @@
+---
+title: "Títol de l'entrada"
+description: "Una frase que resumeix l'entrada (surt a la targeta de la portada)."
+author: "Nom Cognom"
+date: 2026-11-05
+categories: [categoria1, categoria2]
+# image: portada.jpg
+---
+
+Text de l'entrada. Les cites es fan així [@clau], i la bibliografia
+surt sola al final.
+
+## Secció
+
+![Peu de figura. Font: elaboració pròpia.](foto.jpg)

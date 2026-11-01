@@ -1,0 +1,31 @@
+project:
+  type: website
+  output-dir: _site
+
+lang: ca
+
+# Bibliografia comuna per a tot el web
+bibliography: references.bib
+link-citations: true
+
+website:
+  title: "Obsolescència i dret a reparar"
+  description: "Blog del grup 10 · PEF1 26-27 · Projecte VINCLE DIGITAL"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Inici
+      - href: referencies.qmd
+        text: Referències
+      - href: credits.qmd
+        text: Crèdits i ús d'IA
+  page-footer:
+    center: "PEF1 · UPC · Curs 2026-27"
+
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: darkly
+    toc: true
+    toc-title: "En aquesta pàgina"

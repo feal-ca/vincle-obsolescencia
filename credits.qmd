@@ -1,0 +1,16 @@
+---
+title: "Crèdits i ús d'IA"
+toc: false
+---
+
+## Qui ha fet què
+
+| Persona | Entrades | Visuals | Altres |
+|---|---|---|---|
+|  |  |  |  |
+
+## Ús d'eines d'IA
+
+| Eina | Per a què | Com s'ha verificat |
+|---|---|---|
+|  |  |  |

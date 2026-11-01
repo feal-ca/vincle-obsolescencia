@@ -1,0 +1,11 @@
+---
+title: "Obsolescència i dret a reparar"
+subtitle: "Per què els mòbils duren tan poc si tècnicament podrien durar molt més?"
+toc: false
+listing:
+  contents: posts
+  sort: "date desc"
+  type: grid
+  categories: true
+  fields: [image, date, title, author, categories, description]
+---

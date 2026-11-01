@@ -1,0 +1,11 @@
+---
+title: "Referències"
+toc: false
+nocite: |
+  @*
+---
+
+Totes les fonts citades al blog.
+
+::: {#refs}
+:::
