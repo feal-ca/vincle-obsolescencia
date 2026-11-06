@@ -29,3 +29,5 @@ format:
       dark: darkly
     toc: true
     toc-title: "En aquesta pàgina"
+    # Les cites enllacen a la pàgina Referències (no al final de l'entrada)
+    include-after-body: _includes/cites-a-referencies.html

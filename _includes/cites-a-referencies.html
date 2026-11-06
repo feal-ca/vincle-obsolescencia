@@ -1,0 +1,17 @@
+<script>
+// Les cites [@clau] enllacen a la pàgina Referències (referencies.html#ref-clau)
+// en lloc de la bibliografia del final de l'entrada. La bibliografia del final
+// es manté perquè la fa servir la finestreta que surt en passar el ratolí per
+// sobre d'una cita.
+document.addEventListener("DOMContentLoaded", function () {
+  var meta = document.querySelector('meta[name="quarto:offset"]');
+  var arrel = meta ? meta.content : "./";
+  // Quarto ja ha convertit "#ref-clau" en una URL absoluta de la mateixa
+  // pàgina, així que mirem el fragment (a.hash) i no el text de l'href.
+  document.querySelectorAll('a[role="doc-biblioref"]').forEach(function (a) {
+    if (a.hash.indexOf("#ref-") === 0 && a.pathname === window.location.pathname) {
+      a.setAttribute("href", arrel + "referencies.html" + a.hash);
+    }
+  });
+});
+</script>
