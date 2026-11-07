@@ -1,0 +1,83 @@
+---
+title: "Fitxa de criteris de reparabilitat per a mòbils donats"
+description: "Preguntes en cinc blocs, per valorar quant costa reparar un model de mòbil que arriba com a donació a VINCLE DIGITAL."
+author: "Ferran Alía"
+date: 2026-11-07
+categories: [reparabilitat, fitxa de criteris]
+---
+
+La fitxa s'omple un cop per model, a partir de les guies de reparació i la informació pública, de manera que un cop hi hagi un repertori creat, només caldrà consultar-les.
+
+Cada pregunta té unes respostes possibles amb una puntuació de 0 a 4. Les preguntes marcades amb un asterisc (\*) són eliminatòries: vegeu l'apartat [Preguntes eliminatòries](#preguntes-eliminatòries).
+
+
+La fitxa distingeix entre peces principals (pantalla i bateria) i secundàries (port de càrrega, botons, micròfon, altaveu i càmeres), a partir de la llista de peces prioritàries del reglament europeu [@ue2023etiquetatge].
+
+
+## A. Accés a les peces (30 %)
+
+| | Pregunta | Respostes |
+|-----|-----------------------------------|------------------------------------------------------------|
+| A1 | Com s'obre el mòbil (tapa posterior, o pantalla si s'obre per davant)? | A mà, sense eines (4) · Cargols (3) · Clips per als quals cal una palanca (2) · Adhesiu que demana calor (1) · Només trencant la tapa (0) |
+| A2\* | Com està subjecta la bateria? | Es treu a mà (4) · Cargols o un suport (3) · Adhesiu amb lengüetes d'extracció (2) · Adhesiu que demana calor o dissolvent (1) · Soldada, o no surt sense malmetre-la (0) |
+| A3 | Què cal treure abans d'arribar a la bateria? | Res, o només la tapa (4) · Un marc o una placa de protecció (2) · La pantalla o la placa base (0) |
+| A4 | Com està subjecta la pantalla? | Cargols o clips (4) · Adhesiu sense calor (2) · Adhesiu que demana calor (1) · Només surt trencant-la (0) |
+| A5 | Què cal treure abans d'arribar a la pantalla? | Res (4) · Desconnectar la bateria (3) · Treure la bateria (1) · Treure la placa base (0) |
+| A6 | Quantes peces secundàries van en un mòdul a part (placa o flex amb connector) i es poden canviar sense tocar la placa base? | Totes (4) · La majoria (3) · Algunes (2) · Poques (1) · Cap: van soldades a la placa base (0) |
+| A7\* | Una peça nova funciona del tot sense autorització del fabricant? | Sí (4) · Funciona, però amb avisos o perdent alguna funció (2) · No (0) |
+
+: A partir de l'annex IV del reglament (UE) 2023/1669 [@ue2023etiquetatge].
+
+## B. Eines (15 %)
+
+| | Pregunta | Respostes |
+|-----|-----------------------------------|------------------------------------------------------------|
+| B1 | Quins cargols porta? | Cap, o de creu (4) · Torx o hexagonals (3) · Cabotes poc habituals, com pentalobe o tri-wing (1) |
+| B2 | Cal escalfar? | No (4) · Sí, i n'hi ha prou amb un assecador (2) · Cal una estació d'aire calent o una placa calefactora (0) |
+| B3\* | Cal alguna eina a part de les bàsiques? | No (4) · Ventosa, pues o dissolvent d'adhesiu (3) · Una eina específica del model, com una premsa o un marc d'alineació (1) · Eines o programari que només té el fabricant (0) |
+| B4 | Cal soldar? | No (4) · Sí (0) |
+
+: Elaboració pròpia. Les eines bàsiques són les que defineix el reglament: tornavisos, alicates, una palanca, pinces, una lupa, una espàtula i una pua [@ue2023etiquetatge].
+
+## C. Peces de recanvi (20 %)
+
+| | Pregunta | Respostes |
+|-----|-----------------------------------|------------------------------------------------------------|
+| C1 | Es troba bateria? | Original o compatible de marca coneguda (4) · Només genèrica o de segona mà (2) · No (0) |
+| C2 | Es troba pantalla? | Original o compatible de marca coneguda (4) · Només genèrica o de segona mà (2) · No (0) |
+| C3 | Quantes peces secundàries es troben? | Totes (4) · La majoria (3) · Algunes (2) · Només de segona mà (1) · Cap (0) |
+| C4 | Quant costa la peça principal més cara, comparada amb el valor del mòbil de segona mà? | Menys d'una quarta part (4) · Fins a la meitat (3) · Fins a tres quartes parts (2) · Fins al valor del mòbil (1) · Més que el mòbil (0) |
+
+: Elaboració pròpia. La comparació de preus ve de l'índex de reparabilitat francès [@ministere2026indice].
+
+## D. Informació de reparació (15 %)
+
+| | Pregunta | Respostes |
+|-----|-----------------------------------|------------------------------------------------------------|
+| D1 | Hi ha una guia per canviar la bateria? | Oficial, o d'iFixit completa (4) · Incompleta, o només en vídeo (2) · No (0) |
+| D2 | Hi ha una guia per canviar la pantalla? | Oficial, o d'iFixit completa (4) · Incompleta, o només en vídeo (2) · No (0) |
+| D3 | Hi ha guies per canviar les peces secundàries? | Per a totes (4) · Per a la majoria (3) · Per a algunes (2) · Només vídeos o guies incompletes (1) · Cap (0) |
+| D4 | El fabricant publica un manual de servei? | Públic i gratuït (4) · Només per a reparadors professionals, o de pagament (2) · No (0) |
+
+: Elaboració pròpia.
+
+## E. _Software_ (20 %)
+
+| | Pregunta | Respostes |
+|-----|-----------------------------------|------------------------------------------------------------|
+| E1\* | Quant de temps li queda d'actualitzacions de seguretat del fabricant? | 3 anys o més (4) · D'1 a 3 anys (3) · Menys d'un any (2) · Ja no en rep (0) |
+| E2\* | Hi ha un sistema alternatiu mantingut, com LineageOS? | Sí, amb suport oficial (4) · Només versions no oficials (2) · No (0) |
+| E3 | Les aplicacions habituals (missatgeria, banca, salut) funcionen amb l'última versió del sistema que rep? | Totes (4) · Algunes no (2) · La majoria no (0) |
+
+: Elaboració pròpia. Consultar a endoflife.date [@endoflife2026samsung] i la llista de dispositius de LineageOS [@lineageos2026dispositius].
+
+## Preguntes eliminatòries
+
+Si una pregunta marcada amb asterisc té un 0, el model es considera no apte per a la donació, sigui quina sigui la nota final. Són aquestes:
+
+- A2, A7 i B3: la bateria no surt sense malmetre-la, les peces noves no funcionen sense autorització del fabricant, o cal una eina o un programari que només té el fabricant. En tots tres casos, un taller de voluntaris no pot fer la reparació.
+- E1 i E2 compten juntes: el model és eliminatori només si totes dues tenen un 0, és a dir, si el fabricant ja no l'actualitza i tampoc hi ha cap sistema alternatiu mantingut.
+
+## Nota
+
+La nota de cada bloc és la mitjana de les seves preguntes, de 0 a 4. La nota final, sobre 100, és la suma de les notes dels blocs dividides per 4 i ponderada pel pes de cada bloc. Els pesos són una modificació dels del reglament europeu, que dona un 25 % al desmuntatge i un 15 % a cadascun dels altres cinc criteris [@ue2023etiquetatge]. El reglament s'aplica als models que es posen a la venda des del 20 de juny de 2025 [@ue2023etiquetatge; @ue2023ecodisseny], i puntua el que el fabricant es compromet a oferir en el futur, com els anys d'actualitzacions i de recanvis. Els mòbils donats solen ser antics i de segona mà, i d'aquests ens interessa el que es pot fer avui. Per això les peces pesen més, perquè la fitxa també en valora el preu, i el programari també, perquè compta el suport que li queda al mòbil.
