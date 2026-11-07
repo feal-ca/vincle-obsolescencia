@@ -10,7 +10,8 @@ categories: [categoria1, categoria2]
 Amb els smartphones cada cops més presents a les nostres vides, costa imaginar el nostre dia a dia sense utilitzar-los
 en cap moment: ja sigui per realitzar trucades, enviar missatges, mirar xarxes socials, escoltar música o,
 fins i tot, accedir a credencials i mètodes de pagament. En un món on tot està a l'abast d'un sol clic,
-què lluny queda realment quan apaguem aquest petit aparell metàl·lic? \\
+què lluny queda realment quan apaguem aquest petit aparell metàl·lic?
+
 
 ## Secció
 
