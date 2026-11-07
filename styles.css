@@ -1,0 +1,19 @@
+/* Referències: més aire entre entrades i URL en una línia pròpia */
+#refs div.csl-entry {
+  margin-bottom: 0.9em;
+  line-height: 1.5;
+}
+#refs div.csl-entry a {
+  font-size: 0.85em;
+  color: var(--bs-secondary-color);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+#refs div.csl-entry a::before {
+  content: "\A";
+  white-space: pre;
+}
+#refs div.csl-entry a:hover {
+  color: var(--bs-link-color);
+  text-decoration: underline;
+}
