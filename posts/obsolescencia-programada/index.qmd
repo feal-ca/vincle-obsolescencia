@@ -1,0 +1,31 @@
+---
+title: "L'obsolescència programada: què és i quines mesures s'estan prenent per combatre-la"
+description: "L'obsolescència programada agreuja la crisi medioambiental, té un impacte social significatiu i representa una vulnerabilitat cap al consumidor desinformat. Quan es dona i quines mesures s'han près a Europa per combatre-la?."
+author: "Laia Oleart Rabanal"
+date: 2026-11-05
+categories: [obsolescència, obsolescència programada, obsolescència]
+# image: portada.jpg
+---
+
+
+En articles anteriors, hem comentat diversos motius pels quals es canvia un mòbil, així com el temps esperat que aquest és utilitzat en la seva vida. Hem parlat d’obsolescència percebuda i el seu paper cada cop més creixent pel que fa als smartphones. Tot i així, aquest tipus d’obsolescència és només un de tots els tipus d’obsolescència programada que es produeixen. En aquest article, doncs, parlarem de l’obsolescència programada i de mesures que s’estan prenent per combatre-la.
+
+
+L’obsolescència programada és aquella que es dona quan el propi producte ja està dissenyat perquè falli o es quedi obsolet de manera prematura, abans del final de la seva vida útil esperada  [@iberdrola_obsolescencia]. D’aquesta manera, el fabricant aconsegueix que es torni a comprar el producte, un cop el teu dispositiu ha deixat de funcionar abans del que seria necessari.  L’obsolescència programada es pot trobar en tota mena de productes, en la indústria tèxtil, automobilística, electrònica… Els mòbils també en són víctima.
+
+
+## Obsolescència programada als 1930s
+
+Històricament, arran de la crisi del mercat americà al 1929, Bernard London va proposar que l’obsolescència programada es fes obligatòria per llei. D’aquesta manera, es garantiria un nivell de consumició més alt que el que es tindria amb productes duradors, per tal que no es reduís la necessitat de producció que comportés una disminució dels llocs d
+e treball. Tot i que mai es va aprovar una llei d’aquesta mena, la idea es va anar estenent. Per tant, originalment, l’obsolescència programada estava concebuda de tal manera que les empreses poguessin llençar al mercat nous productes i garantir-ne la compra. Amb el temps, això va anar creant una tendència de tenir la versió del producte quant més nova millor [@mcveigh2019planned].
+
+## Quins tipus d’obsolescència programada hi ha?
+Aquesta obsolescència es pot dur a terme de diverses maneres. Els principals serien:
+En primer lloc, pot succeir que el dispositiu ja no sigui compatible amb elements necessaris pel seu funcionament. Per exemple, quan el pont de càrrega que necessita ja no és l’estàndard que es fa servir i no es pot aconseguir un de nou.
+També es pot donar l’obsolescència tecnològica o funcional. Es dona quan el producte esdevé desplaçat perquè les tecnologies disponibles han millorat i altres productes disposen de millors funcionalitats que les fan més atractives.
+D’altra banda trobem el trencament del producte. És a dir, el producte està dissenyat per tal que deixi de funcionar al cap de poc temps i forçar que l’usuari l’hagi de reemplaçar, sense dependre de factors externs.
+Per últim, trobem l’obsolescència psicològica o d’estil. Aquesta està agreujada, sobretot, per campanyes de màrqueting. A mesura que van apareixen nous productes amb noves característiques, es sent que el producte antic està “antiquat” i perd atractiu.
+
+Els mòbils són molt susceptibles a aquest tipus d’obsolescència ja que es tracta d’un mercat amb canvi molt ràpid i on el temps entre llançament de nous models és molt curt, i que, a més a més, té un gran nombre de consumidors interessats. Alhora, depèn de forma important del software i de l’actualització del programari [@corrocher2025]. Entendre cadascun d’aquests tipus d’obsolescència ens pot donar una perspectiva més ample sobre els motius pels quals reemplacem els mòbil. 
+
+## Quines mesures s’estan prenent per combatre l’obsolescència programada?
