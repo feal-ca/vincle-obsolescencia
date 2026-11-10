@@ -1,6 +1,6 @@
 """Exploració inicial dels mòbils d'Open Repair (fase 0 del disseny).
 
-Reprodueix les xifres de l'apartat "Què hem comprovat" de l'entrada.
+Reprodueix les xifres de l'apartat 3, "Què hem comprovat", de l'entrada.
 Cal haver executat abans 01_descarrega_ora.py.
 """
 
