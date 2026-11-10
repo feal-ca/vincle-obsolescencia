@@ -1,13 +1,13 @@
 ---
-title: "Títol de l'entrada"
-description: "Una frase que resumeix l'entrada (surt a la targeta de la portada)."
+title: "L'obsolescència percebuda: Un dels principals motius del canvi de mòbil"
+description: "Amb tants mòbils al món i el seu cost ambiental, és important ser conscients de cada quan els canviem i els motius. Entre ells, destaca l'obsolescència percebuda, que es produeix quan percebem que el producte està obsolet abans que deixi de funcionar com a tal."
 author: "Laia Oleart Rabanal"
 date: 2026-11-05
-categories: [categoria1, categoria2]
-# image: portada.jpg
+categories: [vida útil, obsolescència programada]
+# image: perc_tipus_obs.jpg
 ---
 
-Amb els smartphones cada cops més presents a les nostres vides, costa imaginar el nostre dia a dia sense utilitzar-los
+Amb els smartphones cada cop més presents a les nostres vides, costa imaginar el nostre dia a dia sense utilitzar-los
 en cap moment: ja sigui per realitzar trucades, enviar missatges, mirar xarxes socials, escoltar música o,
 fins i tot, accedir a credencials i mètodes de pagament. En un món on tot està a l'abast d'un sol clic,
 què lluny queda realment quan apaguem aquest petit aparell metàl·lic?
@@ -24,9 +24,4 @@ Per tant, no necessàriament es tracta que el dispositiu ja no pugui realitzar l
 L’obsolescència percebuda seria un dels tipus del que anomenem “obsolescència programada”. L’obsolescència programada es dona quan un producte està dissenyat perquè quedi obsolet o falli abans del final de la seva vida útil esperada. En particular, els mòbils són molt susceptibles a l’obsolescència percebuda i psicològica en concret. De fet, estudis mostren que l’obsolescència en els smartphones és cada cop més psicològica i no tant per motius de hardware o software [@corrocher2025]. Envoltats constantment per l’aparició de nous models amb noves funcionalitats que cada cop semblen millores, una pressió social que devalua l’atractiu de qualsevol producte que no acabi de sortir del mercat, un màrqueting constant per part de les empreses que porta a consumir cada cop més - fins a quin punt podem dir que aquesta sensació de “passat de moda” ve només dels usuaris, sense implicació alguna de les empreses? Al cap i a la fi, no cal produir la necessitat funcional de reemplaçar el producte si el propi client desitja comprar-ne un de nou.
 
 
-![ Font: elaboració pròpia a partir de les dades extretes de [@su17136160].](perc_tipus_obs.png)
-
-## Secció
-
-
-![Peu de figura. Font: elaboració pròpia.](foto.jpg)
+![Proporció del motiu del canvi de mòbil que representa cada tipus d'obsolescència. Observem que els principals motius són l'obsolescència percebuda i la psicològica, que sovint es fan servir com a sinònims ja que el matís que les diferencia és subtil. Font: elaboració pròpia a partir de les dades extretes de [@su17136160].](perc_tipus_obs.png)
