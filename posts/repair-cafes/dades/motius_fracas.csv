@@ -1,0 +1,16 @@
+grup,motiu,n,total,pct
+Tots els aparells elèctrics,Avaria sense solució o no trobada,9304,26230,35.5
+Tots els aparells elèctrics,Peces (no n'hi ha o són cares),9131,26230,34.8
+Tots els aparells elèctrics,Massa gastat,3276,26230,12.5
+Tots els aparells elèctrics,No es pot obrir,2320,26230,8.8
+Tots els aparells elèctrics,"Falten mitjans a la sessió (temps, eines, informació)",2199,26230,8.4
+Ordinadors,Avaria sense solució o no trobada,179,457,39.2
+Ordinadors,Peces (no n'hi ha o són cares),150,457,32.8
+Ordinadors,"Falten mitjans a la sessió (temps, eines, informació)",68,457,14.9
+Ordinadors,Massa gastat,45,457,9.8
+Ordinadors,No es pot obrir,15,457,3.3
+Mòbils i tauletes,Avaria sense solució o no trobada,93,238,39.1
+Mòbils i tauletes,"Falten mitjans a la sessió (temps, eines, informació)",52,238,21.8
+Mòbils i tauletes,Peces (no n'hi ha o són cares),45,238,18.9
+Mòbils i tauletes,Massa gastat,27,238,11.3
+Mòbils i tauletes,No es pot obrir,21,238,8.8
