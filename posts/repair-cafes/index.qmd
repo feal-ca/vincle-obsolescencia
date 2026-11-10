@@ -1,0 +1,114 @@
+---
+title: "Què poden arreglar els repair cafés (i què no)"
+description: "Amb la experiència propia i dades de més de 200.000 reparacions, veiem què arreglen els repair cafés i on topen."
+author: "Ferran Alía"
+date: 2026-11-11
+categories: [reparabilitat, repair cafés, experiència pròpia]
+execute:
+  echo: false
+  freeze: auto       # les gràfiques s'executen al teu ordinador; GitHub publica el resultat desat a _freeze/
+---
+
+```{python}
+#| include: false
+from pathlib import Path
+
+import altair as alt
+
+import grafiques as g
+
+alt.renderers.set_embed_options(actions=False, formatLocale=g.LOCALE)
+DADES = Path("dades")
+```
+
+Quan una cosa s'espatlla, sovint ni ens plantegem arreglar-la. En una enquesta a 617 persones d'Europa occidental que acabaven de substituir un aparell avariat, el 60 % no s'havia plantejat reparar-lo [@magnier2022]. Els repair cafés miren de canviar això des del barri. Fa un temps vaig participar en unes sessions de reparació i en unes install parties de Linux al punt multimèdia del meu barri, i en aquesta entrada explico què hi vaig veure i què diuen les dades sobre què poden arreglar aquests espais i on topen.
+
+## Què és un repair café i on n'hi ha
+
+Un repair café sol ser una trobada periòdica i gratuïta, normalment en un centre cívic, una biblioteca o un local de barri, on la gent porta objectes espatllats i els arregla amb l'ajuda de voluntaris. El primer el va organitzar la periodista Martine Postma a Amsterdam el 18 d'octubre de 2009, i dos anys després va crear la fundació Repair Café International per ajudar altres grups a muntar-ne [@repaircafe2026about]. La persona que porta un objecte a reparar no sols el porta a reparar, sino que mira com es fa i aprèn. No es paga res (com a molt la peça substituida) i tampoc hi ha garantia: el 88 % dels repair cafés fan signar unes normes de la casa que eximeixen els voluntaris de responsabilitat si alguna cosa surt malament [@charter2016].
+
+Hi ha formats semblants. Les restart parties, que va començar The Restart Project a Londres el 2012, se centren només en aparells electrònics [@restart2013]. A les install parties, uns voluntaris ajuden la gent a instal·lar Linux al seu ordinador, sovint després de reparar-lo (o com a mínim fer-li una repasada). I algunes iniciatives arreglen aparells donats per donar-los després a qui els necessita. A Barcelona ho fa a gran escala la xarxa eReuse, impulsada per l'associació Pangea amb investigadors de la UPC, que recull ordinadors descartats i els reacondiciona per a entitats socials [@ereuse2025].
+
+El que vaig viure jo era una barreja de tot això. Tot va ser força informal, qui portava el punt multimèdia havia estat el meu professor de robòtica de petit, i em va avisar per si m'interessava. La gent portava un munt d'ordinadors vells (i en tenien un altre munt de donats), i la idea era arreglar-los o veure si s'hi podia fer res amb ells, mentre en paral·lel es feia una install party per ficar-lis un Linux lleuger perquè tornessin a ser útils. Un cop arreglats, els que algú havia portat propis se'ls van endur, i els que s'havien donat van anar a parar a entitats o persones que els necessitessin.
+
+El moviment ha crescut de pressa. D'aquell primer repair café d'Amsterdam s'ha passat a més de 1.000 el 2016, més de 2.000 el 2021 [@moalem2021] i més de 3.800 el 2025 [@wikipedia2025repaircafe]. La Open Repair Alliance calcula que al món hi ha almenys 4.000 grups de reparació comunitària actius [@ora2024].
+
+```{python}
+#| label: fig-creixement
+#| fig-cap: "Font: elaboració pròpia a partir de Repair Café International, Wikipedia, Moalem i Mosgaard (2021) i Open Repair Alliance (2024)."
+g.estil(g.creixement())
+```
+
+On són, però? Repair Café International té un mapa públic amb la fitxa de cada repair café registrat.
+
+```{python}
+#| label: fig-mapa
+#| fig-cap: "Font: elaboració pròpia a partir del mapa de Repair Café International (10/11/2026). Només fitxes amb coordenades (3.979 de 5.385). En taronja, els que també instal·len Linux. Clica la llegenda per filtrar."
+g.estil(g.mapa(DADES))
+```
+
+Veiem que el moviment és clarament del nord-oest d'Europa. França (814), els Països Baixos (771), Alemanya (695), el Regne Unit (489) i Bèlgica (382) en concentren la gran majoria. Per habitant, la diferència és encara més gran: els Països Baixos en tenen 44 per milió d'habitants i Bèlgica 33, mentre que Espanya en té 41 en total, menys d'un per milió. A prop de casa n'hi ha alguns, com el Repair Café Barcelona, que funciona des del 2019 a Baró de Viver [@repaircafebcn], o el grup Restarters BCN, però són pocs.
+
+Al mapa també es veu una altra cosa. 200 fitxes indiquen que, a més de reparar, hi instal·len Linux, sobretot als Països Baixos (66) i a França (50). És en part una conseqüència del final de Windows 10. Microsoft va deixar de donar-ne actualitzacions gratuïtes el 14 d'octubre de 2025, i molts ordinadors que funcionen bé no compleixen els requisits de Windows 11. La consultora Canalys calculava que uns 240 milions de PCs podien acabar llençats per aquest motiu [@reuters2023canalys]. El moviment de reparació hi ha respost amb la campanya End of 10 [@endof10] i amb els "Linux Repair Café", on els visitants proven Linux i, si els convenç, se l'instal·len al portàtil en el moment [@repaircafe2026linux].
+
+Les dades de reparacions ho mostren. Fins al 2024, entre l'1 i el 5 % de les reparacions d'ordinadors esmentaven Linux, i el 2025 es van més que duplicar. És una cosa molt natural, sovint el maquinari està bé i el que falla és el sistema operatiu, instal·lar-ne un alternatiu acostuma a funcionar. Per a la part de programari en mòbils, el Pau ho explica a [És segur seguir usant els mòbils vells?](../suport-programari/)
+
+## Funcionen?
+
+Per saber-ho he analitzat les dades del RepairMonitor, l'eina on els voluntaris dels repair cafés en registren cada de reparació quin aparell era, què tenia, si es va arreglar i, si no, per què [@repairmonitor2026]. Hi ha 131.962 intents de reparar aparells elèctrics i electrònics entre el 2015 i el 2026. El 53 % va sortir reparat, el 15 % a mitges i el 32 % no es va poder arreglar (els seus números coincideixen amb el 53 % de la Open Repair Alliance, que ajunta dades de diverses xarxes de reparació [@ora2024]). Alguns cafés també accepten objectes no electrònics, i si es compten, l'èxit puja al 64 %, perquè uns pantalons s'arreglen gairebé sempre (el 96 % de les vegades, concretament. No vull pensar en com havia d'estar aquell 4 %). Aquesta taxa global s'ha mantingut cada any entre el 60 i el 67 % des del 2017, i quadra també amb el 63 % que declaraven els organitzadors en una enquesta del 2016 [@charter2016].
+
+```{python}
+#| label: fig-exit
+#| fig-cap: "Font: elaboració pròpia a partir de RepairMonitor (Repair Café International)."
+g.estil(g.exit_per_objecte(DADES))
+```
+
+Els ordinadors i els mòbils queden a prop de la mitjana, amb el PC de sobretaula surt reparat el 55 % de les vegades, l'smartphone el 52 % i el portàtil el 51 %. En tots tres, però, hi ha molts casos a mitges, entre el 24 i el 27 %. En aquests casos el voluntari n'ha arreglat una part o ha donat un consell perquè la persona acabi la reparació a casa, per exemple comprant una peça, ja que sovint s'ha d'anar a comprar especialment. El pitjor cas és la impressora, que només surt reparada el 38 % de les vegades. Ja el 2016, més d'un terç dels repair cafés creien que almenys la meitat de les impressores que els arribaven s'havien espatllat per obsolescència incorporada [@charter2016].
+
+## Els obstacles
+
+Que la meitat dels aparells surtin arreglats està bé, però el que més interessa és què passa amb l'altra meitat. Els obstacles es poden agrupar en tres nivells: l'objecte, el mateix repair café i la gent.
+
+### L'objecte
+
+Quan una reparació falla, el voluntari pot anotar-ne el motiu. Les dues causes principals son que l'avaria no té solució o no es troba (36 % dels aparells elèctrics no reparats) i que no hi ha les peces necessaries a la sessió, ja no es fabriquen o són massa cares (35 %, i el 33 % en ordinadors). La Open Repair Alliance, que classifica els motius d'una altra manera, arriba al 42 % per les peces. Dels més de 200.000 aparells que té registrats, només 40 eren productes coberts per legislació europea de reparació [@ora2024].
+
+A la meva experiència al punt multimèdia és va notar clarament la diferència entre aparells. Amb les torres podíem fer una mica de Frankenstein, es a dir, si un ordinador no tenia solució, el desmuntàvem i en fèiem servir les peces per als altres. Si a un li faltava memòria RAM, n'hi afegíem, i si un connector tenia corrosió o fallava alguna peça que teníem a mà, la canviàvem. Funcionava perquè les peces d'un PC de sobretaula solen ser bastant estàndard, i una memòria o un disc d'un ordinador serveixen per a un altre. Els problemes venien quan no era així. Alguns ordinadors tenien poca RAM i no es podia ampliar, i amb els portàtils era especialment difícil. Algú va portar un MacBook, i no recordo que hi poguéssim fer gran cosa. Els que no tenien solució els vam fer servir com a font de peces, i les restes es van quedar allà, per després enviarles a reciclar pels materials, que segueixen tenint valor.
+
+```{python}
+#| label: fig-motius
+#| fig-cap: "Font: elaboració pròpia a partir de RepairMonitor (Repair Café International)."
+g.estil(g.motius(DADES))
+```
+
+En mòbils i tauletes les proporcions canvien. Les peces pesen menys (19 %), i en canvi pesa més que a la sessió faltin mitjans: temps, eines o informació (22 %, davant del 8 % general). Els ordinadors, en canvi, gairebé sempre es poden obrir, només un 3 % dels fracassos es deuen a això, davant del 9 % en mòbils i tauletes. En qualsevol cas, la mostra de mòbils i tauletes és petita (238 casos), així que cal llegir-ho com un indici.
+
+### El repair café
+
+Els propis repair cafés també tenen els seus límits. En una enquesta del 2016 a 317 repair cafés, pocs veien obstacles greus, però més de la meitat deien que costava trobar voluntaris i visitants, i un 20 % també en deia el mateix del finançament [@charter2016]. A més, s'han de buscar la vida per trobar les peces i la informació, el 71 % compra recanvis per internet i el 77 % consulta el web del fabricant durant les sessions[REVISAR: no es esto algo muy normal? Osea, buscar por internet y consultar documentacion? Porque es esto "buscarse la vida"?]. Una revisió de 44 estudis hi afegeix que molts organitzadors són jubilats i que corren el risc de cremar-se, perquè mantenir la iniciativa és una feina constant i voluntària [@moalem2021].
+
+En el meu cas hi havia un local, algú conegut que s'encarrega de tota la organització i un munt d'ordinadors donats amb què treballar. Si falta qualsevol d'aquestes coses, és difícil que una iniciativa així arrenqui, i potser per això a Espanya n'hi ha tan poques.
+
+### La gent
+
+L'últim obstacle és el més bàsci, i es que la gent hi vagi. Ja hem vist que el 60 % de qui substitueix un aparell avariat ni es planteja reparar-lo [@magnier2022]. Els que sí que hi van ho fan sobretot pel medi ambient. En un estudi amb 30 visitants de repair cafés d'Utrecht, 29 ho esmentaven, mentre que els motius econòmics (que sembla raonable pensar que hi tenen força pes) només apareixien en el 40 % [@luukkonen2024]. Com que els estudis entrevisten qui ja hi va, amb aquestes fonts poc sabem de per què la majoria de la gent no hi va, pero probablement es deu a la manca de coneixement sobre la iniciativa, o falta de conscienciació social al respecte.
+
+| Nivell | Obstacle principal | Dada | Exemple |
+|---|---|---|---|
+| L'objecte | Peces i disseny | Un 35 % dels fracassos són per peces | RAM soldada, alguns portàtils |
+| El repair café | Voluntaris, difusió i eines | Més de la meitat diu que costa trobar voluntaris i visitants | Al meu barri hi havia local i algú que ho organitzava |
+| La gent | Ni es planteja reparar | Un 60 % no considera la reparació | Els smartphones són el 0,35 % de les reparacions |
+
+: Els obstacles dels repair cafés. {#tbl-obstacles}
+
+## El cas dels mòbils
+
+El cas dels mòbils es el cas més clar. Al RepairMonitor només hi ha 727 smartphones entre 209.733 reparacions, un 0,35 %. Les dades de la Open Repair Alliance també diuen el mateix: mòbils, tauletes i televisors junts són el 4 % del que arriba a les sessions [@ora2024]. I quan hi arriben, no es per vells. L'edat mediana d'un smartphone és de 4 anys, comparat amb els 9 d'un PC de sobretaula, i encaixa amb el que passa fora dels repair cafés, on els mòbils se substitueixen de mitjana als 3,6 anys [@magnier2022].
+
+Les raons han anat sortint al llarg de l'entrada. Un mòbil va enganxat, les peces són específiques de cada model i calen eines que un repair café no sol tenir. Ho vaig comprovar amb el meu [Samsung Galaxy A40](../reparacio-samsung-a40/). Era una reparació sencilla, pero tot i així, la guia demanava pistola de calor i ventosa, vaig trobar a faltar la pistola en separar la placa de càrrega, i entre una cosa i l'altra hi vaig passar gairebé tres hores.
+
+## Conclusió
+
+Els repair cafés arreglen més o menys la meitat dels aparells que els arriben, i se'n surten bé amb els que estan pensats per obrir-se i tenen peces estàndard, com les torres que desmuntàvem al punt multimèdia. On topen és en coses que no depenen tant d'ells mateixos, com peces que no es fabriquen o són massa cares, aparells que no s'obren i gent que no s'ho planteja. Els mòbils acumulen gairebé tots aquests problemes, i per això gairebé no hi arriben.
+
+La Unió Europea ja reconeix el paper d'aquestes iniciatives. La Directiva (UE) 2024/1799 obliga cada estat a prendre almenys una mesura per promoure la reparació, i posa com a exemple cedir espais en centres cívics o culturals a iniciatives comunitàries com els repair cafés [@ue2024reparacio]. Un local, però, no resol el problema de les peces ni el del disseny, i d'això en parlarem a l'entrada sobre el dret a reparar.
