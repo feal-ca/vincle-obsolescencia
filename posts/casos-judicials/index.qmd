@@ -1,7 +1,7 @@
 ---
 title: "Sancions judicials i obsolescència de mòbils"
 description: "Apple i Samsung, dos gegants tecnològics en el món dels smartphones, han anat a judici per casos d'obsolescència provocada. Analitzem els casos i les seves conseqüències."
-author: "Pau Soler"
+author: "Pau Soler Rodríguez"
 date: 2026-11-11
 categories: [obsolescència, programari, legislació]
 image: portada.png
