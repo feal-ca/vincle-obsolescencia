@@ -4,6 +4,7 @@ description: "Amb l'experiència pròpia i dades de més de 200.000 reparacions,
 author: "Ferran Alía Castillejos"
 date: 2026-11-11
 categories: [reparabilitat, experiència pròpia]
+image: portada.png
 execute:
   echo: false
   freeze: auto       # les gràfiques s'executen al teu ordinador; GitHub publica el resultat desat a _freeze/

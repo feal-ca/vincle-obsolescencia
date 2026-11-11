@@ -4,11 +4,9 @@ description: "Una repassada dels casos d'obsolescència programada en el sector 
 investigats i denunciats per l'organització Halte a l'Obsolescence Programée"
 author: "Martí Gil Comas"
 date: 2026-11-11
-categories: [categoria1, categoria2]
+categories: [impremta, obsolescència]
 # image: portada.jpg
 ---
-
-## 1. Què és Halte a l’Obsolescence Programmée?
 
 Halte a l’Obsolescence Programmée (HOP) és una organització francesa sense ànim de lucre fundada
 el 2015, el mateix any que França es convertí en el primer país en prohibir l’obsolescència
@@ -41,7 +39,7 @@ reparables: en el cas dels cartutxos de tinta, allargant la seva vida útil o ad
 de cartutxos remanufacturats. Malauradament, en molts casos no ho són, i s'empren pràctiques
 fraudulentes per a escurçar la vida útil dels productes.
 
-## 2. El cas contra Epson
+## El cas contra Epson
 
 Un cas que ha arribat a judici aquest mateix any 2026 és el cas contra Epson, un gran participant
 del sector de la impremta, acusat d’aplicar l’obsolescència programada en molts dels seus
@@ -71,7 +69,7 @@ El juliol de 2026 va succeir la primera vista processal del cas, i la pròxima e
 serà el 25 de febrer de 2027 [@hop_trialepson25/02/2027]. Així doncs, tot i haver-se denunciat i investigat des de fa
 10 anys, segueix sent una batalla vigent.
 
-## 3. El cas contra HP
+## El cas contra HP
 
 Epson no és l’única empresa del sector de la impremta que està sent investigada per HOP.
 Una altra és HP, que va ser denunciada el 2024 i fins avui dia segueix sent investigada per
