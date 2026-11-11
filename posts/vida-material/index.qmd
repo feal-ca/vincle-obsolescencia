@@ -5,7 +5,6 @@ author: "Eki Gonzalez Flamarique"
 date: 2026-11-11
 categories: [bateria, reparabilitat, anàlisi de dades]
 image: b3_resultat.png
-draft: true
 ---
 
 En entrades anteriors hem vist que un mòbil no deixa de servir només perquè s'espatlli: hi pesen [la percepció](../obsolescencia/), [el programari](../suport-programari/) i les dificultats per [arreglar-lo en un repair café](../repair-cafes/). Però hi ha una peça que, faci el que faci l'usuari, acaba fallant: la bateria. Cada cicle de càrrega li treu una mica de capacitat, i la calor o tenir-la sempre plena ho acceleren [@batteryuniversity2021]. I té un llindar legal de durabilitat propi: des del 20 de juny de 2025, ha de conservar el 80 % de la capacitat després de 800 cicles complets [@ue2023ecodisseny].
