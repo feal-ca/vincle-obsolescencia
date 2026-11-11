@@ -2,7 +2,7 @@
 title: "Com vaig ressuscitar el meu Samsung Galaxy A40"
 description: "Després de set anys d'ús i una caiguda en bici, el mòbil ja no carregava. Així el vaig obrir, netejar i tornar a encendre sense comprar cap peça."
 author: "Ferran Alía Castillejos"
-date: 2026-11-06
+date: 2026-11-11
 categories: [reparabilitat, experiència pròpia]
 image: portada.jpg
 lightbox: true

@@ -2,7 +2,7 @@
 title: "L'obsolescència percebuda: Un dels principals motius del canvi de mòbil"
 description: "Amb tants mòbils al món i el seu cost ambiental, és important ser conscients de cada quan els canviem i els motius. Entre ells, destaca l'obsolescència percebuda, que es produeix quan percebem que el producte està obsolet abans que deixi de funcionar com a tal."
 author: "Laia Oleart Rabanal"
-date: 2026-11-03
+date: 2026-11-11
 categories: [vida útil, obsolescència]
 # image: perc_tipus_obs.jpg
 ---
