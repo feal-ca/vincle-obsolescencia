@@ -1,0 +1,89 @@
+{
+ "title": "Distribució anual de les causes d'avaria dels mòbils (MobiFix)",
+ "language": "es",
+ "problem": {
+  "archetype": "part-to-whole-over-time",
+  "catalog_functions": [
+   "proportions",
+   "data-over-time"
+  ],
+  "statement": "¿Cuál es la causa de avería de los móviles en cada año y cómo cambia año tras año la distribución de causas?",
+  "mode": "explanatory"
+ },
+ "user": {
+  "profile": "general-public",
+  "modifiers": [
+   "cvd"
+  ]
+ },
+ "tasks": {
+  "why": {
+   "goal": "present",
+   "search": "locate",
+   "query": "compare"
+  },
+  "low_level": [
+   "retrieve-value",
+   "find-extremum",
+   "compare",
+   "characterize-distribution"
+  ],
+  "temporal": [
+   "pattern",
+   "rate-of-change"
+  ],
+  "shneiderman": [
+   "overview"
+  ]
+ },
+ "data": {
+  "dataset_type": "table",
+  "source_file": "../dades/raw/ora_mobifix.csv",
+  "keys": [
+   {
+    "role": "time",
+    "type": "temporal",
+    "cardinality": 8,
+    "grain": "year",
+    "source_column": "event_date"
+   },
+   {
+    "role": "category",
+    "type": "categorical",
+    "cardinality": 8,
+    "source_column": "fault_type"
+   }
+  ],
+  "values": [
+   {
+    "role": "measure",
+    "type": "quantitative",
+    "semantics": "share",
+    "derived": true,
+    "derivation": "count of repairs per (year, cause) / count of repairs in that year",
+    "unit": "% of the year's repairs"
+   }
+  ],
+  "items": "medium",
+  "filters": [
+   "repair_status known (1842 of 1916 rows)"
+  ],
+  "normalization": "share of the year's repairs",
+  "parse": {
+   "delimiter": ",",
+   "decimal": ".",
+   "date_format": "%Y-%m-%d"
+  }
+ },
+ "constraints": [
+  "static-only",
+  "exact-values",
+  "uncertainty"
+ ],
+ "library": "matplotlib",
+ "host": "script",
+ "stage_validation": {
+  "stage1": "assumed",
+  "stage2": "assumed"
+ }
+}

@@ -13,12 +13,14 @@ Des de l'arrel del repositori:
 ```bash
 python3 posts/vida-material/_analisi/scripts/01_descarrega_ora.py
 python3 posts/vida-material/_analisi/scripts/02_exploracio_ora.py
+python3 posts/vida-material/_analisi/scripts/03_sankey_mobifix.py
+python3 posts/vida-material/_analisi/scripts/04_causes_per_any.py
 python3 posts/vida-material/_analisi/scripts/05_b1_simptomes.py
 python3 posts/vida-material/_analisi/scripts/06_b2_edat_bateria.py
 python3 posts/vida-material/_analisi/scripts/07_b3_resultat.py
 ```
 
-El primer script descarrega les dades d'Open Repair (uns 80 MB) a `dades/raw/`, que no es puja a git. El segon fa l'exploració inicial dels mòbils. Els altres tres generen les figures 1, 2 i 3 de l'entrada (`b1_simptomes`, `b2_edat_bateria` i `b3_resultat`, en PNG i SVG). Els de les figures 2 i 3 necessiten haver executat abans els quaderns 01 i 02, que creen `dades/processades/`.
+El primer script descarrega les dades d'Open Repair (uns 80 MB) a `dades/raw/`, que no es puja a git. El segon fa l'exploració inicial dels mòbils. El tercer i el quart generen el gràfic de Sankey i el mapa de calor de causes per any de l'entrada `posts/avaries-mobil` i n'imprimeixen les xifres. Els tres últims generen les figures 1, 2 i 3 de l'entrada (`b1_simptomes`, `b2_edat_bateria` i `b3_resultat`, en PNG i SVG). Els de les figures 2 i 3 necessiten haver executat abans els quaderns 01 i 02, que creen `dades/processades/`.
 
 ## Dades
 
