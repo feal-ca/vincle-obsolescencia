@@ -8,9 +8,11 @@ toc: false
 | Persona | Entrades | Visuals | Altres |
 |---|---|---|---|
 | Laia Oleart | Articles "_L'obsolescència percebuda: Un dels principals motius del canvi de mòbil_" i "_L'obsolescència programada: què és i quines mesures s'estan prenent per combatre-la_" | Gràfica dels percentatges dels tipus d'obsolescència a l'article "_L'obsolescència percebuda: Un dels principals motius del canvi de mòbil_" | Cerca inicial i resum de fonts sobre vida útil, obsolescència, marc europeu, casos judicials i de fonts amb dades per poder elaborar visualitzacions.|
+| Ferran Alía | Articles "_Com vaig ressuscitar el meu Samsung Galaxy A40_", "_Fitxa de criteris de reparabilitat per a mòbils donats_" i "_Què poden arreglar els repair cafés (i què no)_" | Fotos de la reparació a A40. Gràfiques a l'article de repair cafés | Esquelet del blog amb Quarto. Recollida, neteja, tractament i anàlisi de les dades de l'article de repair cafés.|
 
 ## Ús d'eines d'IA
 
 | Eina | Per a què | Com s'ha verificat |
 |---|---|---|
 | Gemini | Escriure les citacions de la bibliografia en format bib per les referencies dels articles "_L'obsolescència percebuda: Un dels principals motius del canvi de mòbil_" i "_L'obsolescència programada: què és i quines mesures s'estan prenent per combatre-la_" | Revisant els camps donats i comprovant que es corresponen amb les fonts consultades. Observant que es llegeix bé al blog final. |
+| Claude (Claude Code) | Muntar l'esquelet de Quarto i la publicació automàtica. Cerca d'articles, fonts i bases de dades rellevants. Ajuda amb codi Altair de les gràfiques. | Comprovant el bon funcionament de la web. Llegint directament les fonts suggerides. |
