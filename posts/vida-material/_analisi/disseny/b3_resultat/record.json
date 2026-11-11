@@ -1,0 +1,208 @@
+{
+ "title": "Com acaben les reparacions de bateria i de pantalla (MobiFix)",
+ "language": "es",
+ "problem": {
+  "archetype": "compare-two-keys",
+  "catalog_functions": [
+   "proportions",
+   "comparisons"
+  ],
+  "statement": "Per què les reparacions de bateria acaben sense arreglar més que les de pantalla?",
+  "mode": "explanatory",
+  "domain_examples": [
+   "com acaben les reparacions segons el component",
+   "motiu de no reparació per component"
+  ]
+ },
+ "user": {
+  "profile": "general-public",
+  "modifiers": [
+   "cvd",
+   "print-grayscale"
+  ]
+ },
+ "tasks": {
+  "why": {
+   "goal": "present",
+   "search": "lookup",
+   "query": "compare"
+  },
+  "low_level": [
+   "gist",
+   "compare",
+   "retrieve-value"
+  ],
+  "temporal": [],
+  "shneiderman": [
+   "overview"
+  ]
+ },
+ "data": {
+  "dataset_type": "table",
+  "source_file": "../dades/processades/mobils_classificats.csv",
+  "keys": [
+   {
+    "role": "category",
+    "type": "categorical",
+    "cardinality": 2,
+    "source_column": "grup_avaria (Bateria i alimentació, Pantalla)"
+   },
+   {
+    "role": "category2",
+    "type": "categorical",
+    "cardinality": 3,
+    "source_column": "repair_status (final de vida, pendent, reparat)"
+   }
+  ],
+  "values": [
+   {
+    "role": "measure",
+    "type": "quantitative",
+    "semantics": "share",
+    "derived": true,
+    "derivation": "panell A: reparacions per resultat / reparacions del component (MobiFix)",
+    "unit": "% de reparacions"
+   }
+  ],
+  "items": "tiny",
+  "filters": [
+   "font_avaria == MobiFix, repair_status conegut"
+  ],
+  "normalization": "share of the component's repairs",
+  "parse": {
+   "delimiter": ",",
+   "decimal": "."
+  }
+ },
+ "constraints": [
+  "static-only",
+  "exact-values",
+  "print-grayscale"
+ ],
+ "library": "altair",
+ "host": "script",
+ "stage_validation": {
+  "stage1": "confirmed",
+  "stage2": "confirmed",
+  "stage3": "confirmed"
+ },
+ "solution": {
+  "idiom": "stacked_bar_graph",
+  "family": "stacked-bar",
+  "mark": "rect",
+  "encodings": [
+   {
+    "attribute": "category",
+    "channel": "position-y",
+    "scale": "nominal",
+    "note": "una fila per component, etiqueta en negre amb la n"
+   },
+   {
+    "attribute": "measure",
+    "channel": "length",
+    "scale": "linear",
+    "zero": true,
+    "note": "panell A: 100 % per fila; el final de vida primer, des de la base comuna"
+   },
+   {
+    "attribute": "category2",
+    "channel": "color-luminance",
+    "scale": "ordinal",
+    "note": "pastels de la mateixa lluminositat (J'=78): final de vida corall, pendent lavanda, reparat aigua; la distinció per a daltònics és pel to"
+   },
+   {
+    "attribute": "measure",
+    "channel": "text",
+    "note": "percentatges als segments, 'final de vida: n de total' a la dreta en vermell, nom de cada segment a sobre del seu color"
+   }
+  ],
+  "derived_data": [
+   "panell A: share = n(component, resultat) / n(component), MobiFix"
+  ],
+  "ordering": "final de vida, pendent, reparat; bateria a dalt",
+  "color": {
+   "purpose": "encode-value",
+   "palette_type": "qualitative",
+   "suggested": [
+    "#f99e7e",
+    "#b4b4f8",
+    "#69cec4"
+   ],
+   "cvd_safe": true,
+   "second_cue": "nom de cada segment a sobre en una versió fosca del to (#b5502f, #5a5ab0, #1f7a70) i separadors blancs; en grisos els tres pastels són iguals"
+  },
+  "text": {
+   "title": "takeaway",
+   "axis_units": false,
+   "direct_labels": true,
+   "annotations": [
+    "subtítol amb el període",
+    "'Pendent' definit al peu"
+   ],
+   "source_line": true
+  },
+  "interaction": {
+   "level": "none",
+   "default_state_answers_task": true,
+   "intents": []
+  },
+  "layout": {
+   "small_multiples": false,
+   "facet_by": null,
+   "aspect": "wide"
+  },
+  "rejected_alternatives": [
+   {
+    "idiom": "stacked_bar_graph",
+    "reason": "versió de dos panells (p-compare-two-keys--com-acaben-les-reparacions-de-20261111): l'usuari no la va acceptar; massa barres al panell de motius i resultat en grisos sense connotació",
+    "rule": "CLT-02"
+   },
+   {
+    "idiom": "stacked_bar_graph",
+    "reason": "versió original d'un sol panell: vermell només per al final de vida, 'Reparable' es llegia al revés, sense títol ni font",
+    "rule": "TXT-07"
+   },
+   {
+    "idiom": "multiset_barchart",
+    "reason": "llavor compare-two-keys--grouped-bars-few-few: separa les parts i amaga que sumen el total del component",
+    "rule": "EXP-05"
+   },
+   {
+    "idiom": "stacked_bar_graph",
+    "reason": "paleta semàfor (#b2182b, #f4c542, #1b9e77): l'usuari la va trobar massa semàfor; a més, vermell i verd quedaven a ΔE 20 en deuteranopia (CAM02-UCS)",
+    "rule": "COL-05"
+   },
+   {
+    "idiom": "stacked_bar_graph",
+    "reason": "paleta granat, sorra i verd blavós (#8e2a4a, #e4d9b8, #3f9f90): la més robusta (ΔE mínima 24), però l'usuari la va trobar descolorida i grisosa",
+    "rule": "PUR-13"
+   },
+   {
+    "idiom": "stacked_bar_graph",
+    "reason": "paleta Okabe-Ito (vermelló, groc, verd blavós): vermelló i verd amb la mateixa lluminositat, i el vermelló és la bateria a B2",
+    "rule": "COL-08"
+   }
+  ],
+  "validation": {
+   "stage3_checks": [
+    "EXP-05",
+    "EXP-08",
+    "TXT-01",
+    "TXT-04",
+    "TXT-07",
+    "TXT-08",
+    "COL-05",
+    "COL-08",
+    "DAT-03"
+   ],
+   "critique_skill": "used before redesign",
+   "cvd_method": "colorspacious 1.1, simulació de Machado et al. al 100 % (deuteranopia, protanopia, tritanopia), ΔE a CAM02-UCS; mínim 15,2 (deuteranopia), 29,7 en visió normal"
+  },
+  "library_notes": {
+   "altair": "layer de mark_bar amb x/x2 calculats per a l'apilat, mark_text per a etiquetes; vconcat amb una línia de text per al peu"
+  }
+ },
+ "rationale": "El lector ha de veure en segons que la bateria acaba sense arreglar més sovint que la pantalla. El final de vida va primer des de la base comuna. L'usuari va demanar pastels de la mateixa lluminositat amb la connotació dolent–bo; la combinació corall, lavanda i aigua és la que maximitza la distància mínima en les tres simulacions de daltonisme. Com que en grisos no es distingeixen, els noms dels segments fan de segona pista.",
+ "confidence": "high",
+ "id": "p-compare-two-keys--com-acaben-les-reparacions-de-20261111-3"
+}
