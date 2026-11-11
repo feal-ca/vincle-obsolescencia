@@ -3,7 +3,7 @@ title: "Quants mòbils surten d'ús i per què: dels registres de reparació a u
 description: "Descrivim 1.842 reparacions de mòbils de Repair Cafés i construïm un model de balanç per estimar, per al Regne Unit del 2013 al 2019, quants mòbils hi ha en ús, quants s'hi afegeixen i quants en surten cada any."
 author: "Eki Gonzalez Flamarique"
 date: 2026-11-10
-categories: [avaries, reparabilitat, anàlisi de dades, estimació]
+categories: [reparabilitat, anàlisi de dades]
 image: poblacio_mobils_uk.png
 ---
 

@@ -4,7 +4,7 @@ description: "Repàs breu de les mesures i els estàndards dissenyats a la UE i 
 a afavorir la fabricació de productes electrònics sostenibles"
 author: "Martí Gil Comas"
 date: 2026-11-11
-categories: [reparabilitat, legislació, Unió Europea, França]
+categories: [reparabilitat, normativa]
 # image: etiqueta_energetica.png
 ---
 
