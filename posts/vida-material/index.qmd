@@ -74,15 +74,17 @@ Hi ha una pista més. Entre els mòbils de MobiFix amb edat coneguda, els de 3 a
 
 Amb aquests registres, doncs, no es pot saber si el que falla és la peça, el disseny del mòbil, l'edat o el temps dels voluntaris.
 
-## I ara, què?
+## Conclusions
 
-El reglament (UE) 2023/1670 no només demana 800 cicles amb el 80 % de capacitat. També obliga que l'usuari pugui canviar la bateria, amb una excepció: el fabricant pot reservar aquest canvi als reparadors professionals si la bateria conserva el 83 % després de 500 cicles i el 80 % després de 1.000, i si el mòbil és resistent a l'aigua i la pols (IP67) [@ue2023ecodisseny]. El mateix reglament recull que la millor tecnologia disponible ja arriba als 1.200 cicles.
+Tornem a les tres preguntes del principi. Quan un mòbil no carrega, la bateria només n'és la causa la meitat de les vegades, i sovint el que falla és el port. La bateria es porta a reparar amb una edat mediana de 4 anys, però aquestes dades no diuen si falla abans o després dels 800 cicles del reglament. I quan s'espatlla, acaba sense solució més sovint que una pantalla, sense que els registres expliquin per què en dos de cada tres casos.
+
+Mirant endavant, el reglament (UE) 2023/1670 no només demana 800 cicles amb el 80 % de capacitat. També obliga que l'usuari pugui canviar la bateria, amb una excepció: el fabricant pot reservar aquest canvi als reparadors professionals si la bateria conserva el 83 % després de 500 cicles i el 80 % després de 1.000, i si el mòbil és resistent a l'aigua i la pols (IP67) [@ue2023ecodisseny]. El mateix reglament recull que la millor tecnologia disponible ja arriba als 1.200 cicles.
 
 A més, el reglament de bateries (UE) 2023/1542 exigeix bateries que pugui extreure l'usuari a partir del 18 de febrer de 2027 [@ue2023bateries]. Per als *smartphones*, però, manen els requisits del reglament d'ecodisseny [@comissio2025bateries]. És a dir, molts mòbils podran seguir sense una bateria que l'usuari canviï sol, sempre que sigui prou duradora.
 
-Amb els nostres escenaris, 1.000 cicles són entre 2,7 i 5,5 anys. Les nostres dades no diuen si això n'hi ha prou, perquè l'edat a la reparació no és la durada de la bateria. El que sí hem vist és que, quan finalment falla, la bateria acaba sense solució més sovint que una pantalla, i que en dos de cada tres casos el motiu no consta.
+Amb els nostres escenaris, 1.000 cicles són entre 2,7 i 5,5 anys. Les nostres dades no diuen si això n'hi ha prou, perquè l'edat a la reparació no és la durada de la bateria.
 
-La bateria és la peça que posa més clara la tesi d'aquest blog: un mòbil no es jubila només per motius tècnics, però tampoc en té prou amb la bona voluntat. La bateria es gasta segur, sovint es confon amb avaries més barates i, quan s'espatlla, costa més d'arreglar que una pantalla. El reglament europeu apunta en la bona direcció, però exigeix durabilitat més que no pas facilitat per canviar-la.
+La bateria és la peça que posa més clara la tesi d'aquest blog: un mòbil no es jubila només per motius tècnics, però tampoc en té prou amb la bona voluntat. El reglament europeu apunta en la bona direcció, però exigeix durabilitat més que no pas facilitat per canviar-la.
 
 Per a VINCLE DIGITAL, això té una conseqüència pràctica. Davant d'un mòbil donat que «no carrega», abans de donar la bateria per morta cal mirar el port. I quan sí que és la bateria, la [fitxa de reparabilitat](../fitxa-reparabilitat/) ja valora si es troba recanvi i si hi ha guia per canviar-la, que és on topen moltes reparacions dels repair cafés quan el motiu consta.
 
