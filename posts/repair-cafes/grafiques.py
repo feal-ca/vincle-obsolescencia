@@ -30,9 +30,9 @@ def estil(grafica):
 def creixement():
     dades = pd.DataFrame({
         "any": [2009, 2016, 2021, 2024, 2025],
-        "n": [1, 1000, 2000, 3275, 3818],
-        "etiqueta": ["1r Repair Café (Amsterdam)", "Més de 1.000", "Més de 2.000",
-                     "3.275 al mapa de RCI", "Més de 3.818"],
+        "n": [1, 1007, 2000, 3275, 3574],
+        "etiqueta": ["1r Repair Café (Amsterdam)", "1.007 al web de RCI", "Més de 2.000",
+                     "3.275 al mapa de RCI", "3.574 al mapa de RCI"],
     })
     base = alt.Chart(dades).encode(
         x=alt.X("any:Q", title=None, scale=alt.Scale(domain=[2008, 2026]), axis=alt.Axis(format="d", tickMinStep=2)),

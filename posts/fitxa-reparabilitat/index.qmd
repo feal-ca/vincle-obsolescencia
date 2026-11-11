@@ -37,7 +37,7 @@ La fitxa distingeix entre peces principals (pantalla i bateria) i secundàries (
 | B3\* | Cal alguna eina a part de les bàsiques? | No (4) · Ventosa, pues o dissolvent d'adhesiu (3) · Una eina específica del model, com una premsa o un marc d'alineació (1) · Eines o programari que només té el fabricant (0) |
 | B4 | Cal soldar? | No (4) · Sí (0) |
 
-: Elaboració pròpia. Les eines bàsiques són les que defineix el reglament: tornavisos, alicates, una palanca, pinces, una lupa, una espàtula i una pua [@ue2023etiquetatge].
+: Elaboració pròpia. Les eines bàsiques són les que defineix el reglament, entre d'altres tornavisos, claus Allen, alicates, una palanca, pinces, una lupa, una espàtula i una pua [@ue2023etiquetatge].
 
 ## C. Peces de recanvi (20 %)
 
