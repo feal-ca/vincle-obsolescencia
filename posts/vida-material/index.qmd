@@ -24,7 +24,7 @@ Fem servir les reparacions que registren els Repair Cafés i iniciatives semblan
 | Classificades pels voluntaris com a avaria de bateria (figura 3) | 200 |
 | D'aquestes, amb l'edat del mòbil (figura 2) | 52 |
 
-: Elaboració pròpia a partir d'Open Repair Data, versió de juliol de 2026. Les files no són un embut: totes es compten sobre les 1.664 reparacions, menys l'última, que es compta sobre les 200 de bateria. Un mateix text pot tenir més d'un símptoma.
+: Elaboració pròpia a partir d'Open Repair Data, versió de juliol de 2026. Les files no són un embut. Les tres primeres es compten sobre les 1.664 reparacions. La quarta es compta sobre les 1.407 que es troben al conjunt de *smartphones*, d'on surten l'edat i el resultat, i l'última, sobre les 200 de bateria. Un mateix text pot tenir més d'un símptoma.
 
 També hem fet servir un programa que classifica automàticament la resta de reparacions, fins al 2026, a partir del text. Aquestes xifres surten com a complement i les marquem com a **no validades**, perquè el classificador només s'ha pogut comprovar amb les dades de MobiFix.
 
@@ -73,7 +73,7 @@ Una bateria espatllada acaba sense solució (a «final de vida») el **13 %** de
 
 El que hem intentat saber és per què, i la resposta curta és que els registres no ho diuen. Dels 89 finals de vida de bateria que hi ha comptant MobiFix i el classificador junts, els voluntaris només n'han anotat el motiu en 32; en els altres **57**, no consta. A les pantalles passa el mateix: 56 de 87 sense motiu. I quan el motiu consta, és gairebé el mateix en tots dos casos: sobretot les peces, perquè són massa cares o no n'hi ha. L'única diferència és que la bateria «no es pot obrir» una mica més sovint (6 casos davant de 3), massa pocs per treure'n conclusions.
 
-Hem llegit també les descripcions amb una classificació automàtica per paraules clau, i en el 75 % dels casos el text tampoc no diu per què no s'ha pogut arreglar. Quan ho diu, els motius més freqüents són que el problema no era la bateria (7 casos) i que la bateria estava inflada o vessada (6). Que en 7 casos no fos la bateria vol dir, a més, que alguns d'aquests finals de vida estan mal agrupats.
+Hem passat també les descripcions per una classificació automàtica per paraules clau, i en el 75 % dels casos el text tampoc no diu per què no s'ha pogut arreglar. Quan ho diu, els motius més freqüents són que el problema no era la bateria (7 casos) i que la bateria estava inflada o vessada (6). Que en 7 casos no fos la bateria vol dir, a més, que alguns d'aquests finals de vida estan mal agrupats.
 
 Hi ha una pista més. Entre els mòbils de MobiFix amb edat coneguda, els de 3 anys o menys acaben a final de vida igual de sovint si és la bateria que si és la pantalla (un 5 %). La diferència apareix en els més vells: un 16 % de les bateries (5 de 32) davant d'un 3 % de les pantalles. Com que les bateries es porten a reparar més tard, part de la diferència podria ser l'edat del mòbil i no la bateria. Amb tan pocs casos, però, és només un indici.
 
@@ -97,9 +97,10 @@ Per a VINCLE DIGITAL, això té una conseqüència pràctica. Davant d'un mòbil
 ## Com ho hem fet
 
 - **Dades.** Open Repair Data, versió de juliol de 2026, filtrada a *smartphones* amb resultat conegut (5.652 reparacions). MobiFix aporta les etiquetes d'avaria posades per persones fins al 2020.
-- **Símptomes (primer apartat).** Paraules clau en anglès, alemany, neerlandès, francès, castellà i danès. Només MobiFix. El quadern mostra 30 textos per comprovar a mà que les paraules clau funcionen; aquesta comprovació també està pendent.
+- **Símptomes (primer apartat).** Paraules clau en anglès, alemany, neerlandès, francès, castellà i danès. Només MobiFix. Les paraules clau no s'han revisat a mà i se'n poden escapar alguns textos; l'avaria, en canvi, és la que van anotar els voluntaris.
 - **Edat (segon apartat).** Mediana amb interval de confiança per *bootstrap* agrupat per grup de reparació (1.000 repeticions). Els cicles es converteixen en anys amb escenaris de 0,5, 0,75 i 1 cicle complet al dia, que són supòsits nostres.
 - **Classificador (complement).** Regressió logística sobre fragments de text [@pedregosa2011], entrenada amb MobiFix. F1 macro de 0,76 en validació creuada. No validat fora de MobiFix.
-- **Motius (tercer apartat).** Precodificació automàtica per paraules clau. Està pendent que una persona del grup revisi els 89 textos de final de vida.
+- **Bateria.** Als apartats segon i tercer, «avaria de bateria» és el grup de bateria i alimentació de MobiFix, que inclou 7 carregadors de 200. Treure'ls no canvia les xifres.
+- **Motius (tercer apartat).** Que el motiu no consta surt del camp que omplen els voluntaris. La lectura del text és una classificació automàtica per paraules clau, sense revisió manual, i les seves xifres són orientatives.
 - **Codi.** Quaderns a la carpeta `_analisi/notebooks/` d'aquesta entrada. Les dades d'Open Repair tenen llicència CC BY-SA 4.0.
 :::
