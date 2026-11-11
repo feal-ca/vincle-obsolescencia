@@ -4,7 +4,7 @@ description: "Una repassada dels casos d'obsolescència programada en el sector 
 investigats i denunciats per l'organització Halte a l'Obsolescence Programée"
 author: "Martí Gil Comas"
 date: 2026-11-11
-categories: [impremta, obsolescència]
+categories: [impremta, obsolescència, França]
 # image: portada.jpg
 ---
 
