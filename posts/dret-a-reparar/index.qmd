@@ -4,6 +4,7 @@ description: "Un recorregut d'un segle per la història del moviment pel dret a 
 author: "Eki Gonzalez Flamarique"
 date: 2026-11-11
 categories: [dret a reparar, història, normativa, opinió]
+image: portada.jpg
 ---
 
 Molts de nosaltres tenim al calaix un mòbil que «encara anava bé» fins que la bateria va dir prou. En articles anteriors hem vist [per què canviem de mòbil abans d'hora](../obsolescencia/) i [quines avaries arriben als Repair Cafés](../avaries-mobil/). En aquesta entrada repassem d'on surt el dret a reparar: quines lleis obliguen els fabricants a facilitar la reparació, des dels cotxes i els tractors fins a la directiva europea del 2024, i com s'hi va arribar. En els casos que expliquem, la llei va arribar després d'anys de pressió de tallers, pagesos i associacions.
