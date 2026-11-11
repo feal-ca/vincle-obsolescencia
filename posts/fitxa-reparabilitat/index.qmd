@@ -4,6 +4,7 @@ description: "Preguntes en cinc blocs, per valorar quant costa reparar un model 
 author: "Ferran Alía Castillejos"
 date: 2026-11-07
 categories: [reparabilitat, fitxa de criteris]
+image: portada.png
 ---
 
 La fitxa s'omple un cop per model, a partir de les guies de reparació i la informació pública, de manera que un cop hi hagi un repertori creat, només caldrà consultar-les.
