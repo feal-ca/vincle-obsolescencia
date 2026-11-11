@@ -1,0 +1,84 @@
+{
+ "title": "Com acaben les reparacions de bateria i de pantalla (MobiFix)",
+ "language": "es",
+ "problem": {
+  "archetype": "compare-two-keys",
+  "catalog_functions": [
+   "proportions",
+   "comparisons"
+  ],
+  "statement": "Per què les reparacions de bateria acaben sense arreglar més que les de pantalla?",
+  "mode": "explanatory"
+ },
+ "user": {
+  "profile": "general-public",
+  "modifiers": [
+   "cvd",
+   "print-grayscale"
+  ]
+ },
+ "tasks": {
+  "why": {
+   "goal": "present",
+   "search": "lookup",
+   "query": "compare"
+  },
+  "low_level": [
+   "gist",
+   "compare",
+   "retrieve-value"
+  ],
+  "temporal": [],
+  "shneiderman": [
+   "overview"
+  ]
+ },
+ "data": {
+  "dataset_type": "table",
+  "source_file": "../dades/processades/mobils_classificats.csv",
+  "keys": [
+   {
+    "role": "category",
+    "type": "categorical",
+    "cardinality": 2,
+    "source_column": "grup_avaria (Bateria i alimentació, Pantalla)"
+   },
+   {
+    "role": "category2",
+    "type": "categorical",
+    "cardinality": 3,
+    "source_column": "repair_status (final de vida, pendent, reparat)"
+   }
+  ],
+  "values": [
+   {
+    "role": "measure",
+    "type": "quantitative",
+    "semantics": "share",
+    "derived": true,
+    "derivation": "panell A: reparacions per resultat / reparacions del component (MobiFix)",
+    "unit": "% de reparacions"
+   }
+  ],
+  "items": "tiny",
+  "filters": [
+   "font_avaria == MobiFix, repair_status conegut"
+  ],
+  "normalization": "share of the component's repairs",
+  "parse": {
+   "delimiter": ",",
+   "decimal": "."
+  }
+ },
+ "constraints": [
+  "static-only",
+  "exact-values",
+  "print-grayscale"
+ ],
+ "library": "altair",
+ "host": "script",
+ "stage_validation": {
+  "stage1": "confirmed",
+  "stage2": "confirmed"
+ }
+}

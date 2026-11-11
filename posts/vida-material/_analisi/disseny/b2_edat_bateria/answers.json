@@ -1,0 +1,88 @@
+{
+ "title": "Edat a la reparació de la bateria davant la pantalla i la referència de 800 cicles (MobiFix)",
+ "language": "es",
+ "problem": {
+  "archetype": "distribution-compare-groups",
+  "catalog_functions": [
+   "distribution",
+   "comparisons"
+  ],
+  "statement": "A quina edat arriben a reparar les bateries, comparat amb les pantalles i amb el punt de 800 cicles que avui fixa el reglament?",
+  "mode": "explanatory"
+ },
+ "user": {
+  "profile": "general-public",
+  "modifiers": [
+   "cvd",
+   "print-grayscale"
+  ]
+ },
+ "tasks": {
+  "why": {
+   "goal": "present",
+   "search": "lookup",
+   "query": "compare"
+  },
+  "low_level": [
+   "characterize-distribution",
+   "compare",
+   "retrieve-value",
+   "gist"
+  ],
+  "temporal": [],
+  "shneiderman": [
+   "overview"
+  ]
+ },
+ "data": {
+  "dataset_type": "table",
+  "source_file": "../dades/processades/mobils_classificats.csv",
+  "keys": [
+   {
+    "role": "category",
+    "type": "categorical",
+    "cardinality": 3,
+    "source_column": "grup_avaria (Bateria i alimentació, Pantalla) amb font_avaria = MobiFix, més Bateria i alimentació de tot el conjunt classificat (no validat, capa gris)"
+   }
+  ],
+  "values": [
+   {
+    "role": "measure",
+    "type": "quantitative",
+    "semantics": "duration",
+    "derived": false,
+    "source_column": "edat_neta",
+    "unit": "anys (declarats, sobretot sencers)",
+    "derivation": "edat tal com es declara (anys, amb alguns mitjos anys), sense agrupar"
+   }
+  ],
+  "items": "small",
+  "filters": [
+   "edat_neta no buida (<= 15 anys)",
+   "MobiFix: bateria (n=52) i pantalla (n=160)",
+   "complement: bateria del conjunt classificat (n=213), no validat"
+  ],
+  "normalization": "none (one item per repair)",
+  "reference": "800 cicles convertits a anys amb 0,5–1 cicle/dia: 2,2–4,4 anys",
+  "parse": {
+   "delimiter": ",",
+   "decimal": "."
+  },
+  "derived": [
+   "mediana i IC 95 % per bootstrap agrupat per group_identifier",
+   "% de bateries MobiFix amb edat <= 2,2 i <= 4,4 anys (vores de la franja)"
+  ]
+ },
+ "constraints": [
+  "static-only",
+  "uncertainty",
+  "print-grayscale"
+ ],
+ "library": "matplotlib",
+ "host": "script",
+ "stage_validation": {
+  "stage1": "confirmed",
+  "stage2": "confirmed",
+  "stage3": "confirmed"
+ }
+}

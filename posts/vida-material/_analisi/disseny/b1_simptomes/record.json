@@ -1,0 +1,193 @@
+{
+ "title": "Avaria real darrere dels símptomes de bateria (MobiFix)",
+ "language": "es",
+ "problem": {
+  "archetype": "compare-two-keys",
+  "catalog_functions": [
+   "proportions",
+   "comparisons"
+  ],
+  "statement": "Quan un mòbil no carrega o no s'encén, quantes vegades és realment la bateria i quantes el port o el carregador?",
+  "mode": "explanatory",
+  "domain_examples": [
+   "avaria real darrere dels símptomes de bateria dels mòbils",
+   "diagnòstic final segons el motiu de consulta"
+  ]
+ },
+ "user": {
+  "profile": "general-public",
+  "modifiers": [
+   "cvd",
+   "print-grayscale"
+  ]
+ },
+ "tasks": {
+  "why": {
+   "goal": "present",
+   "search": "lookup",
+   "query": "compare"
+  },
+  "low_level": [
+   "gist",
+   "compare",
+   "retrieve-value"
+  ],
+  "temporal": [],
+  "shneiderman": [
+   "overview"
+  ]
+ },
+ "data": {
+  "dataset_type": "table",
+  "source_file": "../dades/raw/ora_mobifix.csv",
+  "keys": [
+   {
+    "role": "category",
+    "type": "categorical",
+    "cardinality": 2,
+    "source_column": "problem (símptoma per paraules clau)"
+   },
+   {
+    "role": "category2",
+    "type": "categorical",
+    "cardinality": 3,
+    "source_column": "fault_type (agrupat)"
+   }
+  ],
+  "values": [
+   {
+    "role": "measure",
+    "type": "quantitative",
+    "semantics": "share",
+    "derived": true,
+    "derivation": "reparacions per (símptoma, grup d'avaria) / reparacions del símptoma, només textos que no esmenten la bateria",
+    "unit": "% de reparacions"
+   }
+  ],
+  "items": "tiny",
+  "filters": [
+   "MobiFix amb text",
+   "textos sense la paraula 'bateria'",
+   "símptomes no_carrega i no_sencen"
+  ],
+  "normalization": "share of the symptom's repairs",
+  "parse": {
+   "delimiter": ",",
+   "decimal": "."
+  }
+ },
+ "constraints": [
+  "static-only",
+  "exact-values",
+  "few-categories-only"
+ ],
+ "library": "matplotlib",
+ "host": "script",
+ "stage_validation": {
+  "stage1": "confirmed",
+  "stage2": "confirmed",
+  "stage3": "confirmed"
+ },
+ "solution": {
+  "idiom": "stacked_bar_graph",
+  "family": "stacked-bar",
+  "mark": "rect",
+  "encodings": [
+   {
+    "attribute": "category",
+    "channel": "position-y",
+    "scale": "nominal",
+    "note": "un símptoma per fila, amb la n a l'etiqueta"
+   },
+   {
+    "attribute": "measure",
+    "channel": "length",
+    "scale": "linear",
+    "zero": true,
+    "note": "100 % per fila; el segment destacat comença a la base comuna"
+   },
+   {
+    "attribute": "category2",
+    "channel": "color-luminance",
+    "scale": "ordinal",
+    "note": "accent blau per al port o carregador, gris mitjà per a la bateria, gris clar per a la resta"
+   },
+   {
+    "attribute": "measure",
+    "channel": "text",
+    "note": "etiquetes directes 'n de total · %'; sota la barra si el segment és estret"
+   }
+  ],
+  "derived_data": [
+   "share = n(símptoma, grup) / n(símptoma), només textos de MobiFix sense la paraula bateria",
+   "grups: port o carregador = USB/charging port + Charger; bateria = Power/battery; la resta = altres"
+  ],
+  "ordering": "segments fixos: el grup del missatge primer (base comuna), després bateria i la resta; files en l'ordre del text",
+  "color": {
+   "purpose": "highlight",
+   "palette_type": "neutral-accent",
+   "suggested": [
+    "#0072b2",
+    "#8f8e89",
+    "#d9d8d4"
+   ],
+   "cvd_safe": true,
+   "second_cue": "etiquetes directes i separadors blancs entre segments"
+  },
+  "text": {
+   "title": "takeaway",
+   "axis_units": false,
+   "direct_labels": true,
+   "annotations": [
+    "subtítol amb el filtre i el període"
+   ],
+   "source_line": true
+  },
+  "interaction": {
+   "level": "none",
+   "default_state_answers_task": true,
+   "intents": []
+  },
+  "layout": {
+   "small_multiples": false,
+   "facet_by": null,
+   "aspect": "wide"
+  },
+  "rejected_alternatives": [
+   {
+    "idiom": "multiset_barchart",
+    "reason": "decisió desada compare-two-keys--grouped-bars-few-few: separa les parts i amaga que sumen el total de cada símptoma, que és el que fa entendre «la meitat sí, la resta no»",
+    "rule": "EXP-05"
+   },
+   {
+    "idiom": "stacked_bar_graph",
+    "reason": "versió anterior amb 7 tipus d'avaria i la bateria destacada: massa colors per a un argument de tres parts i la salience a l'element contrari al missatge",
+    "rule": "COL-04"
+   },
+   {
+    "idiom": "error_bars",
+    "reason": "punt amb interval del % 'no és la bateria': mostra la incertesa però perd la composició; s'indica la n a l'etiqueta",
+    "rule": "PUR-02"
+   }
+  ],
+  "validation": {
+   "stage3_checks": [
+    "EXP-05",
+    "EXP-08",
+    "COL-04",
+    "COL-05",
+    "TXT-01",
+    "TXT-04",
+    "TXT-08",
+    "DAT-03"
+   ],
+   "critique_skill": "optional"
+  },
+  "library_notes": {
+   "matplotlib": "barh amb left acumulat, edgecolor blanc, ylim manual per deixar lloc a les etiquetes de sota"
+  }
+ },
+ "rationale": "El públic general ha de captar en segons que 'no carrega' no vol dir 'bateria morta'. Una barra al 100 % per símptoma conserva el total; posar el port primer des de la base comuna i en l'únic color d'accent fa que la part del missatge sigui la més visible i comparable. Tres grups en lloc de set eliminen la llegenda; les etiquetes porten el recompte perquè amb n = 42 la xifra exacta i la mida de la mostra importen més que el percentatge.",
+ "confidence": "high",
+ "id": "p-compare-two-keys--avaria-real-darrere-dels-s-20261111"
+}
