@@ -1,10 +1,10 @@
 ---
-title: "Ecodisseny, reparabilitat i durabilitat"
+title: "Regulació a UE i França: ecodisseny i reparabilitat"
 description: "Repàs breu de les mesures i els estàndards dissenyats a la UE i a França per 
 a afavorir la fabricació de productes electrònics sostenibles"
 author: "Martí Gil Comas"
 date: 2026-11-11
-categories: [reparabilitat, unió europea]
+categories: [reparabilitat, normativa]
 # image: etiqueta_energetica.png
 ---
 

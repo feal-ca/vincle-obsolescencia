@@ -1,0 +1,210 @@
+{
+ "title": "Edat a la reparació de la bateria davant la pantalla i la referència de 800 cicles (MobiFix)",
+ "language": "es",
+ "problem": {
+  "archetype": "distribution-compare-groups",
+  "catalog_functions": [
+   "distribution",
+   "comparisons"
+  ],
+  "statement": "A quina edat arriben a reparar les bateries, comparat amb les pantalles i amb el punt de 800 cicles que avui fixa el reglament?",
+  "mode": "explanatory",
+  "domain_examples": [
+   "edat dels mòbils quan arriben a reparar per tipus d'avaria",
+   "durada real davant d'un llindar normatiu"
+  ]
+ },
+ "user": {
+  "profile": "general-public",
+  "modifiers": [
+   "cvd",
+   "print-grayscale"
+  ]
+ },
+ "tasks": {
+  "why": {
+   "goal": "present",
+   "search": "lookup",
+   "query": "compare"
+  },
+  "low_level": [
+   "characterize-distribution",
+   "compare",
+   "retrieve-value",
+   "gist"
+  ],
+  "temporal": [],
+  "shneiderman": [
+   "overview"
+  ]
+ },
+ "data": {
+  "dataset_type": "table",
+  "source_file": "../dades/processades/mobils_classificats.csv",
+  "keys": [
+   {
+    "role": "category",
+    "type": "categorical",
+    "cardinality": 3,
+    "source_column": "grup_avaria (Bateria i alimentació, Pantalla) amb font_avaria = MobiFix, més Bateria i alimentació de tot el conjunt classificat (no validat, capa gris)"
+   }
+  ],
+  "values": [
+   {
+    "role": "measure",
+    "type": "quantitative",
+    "semantics": "duration",
+    "derived": false,
+    "source_column": "edat_neta",
+    "unit": "anys (declarats, sobretot sencers)",
+    "derivation": "edat tal com es declara (anys, amb alguns mitjos anys), sense agrupar"
+   }
+  ],
+  "items": "small",
+  "filters": [
+   "edat_neta no buida (<= 15 anys)",
+   "MobiFix: bateria (n=52) i pantalla (n=160)",
+   "complement: bateria del conjunt classificat (n=213), no validat"
+  ],
+  "normalization": "none (one item per repair)",
+  "reference": "800 cicles convertits a anys amb 0,5–1 cicle/dia: 2,2–4,4 anys",
+  "parse": {
+   "delimiter": ",",
+   "decimal": "."
+  },
+  "derived": [
+   "mediana i IC 95 % per bootstrap agrupat per group_identifier",
+   "% de bateries MobiFix amb edat <= 2,2 i <= 4,4 anys (vores de la franja)"
+  ]
+ },
+ "constraints": [
+  "static-only",
+  "uncertainty",
+  "print-grayscale"
+ ],
+ "library": "altair",
+ "host": "script",
+ "stage_validation": {
+  "stage1": "confirmed",
+  "stage2": "confirmed",
+  "stage3": "confirmed"
+ },
+ "solution": {
+  "idiom": "line_graph",
+  "family": "line",
+  "mark": "line",
+  "encodings": [
+   {
+    "attribute": "measure",
+    "channel": "position-x",
+    "scale": "linear",
+    "zero": true,
+    "note": "edat 0–10 anys; 7 reparacions classificades de més de 10 anys fora, dit al peu"
+   },
+   {
+    "attribute": "derived",
+    "channel": "position-y",
+    "scale": "linear",
+    "zero": true,
+    "note": "% acumulat de reparacions amb aquesta edat o menys, esglaons step-after"
+   },
+   {
+    "attribute": "category",
+    "channel": "color-luminance",
+    "scale": "nominal",
+    "note": "bateria vermelló, pantalla blau (parella Okabe-Ito), classificat gris clar discontinu"
+   },
+   {
+    "attribute": "derived",
+    "channel": "position-x",
+    "marker": "punt a la mediana sobre la línia del 50 % amb barra translúcida de l'IC 95 %"
+   },
+   {
+    "attribute": "derived",
+    "channel": "position-x",
+    "note": "franja gris 2,2–4,4 anys (800 cicles a 0,5–1 cicle/dia) com a referència, no com a llindar complert"
+   }
+  ],
+  "derived_data": [
+   "corba acumulada per grup",
+   "mediana i IC 95 % per bootstrap agrupat per group_identifier (1.000 rèpliques, llavor 42)",
+   "% de bateries MobiFix amb edat <= 2,2 i <= 4,4 anys (23 % i 67 %)"
+  ],
+  "ordering": "capes: classificat a sota, pantalla, bateria a sobre",
+  "color": {
+   "purpose": "distinguish",
+   "palette_type": "qualitative",
+   "suggested": [
+    "#d55e00",
+    "#0072b2",
+    "#b5b4af"
+   ],
+   "cvd_safe": true,
+   "second_cue": "etiquetes directes del mateix color, traç discontinu per al classificat"
+  },
+  "text": {
+   "title": "takeaway",
+   "axis_units": true,
+   "direct_labels": true,
+   "annotations": [
+    "subtítol: la franja és el que el reglament exigeix des del 2025 i aquests mòbils són anteriors",
+    "cruces de la bateria amb les vores de la franja: 23 % abans, 33 % després",
+    "medianes amb IC"
+   ],
+   "source_line": true
+  },
+  "interaction": {
+   "level": "none",
+   "default_state_answers_task": true,
+   "intents": []
+  },
+  "layout": {
+   "small_multiples": false,
+   "facet_by": null,
+   "aspect": "wide"
+  },
+  "rejected_alternatives": [
+   {
+    "idiom": "strip_plot",
+    "reason": "decisió llavor distribution-compare-groups--strip-with-summary adaptada a punts apilats per edat (dues files): generada i mostrada, l'usuari la va rebutjar a la validació de l'etapa 3",
+    "rule": "PUR-13"
+   },
+   {
+    "idiom": "histogram",
+    "reason": "barres de % per any: comparables amb n diferent, però el % abans o després de la franja s'ha de sumar a mà",
+    "rule": "PUR-06"
+   },
+   {
+    "idiom": "box_plot",
+    "reason": "amaga la concentració de les edats en anys sencers i el públic general no el sap llegir",
+    "rule": "EXP-16"
+   },
+   {
+    "idiom": "line_graph",
+    "reason": "versió anterior: sense títol, franja etiquetada com a 'reglament' (comparació amb un llindar que no aplicava), classificat amb el mateix to que la bateria, colors diferents de B1",
+    "rule": "CMP-04"
+   }
+  ],
+  "validation": {
+   "stage3_checks": [
+    "TXT-01",
+    "TXT-02",
+    "TXT-04",
+    "TXT-05",
+    "TXT-08",
+    "CMP-04",
+    "COL-05",
+    "COL-08",
+    "DAT-03",
+    "EXP-09"
+   ],
+   "critique_skill": "used before redesign"
+  },
+  "library_notes": {
+   "altair": "distribució acumulada (ECDF) com a line_graph amb interpolate='step-after'; layer de mark_line(interpolate='step-after') + mark_rect per a la franja + mark_text per a etiquetes; vconcat amb una línia de text per al peu; vl-convert per a PNG i SVG"
+  }
+ },
+ "rationale": "El públic general ha de veure que la bateria arriba a reparar més tard que la pantalla i on queda respecte del punt de 800 cicles. La distribució acumulada permet llegir directament el % abans de cada edat; les anotacions (medianes amb IC i cruces amb la franja) estalvien la lectura de l'eix. La franja es presenta com a referència, amb el subtítol que diu que aquests mòbils són anteriors al reglament, perquè 800 cicles al 80 % no és una avaria. El conjunt classificat queda en gris discontinu perquè no està validat.",
+ "confidence": "medium",
+ "id": "p-distribution-compare-groups--edat-a-la-reparaci-de-la-20261111-2"
+}

@@ -1,9 +1,9 @@
 ---
 title: "És segur seguir usant els mòbils vells?"
 description: "Un telèfon pot estar físicament impecable, però anar perdent rendiment i quedar-se exposat a ciberatacs. Analitzem l'obsolescència de programari i els riscs de seguretat que comporten"
-author: "Pau Soler"
-date: 2026-11-09
-categories: [programari, seguretat, obsolescència]
+author: "Pau Soler Rodríguez"
+date: 2026-11-11
+categories: [obsolescència, programari, normativa]
 # image:
 ---
 
