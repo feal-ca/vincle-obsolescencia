@@ -1,220 +1,155 @@
 ---
-title: "Quan un mòbil s'espatlla: a quina edat i per què no s'arregla. Disseny de l'anàlisi"
-description: "Amb les dades obertes dels Repair Cafés, volem saber quines variables fan que una avaria de mòbil no es pugui reparar i quins factors avancen o endarrereixen l'edat a la qual fallen."
+title: "La bateria del mòbil: quan és ella, quan falla i per què no s'arregla"
+description: "Amb les reparacions de mòbils dels Repair Cafés, mirem si els símptomes de bateria són realment la bateria, a quina edat falla comparada amb el que exigeix el reglament europeu i per què costa tant d'arreglar."
 author: "Eki Gonzalez Flamarique"
-date: 2026-11-10
-categories: [reparabilitat, vida útil, anàlisi de dades, metodologia]
+date: 2026-11-11
+categories: [bateria, reparabilitat, anàlisi de dades]
 draft: true
 ---
 
 ::: {.callout-note appearance="simple"}
 ## Estat d'aquesta entrada
 
-És el **disseny** de l'anàlisi, escrit abans d'ajustar cap model, perquè les decisions no depenguin dels resultats. Quan l'anàlisi estigui feta, aquesta entrada es convertirà en l'article de resultats. El codi i les dades de treball són a la carpeta `_analisi/` d'aquesta entrada.
+És el **disseny** de l'anàlisi, amb una primera mirada a les dades. L'hem escrit **després** d'una primera exploració, no abans. Per tant, les preguntes no són hipòtesis prèvies: són el que les dades permeten respondre. Les xifres són provisionals fins que es faci la validació manual (apartat 6). El codi és a la carpeta `_analisi/` d'aquesta entrada.
 :::
 
-## 1. D'on venim i per què hem canviat la pregunta
+## 1. Per què la bateria
 
-La pregunta inicial era quina és la vida mediana d'un mòbil. Per respondre-la caldria saber quants mòbils fallen d'entre *tots* els que es fan servir, i això només es pot saber seguint una mostra de dispositius durant anys o amb una enquesta d'historials. No tenim recursos per a cap de les dues coses.
+De totes les peces d'un mòbil, la bateria és l'única que es desgasta segur, faci el que faci l'usuari. Cada cicle de càrrega li treu una mica de capacitat, i la calor i el fet de tenir-la sempre plena l'acceleren [@batteryuniversity2021]. També és l'única peça amb un llindar legal de durabilitat: des del 20 de juny de 2025, el reglament europeu d'ecodisseny exigeix que conservi el **80 % de la capacitat després de 800 cicles complets** [@ue2023ecodisseny].
 
-El que sí que tenim és **Open Repair Data**, el conjunt de dades obert de les reparacions fetes en Repair Cafés i esdeveniments similars de diversos països [@ora2026dades]. Hi surten els mòbils que s'han espatllat i que algú ha intentat reparar, amb l'edat que tenien, el problema i com va acabar la reparació. No permet calcular quant viu un mòbil, però sí estudiar amb rigor **què passa quan un mòbil s'espatlla**. I això connecta directament amb el tema del blog: l'obsolescència i el dret a reparar.
+Al blog ja hem parlat de [l'obsolescència percebuda](../obsolescencia/), del [suport de programari](../suport-programari/), de [què poden arreglar els repair cafés](../repair-cafes/) i de [quines avaries de mòbil hi arriben](../avaries-mobil/). Però la bateria només hi surt de passada. Aquesta entrada se centra només en ella.
 
 ## 2. Les preguntes
 
-- **P1. A quina edat s'espatllen els mòbils que arriben a un Repair Café, i a quina edat arriben a final de vida?** Volem l'edat mediana a la reparació, la dels que acaben a final de vida, i quins factors (tipus d'avaria, marca, país i any) fan que fallin més joves o més vells.
-- **P2. Quines variables fan que una avaria no es pugui reparar?** Volem saber com influeixen el tipus d'avaria, l'edat del mòbil, la marca, el país i l'any en la probabilitat que el mòbil acabi a "final de vida" en lloc de reparar-se.
+- **B1. Quan diem «és la bateria», ho és?** Dels mòbils que arriben amb un símptoma típic de bateria (no carrega, dura poc, no s'encén, s'ha inflat), quina avaria hi troben els voluntaris?
+- **B2. A quina edat falla la bateria a la pràctica, comparada amb el que garanteix el reglament?** El reglament parla de cicles i nosaltres tenim anys. Quina part de les bateries que arriben a reparar ho fan després del període que el reglament cobreix?
+- **B3. Per què les reparacions de bateria acaben sense arreglar més sovint que les de pantalla?**
 
 ### Què podem afirmar i què no
 
-Totes dues preguntes es refereixen als **mòbils que s'espatllen i que algú porta a reparar** a un d'aquests esdeveniments. Això té tres conseqüències:
+Totes les dades són de **mòbils que s'espatllen i que algú porta a un Repair Café**, una població petita i molt particular. Els smartphones són només el 0,35 % de les reparacions d'aquests espais, segons l'entrada sobre els repair cafés. Per tant:
 
-- **P1 no és la vida útil.** Que les avaries de bateria arribin a una edat mediana més alta que les de pantalla vol dir que, *entre els que fallen*, unes fallen més tard que les altres. No vol dir que els mòbils visquin de mitjana aquests anys, perquè no sabem res dels que no s'han espatllat o no s'han portat a reparar.
-- **P2 és una pregunta ben definida per a aquesta població.** Si una pantalla té una probabilitat més baixa d'acabar a final de vida que un dany intern, ho podem dir per als mòbils que arriben a un Repair Café.
-- **No fem anàlisi de supervivència.** Els mètodes de supervivència (Kaplan–Meier, Cox) necessiten els dispositius que encara funcionen, encara que sigui de manera parcial, i aquí no n'hi ha cap. Modelitzem directament la distribució de l'edat a la fallada, i ho direm així a l'article.
+- No sabem quantes bateries fallen en general, ni quina és la vida mitjana d'una bateria.
+- L'edat és la del dia de la reparació, no la del dia que la bateria va començar a fallar. Molta gent conviu mesos amb una bateria que dura poc abans de fer res.
+- La bateria que es canvia perquè «dura poc», sense cap avaria, gairebé no arriba a un Repair Café. Aquest motiu de canvi de mòbil, segurament el més habitual, queda fora de les dades.
 
 ## 3. Les dades
 
-### Què hem comprovat
+Fem servir **Open Repair Data**, les reparacions dels Repair Cafés i esdeveniments similars de diversos països [@ora2026dades], en la versió de juliol de 2026. Després de quedar-nos amb els smartphones amb resultat conegut, tenim 5.652 reparacions.
 
-Hem descarregat la versió de juliol de 2026 (estàndard ORDS v0.3) i la classificació MobiFix, i n'hem mirat el contingut amb l'script `_analisi/scripts/02_exploracio_ora.py`.
+El tipus d'avaria només el tenim classificat per persones a **MobiFix**, un subconjunt de 1.916 reparacions de fins al 2020. Per a la resta, un classificador de text entrenat amb MobiFix assigna el tipus d'avaria [@pedregosa2011]. Té una F1 macro de 0,76 en validació creuada, i de 0,90 per a la classe de bateria. Quan no està prou segur, el registre queda com a «desconegut».
 
-**Conjunt agregat:**
-
-- **6.290 mòbils** d'un total de 416.282 reparacions, de 27 països i 707 grups de reparació, entre 2012 i 2026.
-- L'**estat de la reparació** és conegut en 6.061: reparats (*Fixed*, 3.552), reparables (*Repairable*, 1.547) i **final de vida** (*End of life*, 962).
-- Només **1.887 (30 %) tenen edat**, de 327 grups. La manca d'edat depèn de qui registra les dades: Repair Café Denmark, Wales i Toronto no la registren mai. Hi ha 26 mòbils amb edat 0 i 65 amb més de 15 anys.
-- **No hi ha camp de model**, només de marca, i en 2.211 casos és "Unknown". Hi ha variants de la mateixa marca ("iPhone", "Iphone", "Apple").
-- El **problema** està descrit en text lliure en 4.879 casos, en alemany, anglès, neerlandès, castellà i altres idiomes. **No hi ha tipus d'avaria** classificat.
-- Hi ha mòbils que no són smartphones: algunes categories del proveïdor diuen explícitament "not smartphone".
-- Per als 962 de final de vida, el **motiu** consta en 350 casos: peces no disponibles (88), sense informació de reparació (70), peces massa cares (58), falta d'equipament (56), no es pot obrir (40) i massa gastat (38).
-
-**Classificació MobiFix:** 1.916 reparacions de mòbils (de 2012 a 2020) amb el **tipus d'avaria** assignat per voluntaris. Els principals són pantalla (630), desconegut (376), bateria i alimentació (233), altres (114) i port de càrrega (88). Inclou 208 casos de final de vida, el model en 1.105 casos (escrit a mà, com "iPhone 6" o "I-phone 5") i l'edat en 489.
-
-**Una primera mirada**, abans de cap filtre i sense controlar res:
-
-- L'edat mediana a la reparació és de 4 anys. És de 5 anys per als que acaben a final de vida, 4 per als reparats i 3 per als reparables.
-- La mediana ha pujat de 2 anys el 2017 a 5 anys el 2025.
-- A MobiFix, acaben a final de vida 28 de les 619 pantalles amb estat conegut, 25 de les 221 avaries de bateria i 31 de les 113 avaries classificades com a "altres".
-
-Aquestes diferències poden ser reals o poden venir de qui registra les dades. Per això cal el model multivariant.
-
-### Unitat d'anàlisi i variables
-
-La unitat és la **reparació d'un mòbil** en un esdeveniment.
-
-| Variable | Tipus | D'on surt | Paper |
-|---|---|---|---|
-| Final de vida | Binària | `repair_status` | Resposta de P2 |
-| Edat a la reparació | Anys sencers | `product_age` | Resposta de P1; predictor de P2 |
-| Tipus d'avaria | Categòrica (7 grups) | MobiFix o classificació del text (apartat 4) | Predictor principal |
-| Marca | Categòrica (Apple, Samsung, Huawei, Xiaomi, Fairphone, altres) | `brand`, normalitzada | Predictor |
-| País | Categòrica | `country` | Control |
-| Proveïdor | Categòrica | `data_provider` | Control: cada xarxa registra diferent |
-| Any de l'esdeveniment | Contínua | `event_date` | Predictor: tendència en el temps |
-| Grup de reparació | Identificador | `group_identifier` | Agrupament dels errors estàndard |
-| Motiu de final de vida | Categòrica | `repair_barrier_if_end_of_life` | Només descriptiu (apartat 6.3) |
-
-Els grups de tipus d'avaria, a partir de MobiFix: **pantalla**, **bateria i alimentació** (inclou el carregador), **port de càrrega**, **botons i connectors** (botons, jack, safata SIM), **danys interns i aigua**, **programari i configuració** (actualitzacions, emmagatzematge, arrencada, ajuda) i **altres o desconegut**.
-
-## 4. Preparació de les dades
-
-1. **Quedar-se amb els smartphones.** Filtrar `product_category == "Mobile"` i treure els telèfons bàsics a partir de la categoria del proveïdor ("not smartphone") i de marques de telèfons bàsics (Doro, Gigaset, Siemens...). Revisar a mà una mostra de 100 registres per comprovar el filtre.
-2. **Normalitzar les marques.** Passar a minúscules, unificar sinònims ("iphone" → Apple, "redmi" → Xiaomi, "fairphone" → Fairphone) i agrupar a "Altres" les marques amb menys de 50 registres.
-3. **Netejar l'edat.** Excloure les edats de més de 15 anys, inversemblants per a un smartphone, i informar de quantes se'n treuen. Mantenir les edats 0 (mòbils de menys d'un any).
-4. **Definir la resposta de P2.** A l'anàlisi principal, final de vida contra la resta (reparat o reparable). "Reparable" vol dir que es podia arreglar però no es va acabar aquell dia, per exemple perquè calia una peça, de manera que no és una fi de vida. A l'anàlisi de sensibilitat es treuen els reparables.
-5. **Classificar el tipus d'avaria del conjunt agregat.** És el pas més delicat, perquè el tipus d'avaria és el predictor principal i el conjunt agregat no el té:
-   - Entrenem un classificador de text amb les 1.540 reparacions de MobiFix que tenen tipus conegut. Com que els textos són en diversos idiomes, fem servir n-grames de caràcters (trossos de 3 a 5 lletres) i una regressió logística [@pedregosa2011], que funcionen sense traduir.
-   - El validem amb un 20 % de MobiFix reservat i en mesurem la F1 per classe.
-   - L'apliquem a les reparacions del conjunt agregat. Dues persones del grup en classifiquen 200 a mà, sense veure la predicció, i en calculem l'acord entre elles (kappa de Cohen) i amb el classificador.
-   - **Criteri:** si la F1 mitjana és inferior a 0,6 o l'acord amb la classificació manual és baix, el model principal es fa només amb MobiFix (fins al 2020, 208 casos de final de vida) i ho direm així.
-6. **Enllaçar el model, només a MobiFix.** Normalitzar el model ("I-phone 5" → "iPhone 5") i afegir-hi la puntuació de reparabilitat d'iFixit [@ifixit2026puntuacions]. Informar del percentatge que s'ha pogut enllaçar. Si és inferior al 30 %, aquesta variable no s'utilitza.
-
-## 5. Pla d'anàlisi
-
-Tot es fa en Python amb `statsmodels` [@seabold2010] i `scikit-learn` [@pedregosa2011]. Els resultats s'exporten com a imatges a la carpeta de l'entrada, com a l'entrada de suport de programari, perquè el web es pugui generar sense executar codi.
-
-### 5.1 P1: a quina edat s'espatllen i a quina arriben a final de vida
-
-**Model principal: regressió quantílica** [@koenker1978] de l'edat a la reparació, amb el tipus d'avaria, la marca, l'any de l'esdeveniment, el país i el proveïdor. N'hi ha tres motius:
-
-- Respon directament la pregunta: el coeficient de la mediana diu quants anys abans o després falla, en mediana, un grup respecte d'un altre.
-- L'edat té una cua llarga (alguns mòbils de més de 10 anys), i la mediana no s'hi deixa arrossegar com la mitjana.
-- Ajustant també els quartils 25 i 75, veiem si un factor avança les fallades primerencs o endarrereix les tardanes, que no és el mateix.
-
-L'edat ve gairebé sempre en anys sencers (85 registres tenen mitjos anys o dècimes), i això crea molts empats. Per tractar-ho, fem servir el mètode de @machado2005, que afegeix un soroll uniforme a la variable i fa la mitjana de moltes repeticions. Els intervals de confiança s'obtenen amb *bootstrap* per grups de reparació (200 repeticions).
-
-**Comprovació:** una regressió log-normal de l'edat més 0,5 (per poder incloure les edats 0), que dona l'efecte com a percentatge ("les avaries de bateria arriben un 30 % més tard").
-
-**Edat a final de vida.** La segona part de P1 es respon de manera descriptiva: l'edat mediana dels mòbils que acaben a final de vida, comparada amb la dels reparats, amb intervals de confiança per *bootstrap* agrupat per grup de reparació.
-
-**No posem l'estat de la reparació com a predictor del model d'edat**, perquè passa després de la fallada i no la pot causar.
-
-### 5.2 P2: què fa que una avaria no es pugui reparar
-
-**Model principal: regressió logística.** La resposta és si el mòbil acaba a final de vida. Els resultats es donen com a *odds ratios* amb interval de confiança del 95 %, amb errors estàndard agrupats per grup de reparació, perquè les reparacions d'un mateix grup no són independents.
-
-Fem dues versions, perquè l'edat només consta en el 30 % dels registres:
-
-- **M2a, tots els registres (sense l'edat):** tipus d'avaria, marca, any de l'esdeveniment, país i proveïdor. Com que el tipus d'avaria surt del text, només hi entren els registres que tenen descripció del problema: 4.798, amb 728 casos de final de vida, abans de treure els telèfons que no són smartphones.
-- **M2b, registres amb edat:** les mateixes variables més l'edat, que entra amb un spline de 3 nodes per si l'efecte no és lineal. Uns 1.800 registres i uns 260 casos de final de vida.
-
-No imputem l'edat que falta, perquè depèn del proveïdor: hi ha xarxes que no la registren mai, i no hi ha cap manera raonable d'inventar-la. Per veure si la submostra amb edat és diferent, ajustem M2a també només amb aquests registres i comparem els coeficients.
-
-**Mida.** La regla habitual en regressió logística és tenir com a mínim 10 casos per paràmetre [@peduzzi1996]. M2b té uns 20 paràmetres (6 tipus d'avaria, 5 marques, l'any, 3 de l'edat i els controls), de manera que amb 260 casos va just. Si cal, agruparem països o proveïdors.
-
-### 5.3 Quines variables pesen més
-
-Ho decidim abans de veure els resultats:
-
-1. **Mida de l'efecte en el model principal.** Per a P2, l'*odds ratio* entre la categoria de més risc i la de menys de cada variable categòrica, i entre el percentil 25 i el 75 de l'edat i de l'any. Per a P1, la diferència en anys de l'edat mediana amb el mateix criteri.
-2. **Comprovació no lineal:** un bosc aleatori [@breiman2001] amb les mateixes variables, i la importància per permutació de cadascuna en una part de les dades reservada.
-3. **Criteri:** una variable "pesa més" si queda entre les tres primeres amb tots dos mètodes. Si els dos ordres no coincideixen, ho presentarem com a incertesa, no com a resultat.
-
-### 5.4 Validació
-
-- **P2:** àrea sota la corba ROC i calibratge en validació creuada per grups de reparació (5 parts), perquè el model no s'avaluï amb grups que ja ha vist.
-- **P1:** error absolut mitjà de la predicció de la mediana amb la mateixa validació creuada.
-- **Proves múltiples:** les hipòtesis de l'apartat 7 es corregeixen amb el mètode de Holm.
-
-### 5.5 Anàlisis de sensibilitat
-
-| Anàlisi | Què comprova |
+| | Registres |
 |---|---|
-| Treure els "reparables" de P2 | Si la definició de la resposta canvia el resultat |
-| Només MobiFix (tipus d'avaria classificat per persones) | Si el classificador automàtic introdueix errors |
-| Només els tres proveïdors amb més dades | Si el resultat depèn de la barreja de xarxes |
-| Proveïdor com a efecte aleatori en lloc de fix | Si l'agrupament està ben tractat |
-| Incloure el model d'iFixit (només MobiFix enllaçat) | Si la reparabilitat del disseny afegeix informació a la marca |
-| Excloure els anys 2020 i 2021 | Si la pandèmia, amb pocs esdeveniments, distorsiona la tendència |
+| Reparacions de bateria (grup «bateria i alimentació») | 502 (200 etiquetades per persones, 302 pel classificador) |
+| ... amb edat | 213 |
+| ... a final de vida | 89 |
+| Textos de MobiFix amb algun símptoma de bateria | 114 |
 
-## 6. Altres resultats que en sortiran
+: Elaboració pròpia a partir d'Open Repair Data (versió de juliol de 2026).
 
-### 6.1 Tendència de l'edat a la reparació
+## 4. Mètode
 
-La mediana descriptiva puja de 2 a 5 anys entre el 2017 i el 2025. El coeficient de l'any a P1 dirà si la pujada es manté un cop controlats el proveïdor, el país i el tipus d'avaria. Si es manté, és coherent amb que la gent fa durar més els mòbils, però no ho demostra: també pot ser que els Repair Cafés atreguin cada cop més gent amb mòbils vells.
+**B1.** Només amb MobiFix, perquè el tipus d'avaria l'han posat persones i no depèn del classificador.
 
-### 6.2 Reparabilitat del disseny
+- Detectem els símptomes al text amb paraules clau en diversos idiomes i comparem cada símptoma amb l'avaria que hi van trobar els voluntaris.
+- Molts textos ja porten el diagnòstic («bateria canviada»), i això infla la bateria. Per això l'estimació principal es fa amb els textos que **no** diuen «bateria».
+- Una mostra de 30 textos es revisa a mà per comprovar les paraules clau.
 
-A MobiFix, la puntuació d'iFixit permet comprovar si els mòbils dissenyats per ser reparats acaben menys sovint a final de vida. @makov2021 no troben que la reparabilitat allargui la vida dels mòbils, però aquí la pregunta és més concreta: si facilita que una avaria concreta s'arregli.
+**B2.**
 
-### 6.3 Per què no s'arreglen
+- Calculem l'edat mediana a la reparació de les avaries de bateria, amb un interval de confiança per *bootstrap* agrupat per grup de reparació.
+- La comparem amb el llindar de 800 cicles convertit a anys. El reglament no diu quants cicles fa un mòbil cada any, i nosaltres tampoc no ho sabem. Per això fem servir tres escenaris (0,5, 0,75 i 1 cicle complet al dia) i ho presentem com a escenaris, no com a mesura.
+- Un estudi de camp amb dades de bateries de mòbils i tauletes va trobar que, després de diversos anys i centenars de cicles, encara conservaven una salut força alta [@clemm2016]. Les xifres de cicles per dia d'aquell estudi no les hem pogut consultar.
 
-Els 350 casos amb el motiu de final de vida no donen per a un model, però sí per a un gràfic que respon una de les preguntes guia del blog: quins obstacles reals troba la reparació (peces, eines, informació). El creuarem amb el tipus d'avaria i la marca.
+**B3.**
 
-## 7. Hipòtesis
+- Comparem el resultat de les reparacions de bateria amb el de les de pantalla, amb totes les dades i només amb MobiFix.
+- Per saber el *perquè*, llegim els textos de tots els finals de vida de bateria (89) i d'una mostra de 100 «reparables».
+- Una precodificació automàtica proposa un motiu, i dues persones del grup l'han de revisar. Els codis són:
+  - peça no disponible o cara;
+  - no s'obre o no es pot canviar;
+  - no era la bateria;
+  - bateria inflada o vessada;
+  - no surt a compte;
+  - la persona la canvia a casa;
+  - no consta.
+- També fem servir el camp de motiu de final de vida que omplen els voluntaris, que només consta en una part dels casos.
 
-Les escrivim abans de veure les dades:
+## 5. Primera mirada (provisional)
 
-- **H1.** Les avaries de bateria arriben a una edat mediana més alta que les de pantalla, perquè unes són desgast i les altres sovint accidents.
-- **H2.** Les avaries de programari i configuració arriben a una edat més baixa que les de maquinari.
-- **H3.** L'edat mediana a la reparació augmenta amb l'any de l'esdeveniment un cop controlats el proveïdor i el país.
-- **H4.** La probabilitat que una avaria acabi a final de vida creix amb l'edat del mòbil.
-- **H5.** Els danys interns i d'aigua acaben a final de vida més sovint que les avaries de pantalla i de bateria, que tenen peces de recanvi habituals.
-- **H6.** Hi ha diferències entre marques un cop controlat el tipus d'avaria. No en fixem la direcció.
+### B1: no sempre és la bateria
 
-## 8. Amenaces a la validesa
+Dels textos que diuen que el mòbil **no carrega** però no parlen de la bateria (42), els voluntaris hi van trobar una avaria de **bateria en la meitat** dels casos, del **port de càrrega en un terç** i del carregador en un 5 %. Dels que **no s'encenen** (42), un 57 % eren la bateria, un 10 % el programari i un 7 % la pantalla.
 
-| Amenaça | Com ens afecta | Què hi fem |
-|---|---|---|
-| Selecció | Només hi ha qui creu que val la pena reparar i té un Repair Café a prop; els mòbils que es llencen o van al servei oficial no hi surten | Les conclusions es limiten a aquesta població, i ho diem |
-| L'edat no és la data de la fallada | És l'edat el dia de la reparació, que pot ser mesos després de fallar | L'interpretem com a edat a la reparació |
-| Edat que falta | Depèn del proveïdor; la submostra amb edat pot ser diferent | Comparar M2a amb i sense aquesta submostra |
-| Composició per cohorts | L'edat a la fallada d'una marca depèn de quan es van vendre els seus mòbils: si una marca va deixar de vendre's a Europa, els seus mòbils reparats són cada cop més vells | Controlar l'any; interpretar els efectes de marca amb prudència |
-| Classificació de l'avaria | El classificador s'equivoca, sobretot amb textos curts | Validació, kappa i sensibilitat només amb MobiFix |
-| Diferències de registre | Cada xarxa entén diferent "reparable" o "final de vida" | Proveïdor com a control i com a efecte aleatori |
-| Pocs casos en algunes categories | Fairphone o els danys d'aigua tenen pocs registres | Agrupar categories; no interpretar les que tinguin menys de 30 casos |
+Si es confirma, vol dir que una bona part dels mòbils «amb la bateria morta» tenien una avaria més barata, com un port brut o espatllat. És el que va passar amb el [Samsung A40](../reparacio-samsung-a40/).
 
-## 9. Fases
+Les mostres són petites, i el símptoma «dura poc» gairebé sempre surt al costat de la paraula «bateria», així que no el podem separar del diagnòstic.
 
-| Fase | Què es fa | Criteri per continuar |
-|---|---|---|
-| 0. Auditoria de dades | Descarregar i descriure Open Repair (fet) | — |
-| 1. Neteja | Filtre de smartphones, marques, edat (apartat 4, passos 1 a 4) | Nombre de registres a cada pas informat |
-| 2. Classificació de l'avaria | Entrenar i validar el classificador; classificació manual de 200 registres | F1 i kappa: decideix si es fa servir el conjunt agregat o només MobiFix |
-| 3. Models | P1 (edat) i P2 (M2a, M2b) | Comprovacions de l'apartat 5 fetes |
-| 4. Sensibilitat i validació | Apartats 5.4 i 5.5 | Totes fetes |
-| 5. Redacció | Convertir aquesta entrada en l'article de resultats | Revisió per una altra persona del grup |
+### B2: les bateries arriben a reparar més tard del que cobreix el reglament
 
-## 10. Com presentarem els resultats
+L'edat mediana d'un mòbil que arriba amb una avaria de bateria és de **5 anys** (IC 95 %: 4–5). Amb només les etiquetes de MobiFix és de 4 anys (3,5–5), i la d'una pantalla trencada és de 3.
 
-- Gràfic d'*odds ratios* de P2, ordenat per magnitud: respon directament "què fa que una avaria no es pugui reparar".
-- Probabilitat prevista de final de vida segons l'edat, una línia per tipus d'avaria.
-- Gràfic de diferències en l'edat mediana de P1, amb intervals de confiança.
-- Distribució de l'edat a la reparació per tipus d'avaria.
-- Motius de final de vida per tipus d'avaria.
+Els 800 cicles del reglament equivalen a entre **2,2 i 4,4 anys**, segons si el mòbil fa un cicle complet al dia o només mig. Segons l'escenari, entre el **56 % i el 84 %** de les avaries de bateria arriben després d'aquest període.
 
-## 11. Organització de la carpeta
+Hi ha dues lectures, i les dades no permeten triar:
+
+- les bateries duren més del mínim legal, com suggereix l'estudi de camp;
+- la gent conviu anys amb una bateria degradada abans de fer-hi res.
+
+L'edat mediana ha passat de 4 anys (2013–2019) a 5 (2021–2026). Les bateries inflades arriben encara més tard (mediana de 6,5 anys), però només són 11 casos.
+
+### B3: la bateria s'arregla pitjor que la pantalla, i gairebé mai no consta per què
+
+**Un 18 %** de les reparacions de bateria acaben a final de vida, el **doble** que les de pantalla (9 %). Amb només MobiFix és un 13 % davant d'un 5 %. A més, només un 42 % es reparen el mateix dia, davant del 53 % de les pantalles.
+
+El motiu, però, gairebé mai no s'escriu:
+
+- **Camp de motiu dels voluntaris:** consta en 32 dels 89 finals de vida. Peces massa cares (9), no es pot obrir (6), no hi ha peces (6), falta d'equipament (5) i falta d'informació (4).
+- **Text lliure:** la precodificació automàtica no troba cap motiu en el 75 % dels finals de vida. Quan en troba, els més freqüents són que el problema no era la bateria (8 %) i que la bateria estava inflada o vessada (7 %).
+
+Que el motiu no consti és, en si mateix, un resultat: amb aquestes dades no es pot saber si el problema principal és la peça, el disseny o el temps.
+
+## 6. Validació pendent
+
+Dues coses les han de fer persones del grup, i fins aleshores les xifres són provisionals:
+
+1. **Codificació de B3.** El fitxer `dades/processades/codificacio_bateria.csv` té 189 textos. Dues persones, per separat, han d'omplir les columnes `codi_1` i `codi_2` amb un dels codis. El quadern 05 en calcula l'acord (kappa).
+2. **Classificador.** Hi ha 196 registres classificats per la màquina a `dades/processades/validacio_manual.csv`, per comprovar que el classificador funciona amb els textos posteriors al 2020 i en idiomes que MobiFix gairebé no té. Afecta B2 i B3, que fan servir registres classificats. B1 no en depèn.
+
+## 7. Context: què canvia la regulació
+
+- **Durabilitat:** el reglament (UE) 2023/1670 exigeix 800 cicles amb el 80 % de capacitat. Recull com a millor tecnologia disponible bateries de 1.200 cicles [@ue2023ecodisseny].
+- **Bateria que pugui canviar l'usuari:** el mateix reglament obliga a fer-ho possible, amb una excepció. El fabricant pot reservar el canvi als reparadors professionals si la bateria conserva el 83 % després de 500 cicles i el 80 % després de 1.000, i si el mòbil és IP67 [@ue2023ecodisseny].
+- **Reglament de bateries:** el reglament (UE) 2023/1542 exigeix bateries extraïbles per l'usuari a partir del 18 de febrer de 2027 [@ue2023bateries]. Per als smartphones, però, manen els requisits del reglament d'ecodisseny [@comissio2025bateries].
+
+Segons els nostres escenaris, 1.000 cicles són entre 2,7 i 5,5 anys. Si l'edat a què les bateries arriben a reparar es manté al voltant dels 5 anys, una bateria que compleixi l'excepció podria cobrir bona part de la vida del mòbil sense canviar-la. La qüestió és què passa després, quan només la pot canviar un professional.
+
+## 8. I ara, què?
+
+Si la validació confirma aquesta primera mirada, la bateria explica una part del problema que no depèn de la percepció ni del programari: és una peça que falla segur, que sovint es confon amb avaries més barates, i que quan s'espatlla s'arregla pitjor que la pantalla. Per a VINCLE DIGITAL, això té una conseqüència pràctica: davant d'un mòbil donat que «no carrega», cal mirar primer el port abans de donar la bateria per morta, i la [fitxa de reparabilitat](../fitxa-reparabilitat/) ja valora si es troba bateria de recanvi i si hi ha guia per canviar-la.
+
+## 9. Com presentarem els resultats
+
+- Barres apilades: l'avaria real darrere de cada símptoma (B1).
+- Corba acumulada de l'edat de les avaries de bateria, amb la franja dels 800 cicles (B2).
+- Comparació del resultat de bateria i pantalla, i motius de final de vida (B3).
+
+## 10. Organització de la carpeta
 
 ```
 posts/vida-material/
-  index.qmd                  aquesta entrada
-  _analisi/                  Quarto no la publica (comença amb guió baix)
-    README.md                com reproduir l'anàlisi
-    dades/raw/               dades descarregades (no es pugen a git)
-    dades/processades/       dades netes
-    scripts/
-      01_descarrega_ora.py   descarrega Open Repair i MobiFix
-      02_exploracio_ora.py   xifres de l'apartat 3
+  index.qmd                        aquesta entrada
+  _analisi/                        Quarto no la publica (comença amb guió baix)
+    requirements.txt               entorn (.venv)
+    comu.py                        càrrega, neteja i símptomes de bateria
+    notebooks/
+      01_carrega_i_neteja.ipynb
+      02_classificador_avaria.ipynb
+      03_B1_es_la_bateria.ipynb
+      04_B2_edat_i_reglament.ipynb
+      05_B3_per_que_no_sarregla.ipynb
+    dades/                         descarregades i processades (no es pugen a git)
 ```
 
 Les dades d'Open Repair tenen llicència CC BY-SA 4.0: si publiquem un conjunt de dades derivat, ha de tenir la mateixa llicència i citar-ne l'origen.

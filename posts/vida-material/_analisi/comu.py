@@ -149,3 +149,33 @@ def agrupa_rars(serie, minim=30, nom="Altres"):
 def carrega_classificats():
     """Smartphones nets amb el tipus d'avaria (sortida del quadern 04)."""
     return pd.read_csv(PROCESSADES / "mobils_classificats.csv")
+
+
+# Símptomes de bateria en el text lliure (anglès, alemany, neerlandès, francès,
+# castellà i danès/noruec). Són paraules clau: el quadern 03 en comprova una
+# mostra a mà. "mencio_bateria" no és un símptoma: serveix per separar els textos
+# que ja porten el diagnòstic del voluntari.
+SIMPTOMES = {
+    "no_carrega": r"not charg|won.?t charge|doesn.?t charge|does not charge|no charg|not taking charge"
+                  r"|not charging|charging (?:issue|problem|fault)|charge issue|lädt nicht|lädt schlecht|nicht laden"
+                  r"|kann nicht geladen|wird nicht geladen|ladeproblem|laadt niet|laadt slecht|laadprobleem"
+                  r"|ne charge|ne se charge|no carga|no carrega|lader ikke",
+    "dura_poc": r"drain|doesn.?t hold|not hold|won.?t hold|loses charge|battery life|battery weak|weak battery"
+                r"|hält nicht|hält kaum|akku schwach|akkulaufzeit|ontlaadt|snel leeg|tient pas|se décharge"
+                r"|dura poco|holder ikke",
+    "no_sencen": r"won.?t turn on|not turn on|doesn.?t turn on|no power|completely dead|dead phone"
+                 r"|geht nicht an|startet nicht|nicht einschalten|gaat niet aan|ne s.?allume|no enciende"
+                 r"|not switching on|not starting|won.?t start|keine funktion|doet het niet|ne démarre"
+                 r"|tænder ikke|starter ikke",
+    "inflada": r"swollen|swell|bulg|bloated|expanded|geschwollen|aufgebläht|opgezwollen|gonfl|hinchad|oppust|opsvulm",
+}
+MENCIO_BATERIA = r"batter|akku|\baccu|batería|bateria|batterij"
+
+
+def simptomes(textos):
+    """Taula booleana amb un símptoma de bateria per columna i la menció de bateria."""
+    t = textos.fillna("").str.lower()
+    taula = pd.DataFrame({nom: t.str.contains(patro, regex=True) for nom, patro in SIMPTOMES.items()})
+    taula["algun_simptoma"] = taula.any(axis=1)
+    taula["mencio_bateria"] = t.str.contains(MENCIO_BATERIA, regex=True)
+    return taula
