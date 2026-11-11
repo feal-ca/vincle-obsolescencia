@@ -1,0 +1,242 @@
+{
+ "title": "Parc estimat de mòbils del Regne Unit i fluxos anuals (2013–2019)",
+ "language": "es",
+ "problem": {
+  "archetype": "category-breakdown-over-time",
+  "catalog_functions": [
+   "data-over-time",
+   "comparisons",
+   "proportions"
+  ],
+  "statement": "¿Cómo evoluciona cada año la población estimada de móviles en uso del Reino Unido, cuántos entran y cuántos salen (por causa), con su incertidumbre?",
+  "mode": "explanatory",
+  "domain_examples": [
+   "parc de mòbils i fluxos d'entrada i sortida per any",
+   "població d'un servei: altes, baixes i usuaris actius per mes",
+   "existències d'un magatzem amb entrades i sortides per motiu"
+  ]
+ },
+ "user": {
+  "profile": "general-public",
+  "modifiers": [
+   "cvd"
+  ]
+ },
+ "tasks": {
+  "why": {
+   "goal": "present",
+   "search": "browse",
+   "query": "compare"
+  },
+  "low_level": [
+   "trend",
+   "compare",
+   "gist",
+   "determine-range"
+  ],
+  "temporal": [
+   "pattern",
+   "rate-of-change"
+  ],
+  "shneiderman": [
+   "overview"
+  ]
+ },
+ "data": {
+  "dataset_type": "table",
+  "source_file": "../balanc_escenaris_uk.csv",
+  "keys": [
+   {
+    "role": "time",
+    "type": "temporal",
+    "cardinality": 7,
+    "grain": "year",
+    "source_column": "any"
+   },
+   {
+    "role": "category",
+    "type": "categorical",
+    "cardinality": 5,
+    "source_column": "causa de sortida (avaria_*, sortides_sense_avaria)"
+   }
+  ],
+  "values": [
+   {
+    "role": "measure",
+    "type": "quantitative",
+    "semantics": "count",
+    "derived": true,
+    "derivation": "parc en ús (escenaris_uk.py)",
+    "unit": "milions de mòbils"
+   },
+   {
+    "role": "measure2",
+    "type": "quantitative",
+    "semantics": "count",
+    "derived": true,
+    "derivation": "vendes i sortides per causa",
+    "unit": "milions de mòbils per any"
+   },
+   {
+    "role": "lower",
+    "type": "quantitative",
+    "semantics": "count",
+    "derived": true,
+    "derivation": "banda baixa del parc; escenari optimista de les baixes per avaria",
+    "unit": "milions"
+   },
+   {
+    "role": "upper",
+    "type": "quantitative",
+    "semantics": "count",
+    "derived": true,
+    "derivation": "banda alta del parc; escenari pessimista de les baixes per avaria",
+    "unit": "milions"
+   }
+  ],
+  "items": "tiny",
+  "filters": [
+   "escenari in central, pessimista, optimista"
+  ],
+  "normalization": null,
+  "parse": {
+   "delimiter": ",",
+   "decimal": "."
+  }
+ },
+ "constraints": [
+  "static-only",
+  "uncertainty"
+ ],
+ "schema_version": 1,
+ "status": "declared",
+ "solution": {
+  "idiom": "stacked_bar_graph",
+  "family": "bar",
+  "mark": "rect",
+  "encodings": [
+   {
+    "attribute": "time",
+    "channel": "position-x",
+    "scale": "ordinal",
+    "sort": "chronological"
+   },
+   {
+    "attribute": "measure",
+    "channel": "length",
+    "scale": "linear",
+    "zero": true,
+    "note": "top strip: stock in use as bars from zero"
+   },
+   {
+    "attribute": "measure2",
+    "channel": "length",
+    "scale": "linear",
+    "zero": true,
+    "note": "bottom strip: inflow above zero, outflow below zero; same millions-per-cm as the top strip"
+   },
+   {
+    "attribute": "category",
+    "channel": "color-hue",
+    "scale": "nominal",
+    "note": "outflow cause; failure segments next to zero, no-failure below"
+   },
+   {
+    "attribute": "lower",
+    "channel": "position-y",
+    "note": "whisker low end: person-based stock / optimistic failure outflow"
+   },
+   {
+    "attribute": "upper",
+    "channel": "position-y",
+    "note": "whisker high end: SIM-based stock / pessimistic failure outflow"
+   }
+  ],
+  "derived_data": [
+   "stock = population × penetration (central = mean of person and SIM bounds)",
+   "inflow = stock ÷ first-use duration × (1 − second-hand share)",
+   "outflow = stock(t) + inflow − stock(t+1)",
+   "net = inflow − outflow, printed under each year"
+  ],
+  "ordering": "years chronological; outflow stack: failure causes from zero (screen, battery, software, rest), then no-failure",
+  "color": {
+   "purpose": "distinguish",
+   "palette_type": "qualitative",
+   "suggested": [
+    "#A9C1DD",
+    "#7FA7D1",
+    "#C96A55",
+    "#DE9483",
+    "#EDBBAE",
+    "#F7E1DA",
+    "#8CC2AF"
+   ],
+   "cvd_safe": true,
+   "second_cue": "direct labels on the last bar; three hue families with lightness order; white segment borders"
+  },
+  "text": {
+   "title": "takeaway",
+   "axis_units": true,
+   "direct_labels": true,
+   "annotations": [
+    "net balance per year",
+    "worked example of the stock balance in the subtitle",
+    "two-line footnote: reliability and sources",
+    "outflows without failure labelled as other exits (drawer, export, recycling)"
+   ],
+   "source_line": true
+  },
+  "interaction": {
+   "level": "none",
+   "default_state_answers_task": true,
+   "intents": []
+  },
+  "layout": {
+   "small_multiples": false,
+   "facet_by": null,
+   "aspect": "tall"
+  },
+  "rejected_alternatives": [
+   {
+    "idiom": "stacked_bar_graph",
+    "reason": "v1: two side-by-side panels (outflow by route, by cause) duplicated the inflow and left out the stock; failed stage-1 validation by the user",
+    "rule": "CMP-05"
+   },
+   {
+    "idiom": "line_graph",
+    "reason": "stored seed default: lines show trends but not that outflows add up to a total nor the inflow/outflow balance",
+    "rule": "IDM-LINE"
+   },
+   {
+    "idiom": "stacked_area_graph",
+    "reason": "5 cause layers, only the bottom one has a baseline",
+    "rule": "IDM-STACK"
+   },
+   {
+    "idiom": "sankey_diagram",
+    "reason": "bathtub/flow view: arrow width and stock bar length are in incommensurable units (phones vs phones per year); qualitative only",
+    "rule": "EFF-16"
+   },
+   {
+    "idiom": "heatmap",
+    "reason": "stored project decision answers a different question (cause shares), not stock and flows",
+    "rule": "IDM-HEATMAP"
+   }
+  ],
+  "validation": {
+   "stage3_checks": [
+    "COL-05",
+    "IDM-STACK",
+    "TXT-01",
+    "TXT-08",
+    "SCL-08"
+   ],
+   "critique_skill": "optional"
+  },
+  "library_notes": {
+   "matplotlib": "two stacked axes sharing x with the same y span (85 M) so millions per cm match; bars with white edges; whiskers drawn with plot()"
+  }
+ },
+ "rationale": "The reader needs three numbers per year: how many phones are in use, how many enter and how many leave. Bars from zero on two strips with the same millions-per-cm make the stock about two years of sales visible without a dual axis; inflow above and outflow below zero, with the net printed, show why the stock barely moves. Failure causes sit next to zero with the scenario whisker on their boundary, because the failure share is the least reliable part (factor 5).",
+ "confidence": "medium"
+}

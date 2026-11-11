@@ -1,0 +1,326 @@
+any,parametre,escenari,valor,unitat,regla_o_font
+2013,poblacio,central,6.41057e+07,persones,"ONS, mitjan any"
+2013,penetracio_mobil,central,0.92,fracció adults 16+,Ofcom Technology Tracker / CMR
+2013,penetracio_smartphone,central,0.51,fracció adults 16+,Ofcom Technology Tracker / CMR
+2013,parc,baix,5.40065e+07,telèfons,"persones: població × (0,81 × penetració × 1,05 + 0,06) (Fermi)"
+2013,parc,alt,7.82e+07,telèfons,Ofcom: subscripcions de terminal (sense M2M ni dades)
+2013,parc,central,6.61032e+07,telèfons,mitjana de la cota per persones i per SIM
+2013,quota_segona_ma,central,0.08,fracció del parc,Deloitte UK 2015–2019 (2013–2014 extrapolat)
+2013,quota_smartphone_vendes,central,0.77,fracció,"GfK via Ofcom: 74 % T1 2013, 89 % T4 2017 (contracte); interpolat, 2018–2019 Fermi"
+2013,durada_primer_us,central,1.66667,anys,"Kantar GB, sèrie antiga (2017–2019: sèrie nova − 1,8 mesos)"
+2013,durada_primer_us,pessimista,1.525,anys,"Kantar EU5, sèrie antiga (més curta que GB)"
+2013,durada_primer_us,optimista,1.81667,anys,"Kantar GB, sèrie nova (+1,8 mesos); Dixons 29 mesos el 2017"
+2013,desti_calaix,central,0.4,fracció de les deixades,"Deloitte UK 2015/2017/2018, BidGrid 2013; interpolat"
+2013,desti_familia,central,0.184211,fracció de les deixades,"Deloitte UK 2015/2017/2018, BidGrid 2013; interpolat"
+2013,desti_mercat,central,0.247368,fracció de les deixades,"Deloitte UK 2015/2017/2018, BidGrid 2013; interpolat"
+2013,desti_reciclatge,central,0.0421053,fracció de les deixades,"Deloitte UK 2015/2017/2018, BidGrid 2013; interpolat"
+2013,desti_escombraries,central,0.121053,fracció de les deixades,"Deloitte UK 2015/2017/2018, BidGrid 2013; interpolat"
+2013,desti_perdut,central,0.00526316,fracció de les deixades,"Deloitte UK 2015/2017/2018, BidGrid 2013; interpolat"
+2013,desti_calaix,pessimista,0.410447,fracció de les deixades,central × extrem pitjor de les 4 enquestes (1.12)
+2013,desti_familia,pessimista,0.128537,fracció de les deixades,central × extrem pitjor de les 4 enquestes (0.76)
+2013,desti_mercat,pessimista,0.192507,fracció de les deixades,central × extrem pitjor de les 4 enquestes (0.85)
+2013,desti_reciclatge,pessimista,0.036408,fracció de les deixades,central × extrem pitjor de les 4 enquestes (0.94)
+2013,desti_escombraries,pessimista,0.22243,fracció de les deixades,central × extrem pitjor de les 4 enquestes (2.00)
+2013,desti_perdut,pessimista,0.00967087,fracció de les deixades,central × extrem pitjor de les 4 enquestes (2.00)
+2013,desti_calaix,optimista,0.345945,fracció de les deixades,central × extrem millor de les 4 enquestes (0.86)
+2013,desti_familia,optimista,0.225867,fracció de les deixades,central × extrem millor de les 4 enquestes (1.22)
+2013,desti_mercat,optimista,0.317134,fracció de les deixades,central × extrem millor de les 4 enquestes (1.27)
+2013,desti_reciclatge,optimista,0.0499818,fracció de les deixades,central × extrem millor de les 4 enquestes (1.18)
+2013,desti_escombraries,optimista,0.0610715,fracció de les deixades,central × extrem millor de les 4 enquestes (0.50)
+2013,desti_perdut,optimista,0,fracció de les deixades,central × extrem millor de les 4 enquestes (0.00)
+2013,part_avaria,pessimista,0.412358,fracció de les deixades,"Eurobaròmetre 503: trencat + rendiment, normalitzat; × durada"
+2013,part_avaria,central,0.256162,fracció de les deixades,"Eurobaròmetre 503: trencat, normalitzat (0,345 el 2019); × durada"
+2013,part_avaria,optimista,0.0851064,fracció de les deixades,AK Wien 2015: defecte tècnic estricte (10 %); × durada
+2013,calaix_inicial,pessimista,9e+07,telèfons,Deloitte 2015 cita 85 M; Mobile News 2014 90 M
+2013,estada_calaix,pessimista,7,anys,Fermi: calaix / entrada anual (Material Focus 2017: entrada ≈ sortida)
+2013,calaix_a_reciclatge,pessimista,0.45,fracció de les sortides del calaix,Material Focus 2017: 65 % de les descartades no reutilitzades (central); ±Fermi
+2013,calaix_inicial,central,5e+07,telèfons,Green Alliance 2015: 28–125 M (Fermi)
+2013,estada_calaix,central,4,anys,Fermi: calaix / entrada anual (Material Focus 2017: entrada ≈ sortida)
+2013,calaix_a_reciclatge,central,0.65,fracció de les sortides del calaix,Material Focus 2017: 65 % de les descartades no reutilitzades (central); ±Fermi
+2013,calaix_inicial,optimista,3e+07,telèfons,Green Alliance 2015 (28 M); uSwitch 2021 (35 M)
+2013,estada_calaix,optimista,2.5,anys,Fermi: calaix / entrada anual (Material Focus 2017: entrada ≈ sortida)
+2013,calaix_a_reciclatge,optimista,0.8,fracció de les sortides del calaix,Material Focus 2017: 65 % de les descartades no reutilitzades (central); ±Fermi
+2013,causa_Altres,central,0.139785,fracció de les baixes per avaria,"MobiFix Regne Unit, finestra 2013–2014, n = 93"
+2013,causa_Bateria i alimentació,central,0.11828,fracció de les baixes per avaria,"MobiFix Regne Unit, finestra 2013–2014, n = 93"
+2013,causa_Botons i connectors,central,0.129032,fracció de les baixes per avaria,"MobiFix Regne Unit, finestra 2013–2014, n = 93"
+2013,causa_Danys interns i aigua,central,0,fracció de les baixes per avaria,"MobiFix Regne Unit, finestra 2013–2014, n = 93"
+2013,causa_Desconegut,central,0.0752688,fracció de les baixes per avaria,"MobiFix Regne Unit, finestra 2013–2014, n = 93"
+2013,causa_Pantalla,central,0.290323,fracció de les baixes per avaria,"MobiFix Regne Unit, finestra 2013–2014, n = 93"
+2013,causa_Port de càrrega,central,0.0645161,fracció de les baixes per avaria,"MobiFix Regne Unit, finestra 2013–2014, n = 93"
+2013,causa_Programari i configuració,central,0.182796,fracció de les baixes per avaria,"MobiFix Regne Unit, finestra 2013–2014, n = 93"
+2014,poblacio,central,6.45968e+07,persones,"ONS, mitjan any"
+2014,penetracio_mobil,central,0.93,fracció adults 16+,Ofcom Technology Tracker / CMR
+2014,penetracio_smartphone,central,0.61,fracció adults 16+,Ofcom Technology Tracker / CMR
+2014,parc,baix,5.49696e+07,telèfons,"persones: població × (0,81 × penetració × 1,05 + 0,06) (Fermi)"
+2014,parc,alt,7.89e+07,telèfons,Ofcom: subscripcions de terminal (sense M2M ni dades)
+2014,parc,central,6.69348e+07,telèfons,mitjana de la cota per persones i per SIM
+2014,quota_segona_ma,central,0.09,fracció del parc,Deloitte UK 2015–2019 (2013–2014 extrapolat)
+2014,quota_smartphone_vendes,central,0.82,fracció,"GfK via Ofcom: 74 % T1 2013, 89 % T4 2017 (contracte); interpolat, 2018–2019 Fermi"
+2014,durada_primer_us,central,1.83333,anys,"Kantar GB, sèrie antiga (2017–2019: sèrie nova − 1,8 mesos)"
+2014,durada_primer_us,pessimista,1.625,anys,"Kantar EU5, sèrie antiga (més curta que GB)"
+2014,durada_primer_us,optimista,1.98333,anys,"Kantar GB, sèrie nova (+1,8 mesos); Dixons 29 mesos el 2017"
+2014,desti_calaix,central,0.426316,fracció de les deixades,"Deloitte UK 2015/2017/2018, BidGrid 2013; interpolat"
+2014,desti_familia,central,0.197368,fracció de les deixades,"Deloitte UK 2015/2017/2018, BidGrid 2013; interpolat"
+2014,desti_mercat,central,0.228947,fracció de les deixades,"Deloitte UK 2015/2017/2018, BidGrid 2013; interpolat"
+2014,desti_reciclatge,central,0.0421053,fracció de les deixades,"Deloitte UK 2015/2017/2018, BidGrid 2013; interpolat"
+2014,desti_escombraries,central,0.0973684,fracció de les deixades,"Deloitte UK 2015/2017/2018, BidGrid 2013; interpolat"
+2014,desti_perdut,central,0.00789474,fracció de les deixades,"Deloitte UK 2015/2017/2018, BidGrid 2013; interpolat"
+2014,desti_calaix,pessimista,0.44494,fracció de les deixades,central × extrem pitjor de les 4 enquestes (1.12)
+2014,desti_familia,pessimista,0.140076,fracció de les deixades,central × extrem pitjor de les 4 enquestes (0.76)
+2014,desti_mercat,pessimista,0.181222,fracció de les deixades,central × extrem pitjor de les 4 enquestes (0.85)
+2014,desti_reciclatge,pessimista,0.0370314,fracció de les deixades,central × extrem pitjor de les 4 enquestes (0.94)
+2014,desti_escombraries,pessimista,0.181975,fracció de les deixades,central × extrem pitjor de les 4 enquestes (2.00)
+2014,desti_perdut,pessimista,0.0147547,fracció de les deixades,central × extrem pitjor de les 4 enquestes (2.00)
+2014,desti_calaix,optimista,0.367482,fracció de les deixades,central × extrem millor de les 4 enquestes (0.86)
+2014,desti_familia,optimista,0.241198,fracció de les deixades,central × extrem millor de les 4 enquestes (1.22)
+2014,desti_mercat,optimista,0.292544,fracció de les deixades,central × extrem millor de les 4 enquestes (1.27)
+2014,desti_reciclatge,optimista,0.049816,fracció de les deixades,central × extrem millor de les 4 enquestes (1.18)
+2014,desti_escombraries,optimista,0.0489598,fracció de les deixades,central × extrem millor de les 4 enquestes (0.50)
+2014,desti_perdut,optimista,0,fracció de les deixades,central × extrem millor de les 4 enquestes (0.00)
+2014,part_avaria,pessimista,0.453594,fracció de les deixades,"Eurobaròmetre 503: trencat + rendiment, normalitzat; × durada"
+2014,part_avaria,central,0.281778,fracció de les deixades,"Eurobaròmetre 503: trencat, normalitzat (0,345 el 2019); × durada"
+2014,part_avaria,optimista,0.093617,fracció de les deixades,AK Wien 2015: defecte tècnic estricte (10 %); × durada
+2014,estada_calaix,pessimista,7,anys,Fermi: calaix / entrada anual (Material Focus 2017: entrada ≈ sortida)
+2014,calaix_a_reciclatge,pessimista,0.45,fracció de les sortides del calaix,Material Focus 2017: 65 % de les descartades no reutilitzades (central); ±Fermi
+2014,estada_calaix,central,4,anys,Fermi: calaix / entrada anual (Material Focus 2017: entrada ≈ sortida)
+2014,calaix_a_reciclatge,central,0.65,fracció de les sortides del calaix,Material Focus 2017: 65 % de les descartades no reutilitzades (central); ±Fermi
+2014,estada_calaix,optimista,2.5,anys,Fermi: calaix / entrada anual (Material Focus 2017: entrada ≈ sortida)
+2014,calaix_a_reciclatge,optimista,0.8,fracció de les sortides del calaix,Material Focus 2017: 65 % de les descartades no reutilitzades (central); ±Fermi
+2014,causa_Altres,central,0.150943,fracció de les baixes per avaria,"MobiFix Regne Unit, finestra 2013–2015, n = 159"
+2014,causa_Bateria i alimentació,central,0.138365,fracció de les baixes per avaria,"MobiFix Regne Unit, finestra 2013–2015, n = 159"
+2014,causa_Botons i connectors,central,0.113208,fracció de les baixes per avaria,"MobiFix Regne Unit, finestra 2013–2015, n = 159"
+2014,causa_Danys interns i aigua,central,0,fracció de les baixes per avaria,"MobiFix Regne Unit, finestra 2013–2015, n = 159"
+2014,causa_Desconegut,central,0.138365,fracció de les baixes per avaria,"MobiFix Regne Unit, finestra 2013–2015, n = 159"
+2014,causa_Pantalla,central,0.27673,fracció de les baixes per avaria,"MobiFix Regne Unit, finestra 2013–2015, n = 159"
+2014,causa_Port de càrrega,central,0.0566038,fracció de les baixes per avaria,"MobiFix Regne Unit, finestra 2013–2015, n = 159"
+2014,causa_Programari i configuració,central,0.125786,fracció de les baixes per avaria,"MobiFix Regne Unit, finestra 2013–2015, n = 159"
+2015,poblacio,central,6.511e+07,persones,"ONS, mitjan any"
+2015,penetracio_mobil,central,0.93,fracció adults 16+,Ofcom Technology Tracker / CMR
+2015,penetracio_smartphone,central,0.66,fracció adults 16+,Ofcom Technology Tracker / CMR
+2015,parc,baix,5.54063e+07,telèfons,"persones: població × (0,81 × penetració × 1,05 + 0,06) (Fermi)"
+2015,parc,alt,7.97e+07,telèfons,Ofcom: subscripcions de terminal (sense M2M ni dades)
+2015,parc,central,6.75532e+07,telèfons,mitjana de la cota per persones i per SIM
+2015,quota_segona_ma,central,0.1,fracció del parc,Deloitte UK 2015–2019 (2013–2014 extrapolat)
+2015,quota_smartphone_vendes,central,0.85,fracció,"GfK via Ofcom: 74 % T1 2013, 89 % T4 2017 (contracte); interpolat, 2018–2019 Fermi"
+2015,durada_primer_us,central,1.95833,anys,"Kantar GB, sèrie antiga (2017–2019: sèrie nova − 1,8 mesos)"
+2015,durada_primer_us,pessimista,1.7,anys,"Kantar EU5, sèrie antiga (més curta que GB)"
+2015,durada_primer_us,optimista,2.10833,anys,"Kantar GB, sèrie nova (+1,8 mesos); Dixons 29 mesos el 2017"
+2015,desti_calaix,central,0.452632,fracció de les deixades,"Deloitte UK 2015/2017/2018, BidGrid 2013; interpolat"
+2015,desti_familia,central,0.210526,fracció de les deixades,"Deloitte UK 2015/2017/2018, BidGrid 2013; interpolat"
+2015,desti_mercat,central,0.210526,fracció de les deixades,"Deloitte UK 2015/2017/2018, BidGrid 2013; interpolat"
+2015,desti_reciclatge,central,0.0421053,fracció de les deixades,"Deloitte UK 2015/2017/2018, BidGrid 2013; interpolat"
+2015,desti_escombraries,central,0.0736842,fracció de les deixades,"Deloitte UK 2015/2017/2018, BidGrid 2013; interpolat"
+2015,desti_perdut,central,0.0105263,fracció de les deixades,"Deloitte UK 2015/2017/2018, BidGrid 2013; interpolat"
+2015,desti_calaix,pessimista,0.480636,fracció de les deixades,central × extrem pitjor de les 4 enquestes (1.12)
+2015,desti_familia,pessimista,0.152018,fracció de les deixades,central × extrem pitjor de les 4 enquestes (0.76)
+2015,desti_mercat,pessimista,0.169544,fracció de les deixades,central × extrem pitjor de les 4 enquestes (0.85)
+2015,desti_reciclatge,pessimista,0.0376765,fracció de les deixades,central × extrem pitjor de les 4 enquestes (0.94)
+2015,desti_escombraries,pessimista,0.14011,fracció de les deixades,central × extrem pitjor de les 4 enquestes (2.00)
+2015,desti_perdut,pessimista,0.0200157,fracció de les deixades,central × extrem pitjor de les 4 enquestes (2.00)
+2015,desti_calaix,optimista,0.388876,fracció de les deixades,central × extrem millor de les 4 enquestes (0.86)
+2015,desti_familia,optimista,0.256427,fracció de les deixades,central × extrem millor de les 4 enquestes (1.22)
+2015,desti_mercat,optimista,0.268117,fracció de les deixades,central × extrem millor de les 4 enquestes (1.27)
+2015,desti_reciclatge,optimista,0.0496513,fracció de les deixades,central × extrem millor de les 4 enquestes (1.18)
+2015,desti_escombraries,optimista,0.0369282,fracció de les deixades,central × extrem millor de les 4 enquestes (0.50)
+2015,desti_perdut,optimista,0,fracció de les deixades,central × extrem millor de les 4 enquestes (0.00)
+2015,part_avaria,pessimista,0.484521,fracció de les deixades,"Eurobaròmetre 503: trencat + rendiment, normalitzat; × durada"
+2015,part_avaria,central,0.30099,fracció de les deixades,"Eurobaròmetre 503: trencat, normalitzat (0,345 el 2019); × durada"
+2015,part_avaria,optimista,0.1,fracció de les deixades,AK Wien 2015: defecte tècnic estricte (10 %); × durada
+2015,estada_calaix,pessimista,7,anys,Fermi: calaix / entrada anual (Material Focus 2017: entrada ≈ sortida)
+2015,calaix_a_reciclatge,pessimista,0.45,fracció de les sortides del calaix,Material Focus 2017: 65 % de les descartades no reutilitzades (central); ±Fermi
+2015,estada_calaix,central,4,anys,Fermi: calaix / entrada anual (Material Focus 2017: entrada ≈ sortida)
+2015,calaix_a_reciclatge,central,0.65,fracció de les sortides del calaix,Material Focus 2017: 65 % de les descartades no reutilitzades (central); ±Fermi
+2015,estada_calaix,optimista,2.5,anys,Fermi: calaix / entrada anual (Material Focus 2017: entrada ≈ sortida)
+2015,calaix_a_reciclatge,optimista,0.8,fracció de les sortides del calaix,Material Focus 2017: 65 % de les descartades no reutilitzades (central); ±Fermi
+2015,causa_Altres,central,0.131148,fracció de les baixes per avaria,"MobiFix Regne Unit, finestra 2014–2016, n = 244"
+2015,causa_Bateria i alimentació,central,0.172131,fracció de les baixes per avaria,"MobiFix Regne Unit, finestra 2014–2016, n = 244"
+2015,causa_Botons i connectors,central,0.0819672,fracció de les baixes per avaria,"MobiFix Regne Unit, finestra 2014–2016, n = 244"
+2015,causa_Danys interns i aigua,central,0.00409836,fracció de les baixes per avaria,"MobiFix Regne Unit, finestra 2014–2016, n = 244"
+2015,causa_Desconegut,central,0.143443,fracció de les baixes per avaria,"MobiFix Regne Unit, finestra 2014–2016, n = 244"
+2015,causa_Pantalla,central,0.270492,fracció de les baixes per avaria,"MobiFix Regne Unit, finestra 2014–2016, n = 244"
+2015,causa_Port de càrrega,central,0.0655738,fracció de les baixes per avaria,"MobiFix Regne Unit, finestra 2014–2016, n = 244"
+2015,causa_Programari i configuració,central,0.131148,fracció de les baixes per avaria,"MobiFix Regne Unit, finestra 2014–2016, n = 244"
+2016,poblacio,central,6.5648e+07,persones,"ONS, mitjan any"
+2016,penetracio_mobil,central,0.93,fracció adults 16+,Ofcom Technology Tracker / CMR
+2016,penetracio_smartphone,central,0.71,fracció adults 16+,Ofcom Technology Tracker / CMR
+2016,parc,baix,5.58642e+07,telèfons,"persones: població × (0,81 × penetració × 1,05 + 0,06) (Fermi)"
+2016,parc,alt,7.94e+07,telèfons,Ofcom: subscripcions de terminal (sense M2M ni dades)
+2016,parc,central,6.76321e+07,telèfons,mitjana de la cota per persones i per SIM
+2016,quota_segona_ma,central,0.11,fracció del parc,Deloitte UK 2015–2019 (2013–2014 extrapolat)
+2016,quota_smartphone_vendes,central,0.87,fracció,"GfK via Ofcom: 74 % T1 2013, 89 % T4 2017 (contracte); interpolat, 2018–2019 Fermi"
+2016,durada_primer_us,central,1.95,anys,"Kantar GB, sèrie antiga (2017–2019: sèrie nova − 1,8 mesos)"
+2016,durada_primer_us,pessimista,1.8,anys,"Kantar EU5, sèrie antiga (més curta que GB)"
+2016,durada_primer_us,optimista,2.1,anys,"Kantar GB, sèrie nova (+1,8 mesos); Dixons 29 mesos el 2017"
+2016,desti_calaix,central,0.430108,fracció de les deixades,"Deloitte UK 2015/2017/2018, BidGrid 2013; interpolat"
+2016,desti_familia,central,0.236559,fracció de les deixades,"Deloitte UK 2015/2017/2018, BidGrid 2013; interpolat"
+2016,desti_mercat,central,0.215054,fracció de les deixades,"Deloitte UK 2015/2017/2018, BidGrid 2013; interpolat"
+2016,desti_reciclatge,central,0.0430108,fracció de les deixades,"Deloitte UK 2015/2017/2018, BidGrid 2013; interpolat"
+2016,desti_escombraries,central,0.0591398,fracció de les deixades,"Deloitte UK 2015/2017/2018, BidGrid 2013; interpolat"
+2016,desti_perdut,central,0.016129,fracció de les deixades,"Deloitte UK 2015/2017/2018, BidGrid 2013; interpolat"
+2016,desti_calaix,pessimista,0.464932,fracció de les deixades,central × extrem pitjor de les 4 enquestes (1.12)
+2016,desti_familia,pessimista,0.173887,fracció de les deixades,central × extrem pitjor de les 4 enquestes (0.76)
+2016,desti_mercat,pessimista,0.176305,fracció de les deixades,central × extrem pitjor de les 4 enquestes (0.85)
+2016,desti_reciclatge,pessimista,0.0391789,fracció de les deixades,central × extrem pitjor de les 4 enquestes (0.94)
+2016,desti_escombraries,pessimista,0.114476,fracció de les deixades,central × extrem pitjor de les 4 enquestes (2.00)
+2016,desti_perdut,pessimista,0.0312207,fracció de les deixades,central × extrem pitjor de les 4 enquestes (2.00)
+2016,desti_calaix,optimista,0.365179,fracció de les deixades,central × extrem millor de les 4 enquestes (0.86)
+2016,desti_familia,optimista,0.284747,fracció de les deixades,central × extrem millor de les 4 enquestes (1.22)
+2016,desti_mercat,optimista,0.270662,fracció de les deixades,central × extrem millor de les 4 enquestes (1.27)
+2016,desti_reciclatge,optimista,0.0501225,fracció de les deixades,central × extrem millor de les 4 enquestes (1.18)
+2016,desti_escombraries,optimista,0.0292904,fracció de les deixades,central × extrem millor de les 4 enquestes (0.50)
+2016,desti_perdut,optimista,0,fracció de les deixades,central × extrem millor de les 4 enquestes (0.00)
+2016,part_avaria,pessimista,0.482459,fracció de les deixades,"Eurobaròmetre 503: trencat + rendiment, normalitzat; × durada"
+2016,part_avaria,central,0.299709,fracció de les deixades,"Eurobaròmetre 503: trencat, normalitzat (0,345 el 2019); × durada"
+2016,part_avaria,optimista,0.0995745,fracció de les deixades,AK Wien 2015: defecte tècnic estricte (10 %); × durada
+2016,estada_calaix,pessimista,7,anys,Fermi: calaix / entrada anual (Material Focus 2017: entrada ≈ sortida)
+2016,calaix_a_reciclatge,pessimista,0.45,fracció de les sortides del calaix,Material Focus 2017: 65 % de les descartades no reutilitzades (central); ±Fermi
+2016,estada_calaix,central,4,anys,Fermi: calaix / entrada anual (Material Focus 2017: entrada ≈ sortida)
+2016,calaix_a_reciclatge,central,0.65,fracció de les sortides del calaix,Material Focus 2017: 65 % de les descartades no reutilitzades (central); ±Fermi
+2016,estada_calaix,optimista,2.5,anys,Fermi: calaix / entrada anual (Material Focus 2017: entrada ≈ sortida)
+2016,calaix_a_reciclatge,optimista,0.8,fracció de les sortides del calaix,Material Focus 2017: 65 % de les descartades no reutilitzades (central); ±Fermi
+2016,causa_Altres,central,0.151163,fracció de les baixes per avaria,"MobiFix Regne Unit, finestra 2015–2017, n = 258"
+2016,causa_Bateria i alimentació,central,0.186047,fracció de les baixes per avaria,"MobiFix Regne Unit, finestra 2015–2017, n = 258"
+2016,causa_Botons i connectors,central,0.0775194,fracció de les baixes per avaria,"MobiFix Regne Unit, finestra 2015–2017, n = 258"
+2016,causa_Danys interns i aigua,central,0.00387597,fracció de les baixes per avaria,"MobiFix Regne Unit, finestra 2015–2017, n = 258"
+2016,causa_Desconegut,central,0.186047,fracció de les baixes per avaria,"MobiFix Regne Unit, finestra 2015–2017, n = 258"
+2016,causa_Pantalla,central,0.236434,fracció de les baixes per avaria,"MobiFix Regne Unit, finestra 2015–2017, n = 258"
+2016,causa_Port de càrrega,central,0.0503876,fracció de les baixes per avaria,"MobiFix Regne Unit, finestra 2015–2017, n = 258"
+2016,causa_Programari i configuració,central,0.108527,fracció de les baixes per avaria,"MobiFix Regne Unit, finestra 2015–2017, n = 258"
+2017,poblacio,central,6.60402e+07,persones,"ONS, mitjan any"
+2017,penetracio_mobil,central,0.94,fracció adults 16+,Ofcom Technology Tracker / CMR
+2017,penetracio_smartphone,central,0.76,fracció adults 16+,Ofcom Technology Tracker / CMR
+2017,parc,baix,5.67596e+07,telèfons,"persones: població × (0,81 × penetració × 1,05 + 0,06) (Fermi)"
+2017,parc,alt,7.91e+07,telèfons,Ofcom: subscripcions de terminal (sense M2M ni dades)
+2017,parc,central,6.79298e+07,telèfons,mitjana de la cota per persones i per SIM
+2017,quota_segona_ma,central,0.13,fracció del parc,Deloitte UK 2015–2019 (2013–2014 extrapolat)
+2017,quota_smartphone_vendes,central,0.89,fracció,"GfK via Ofcom: 74 % T1 2013, 89 % T4 2017 (contracte); interpolat, 2018–2019 Fermi"
+2017,durada_primer_us,central,2.05417,anys,"Kantar GB, sèrie antiga (2017–2019: sèrie nova − 1,8 mesos)"
+2017,durada_primer_us,pessimista,1.91667,anys,"Kantar EU5, sèrie antiga (més curta que GB)"
+2017,durada_primer_us,optimista,2.20417,anys,"Kantar GB, sèrie nova (+1,8 mesos); Dixons 29 mesos el 2017"
+2017,desti_calaix,central,0.406593,fracció de les deixades,"Deloitte UK 2015/2017/2018, BidGrid 2013; interpolat"
+2017,desti_familia,central,0.263736,fracció de les deixades,"Deloitte UK 2015/2017/2018, BidGrid 2013; interpolat"
+2017,desti_mercat,central,0.21978,fracció de les deixades,"Deloitte UK 2015/2017/2018, BidGrid 2013; interpolat"
+2017,desti_reciclatge,central,0.043956,fracció de les deixades,"Deloitte UK 2015/2017/2018, BidGrid 2013; interpolat"
+2017,desti_escombraries,central,0.043956,fracció de les deixades,"Deloitte UK 2015/2017/2018, BidGrid 2013; interpolat"
+2017,desti_perdut,central,0.021978,fracció de les deixades,"Deloitte UK 2015/2017/2018, BidGrid 2013; interpolat"
+2017,desti_calaix,pessimista,0.447923,fracció de les deixades,central × extrem pitjor de les 4 enquestes (1.12)
+2017,desti_familia,pessimista,0.197574,fracció de les deixades,central × extrem pitjor de les 4 enquestes (0.76)
+2017,desti_mercat,pessimista,0.183627,fracció de les deixades,central × extrem pitjor de les 4 enquestes (0.85)
+2017,desti_reciclatge,pessimista,0.0408061,fracció de les deixades,central × extrem pitjor de les 4 enquestes (0.94)
+2017,desti_escombraries,pessimista,0.086713,fracció de les deixades,central × extrem pitjor de les 4 enquestes (2.00)
+2017,desti_perdut,pessimista,0.0433565,fracció de les deixades,central × extrem pitjor de les 4 enquestes (2.00)
+2017,desti_calaix,optimista,0.341027,fracció de les deixades,central × extrem millor de les 4 enquestes (0.86)
+2017,desti_familia,optimista,0.313609,fracció de les deixades,central × extrem millor de les 4 enquestes (1.22)
+2017,desti_mercat,optimista,0.273255,fracció de les deixades,central × extrem millor de les 4 enquestes (1.27)
+2017,desti_reciclatge,optimista,0.0506028,fracció de les deixades,central × extrem millor de les 4 enquestes (1.18)
+2017,desti_escombraries,optimista,0.0215062,fracció de les deixades,central × extrem millor de les 4 enquestes (0.50)
+2017,desti_perdut,optimista,0,fracció de les deixades,central × extrem millor de les 4 enquestes (0.00)
+2017,part_avaria,pessimista,0.508232,fracció de les deixades,"Eurobaròmetre 503: trencat + rendiment, normalitzat; × durada"
+2017,part_avaria,central,0.31572,fracció de les deixades,"Eurobaròmetre 503: trencat, normalitzat (0,345 el 2019); × durada"
+2017,part_avaria,optimista,0.104894,fracció de les deixades,AK Wien 2015: defecte tècnic estricte (10 %); × durada
+2017,estada_calaix,pessimista,7,anys,Fermi: calaix / entrada anual (Material Focus 2017: entrada ≈ sortida)
+2017,calaix_a_reciclatge,pessimista,0.45,fracció de les sortides del calaix,Material Focus 2017: 65 % de les descartades no reutilitzades (central); ±Fermi
+2017,estada_calaix,central,4,anys,Fermi: calaix / entrada anual (Material Focus 2017: entrada ≈ sortida)
+2017,calaix_a_reciclatge,central,0.65,fracció de les sortides del calaix,Material Focus 2017: 65 % de les descartades no reutilitzades (central); ±Fermi
+2017,estada_calaix,optimista,2.5,anys,Fermi: calaix / entrada anual (Material Focus 2017: entrada ≈ sortida)
+2017,calaix_a_reciclatge,optimista,0.8,fracció de les sortides del calaix,Material Focus 2017: 65 % de les descartades no reutilitzades (central); ±Fermi
+2017,causa_Altres,central,0.12844,fracció de les baixes per avaria,"MobiFix Regne Unit, finestra 2016–2018, n = 327"
+2017,causa_Bateria i alimentació,central,0.186544,fracció de les baixes per avaria,"MobiFix Regne Unit, finestra 2016–2018, n = 327"
+2017,causa_Botons i connectors,central,0.0733945,fracció de les baixes per avaria,"MobiFix Regne Unit, finestra 2016–2018, n = 327"
+2017,causa_Danys interns i aigua,central,0.0030581,fracció de les baixes per avaria,"MobiFix Regne Unit, finestra 2016–2018, n = 327"
+2017,causa_Desconegut,central,0.134557,fracció de les baixes per avaria,"MobiFix Regne Unit, finestra 2016–2018, n = 327"
+2017,causa_Pantalla,central,0.296636,fracció de les baixes per avaria,"MobiFix Regne Unit, finestra 2016–2018, n = 327"
+2017,causa_Port de càrrega,central,0.058104,fracció de les baixes per avaria,"MobiFix Regne Unit, finestra 2016–2018, n = 327"
+2017,causa_Programari i configuració,central,0.119266,fracció de les baixes per avaria,"MobiFix Regne Unit, finestra 2016–2018, n = 327"
+2018,poblacio,central,6.64356e+07,persones,"ONS, mitjan any"
+2018,penetracio_mobil,central,0.94,fracció adults 16+,Ofcom Technology Tracker / CMR
+2018,penetracio_smartphone,central,0.78,fracció adults 16+,Ofcom Technology Tracker / CMR
+2018,parc,baix,5.70994e+07,telèfons,"persones: població × (0,81 × penetració × 1,05 + 0,06) (Fermi)"
+2018,parc,alt,7.95e+07,telèfons,Ofcom: subscripcions de terminal (sense M2M ni dades)
+2018,parc,central,6.82997e+07,telèfons,mitjana de la cota per persones i per SIM
+2018,quota_segona_ma,central,0.15,fracció del parc,Deloitte UK 2015–2019 (2013–2014 extrapolat)
+2018,quota_smartphone_vendes,central,0.9,fracció,"GfK via Ofcom: 74 % T1 2013, 89 % T4 2017 (contracte); interpolat, 2018–2019 Fermi"
+2018,durada_primer_us,central,2.15833,anys,"Kantar GB, sèrie antiga (2017–2019: sèrie nova − 1,8 mesos)"
+2018,durada_primer_us,pessimista,2.03333,anys,"Kantar EU5, sèrie antiga (més curta que GB)"
+2018,durada_primer_us,optimista,2.30833,anys,"Kantar GB, sèrie nova (+1,8 mesos); Dixons 29 mesos el 2017"
+2018,desti_calaix,central,0.445652,fracció de les deixades,"Deloitte UK 2015/2017/2018, BidGrid 2013; interpolat"
+2018,desti_familia,central,0.217391,fracció de les deixades,"Deloitte UK 2015/2017/2018, BidGrid 2013; interpolat"
+2018,desti_mercat,central,0.195652,fracció de les deixades,"Deloitte UK 2015/2017/2018, BidGrid 2013; interpolat"
+2018,desti_reciclatge,central,0.0543478,fracció de les deixades,"Deloitte UK 2015/2017/2018, BidGrid 2013; interpolat"
+2018,desti_escombraries,central,0.0543478,fracció de les deixades,"Deloitte UK 2015/2017/2018, BidGrid 2013; interpolat"
+2018,desti_perdut,central,0.0326087,fracció de les deixades,"Deloitte UK 2015/2017/2018, BidGrid 2013; interpolat"
+2018,desti_calaix,pessimista,0.472401,fracció de les deixades,central × extrem pitjor de les 4 enquestes (1.12)
+2018,desti_familia,pessimista,0.156702,fracció de les deixades,central × extrem pitjor de les 4 enquestes (0.76)
+2018,desti_mercat,pessimista,0.157292,fracció de les deixades,central × extrem pitjor de les 4 enquestes (0.85)
+2018,desti_reciclatge,pessimista,0.0485468,fracció de les deixades,central × extrem pitjor de les 4 enquestes (0.94)
+2018,desti_escombraries,pessimista,0.103162,fracció de les deixades,central × extrem pitjor de les 4 enquestes (2.00)
+2018,desti_perdut,pessimista,0.0618971,fracció de les deixades,central × extrem pitjor de les 4 enquestes (2.00)
+2018,desti_calaix,optimista,0.387464,fracció de les deixades,central × extrem millor de les 4 enquestes (0.86)
+2018,desti_familia,optimista,0.267959,fracció de les deixades,central × extrem millor de les 4 enquestes (1.22)
+2018,desti_mercat,optimista,0.252158,fracció de les deixades,central × extrem millor de les 4 enquestes (1.27)
+2018,desti_reciclatge,optimista,0.0648553,fracció de les deixades,central × extrem millor de les 4 enquestes (1.18)
+2018,desti_escombraries,optimista,0.0275635,fracció de les deixades,central × extrem millor de les 4 enquestes (0.50)
+2018,desti_perdut,optimista,0,fracció de les deixades,central × extrem millor de les 4 enquestes (0.00)
+2018,part_avaria,pessimista,0.534004,fracció de les deixades,"Eurobaròmetre 503: trencat + rendiment, normalitzat; × durada"
+2018,part_avaria,central,0.33173,fracció de les deixades,"Eurobaròmetre 503: trencat, normalitzat (0,345 el 2019); × durada"
+2018,part_avaria,optimista,0.110213,fracció de les deixades,AK Wien 2015: defecte tècnic estricte (10 %); × durada
+2018,estada_calaix,pessimista,7,anys,Fermi: calaix / entrada anual (Material Focus 2017: entrada ≈ sortida)
+2018,calaix_a_reciclatge,pessimista,0.45,fracció de les sortides del calaix,Material Focus 2017: 65 % de les descartades no reutilitzades (central); ±Fermi
+2018,estada_calaix,central,4,anys,Fermi: calaix / entrada anual (Material Focus 2017: entrada ≈ sortida)
+2018,calaix_a_reciclatge,central,0.65,fracció de les sortides del calaix,Material Focus 2017: 65 % de les descartades no reutilitzades (central); ±Fermi
+2018,estada_calaix,optimista,2.5,anys,Fermi: calaix / entrada anual (Material Focus 2017: entrada ≈ sortida)
+2018,calaix_a_reciclatge,optimista,0.8,fracció de les sortides del calaix,Material Focus 2017: 65 % de les descartades no reutilitzades (central); ±Fermi
+2018,causa_Altres,central,0.14539,fracció de les baixes per avaria,"MobiFix Regne Unit, finestra 2017–2019, n = 282"
+2018,causa_Bateria i alimentació,central,0.191489,fracció de les baixes per avaria,"MobiFix Regne Unit, finestra 2017–2019, n = 282"
+2018,causa_Botons i connectors,central,0.0673759,fracció de les baixes per avaria,"MobiFix Regne Unit, finestra 2017–2019, n = 282"
+2018,causa_Danys interns i aigua,central,0.0035461,fracció de les baixes per avaria,"MobiFix Regne Unit, finestra 2017–2019, n = 282"
+2018,causa_Desconegut,central,0.131206,fracció de les baixes per avaria,"MobiFix Regne Unit, finestra 2017–2019, n = 282"
+2018,causa_Pantalla,central,0.294326,fracció de les baixes per avaria,"MobiFix Regne Unit, finestra 2017–2019, n = 282"
+2018,causa_Port de càrrega,central,0.0531915,fracció de les baixes per avaria,"MobiFix Regne Unit, finestra 2017–2019, n = 282"
+2018,causa_Programari i configuració,central,0.113475,fracció de les baixes per avaria,"MobiFix Regne Unit, finestra 2017–2019, n = 282"
+2019,poblacio,central,6.67968e+07,persones,"ONS, mitjan any"
+2019,penetracio_mobil,central,0.94,fracció adults 16+,Ofcom Technology Tracker / CMR
+2019,penetracio_smartphone,central,0.79,fracció adults 16+,Ofcom Technology Tracker / CMR
+2019,parc,baix,5.74099e+07,telèfons,"persones: població × (0,81 × penetració × 1,05 + 0,06) (Fermi)"
+2019,parc,alt,8.1e+07,telèfons,Ofcom: subscripcions de terminal (sense M2M ni dades)
+2019,parc,central,6.92049e+07,telèfons,mitjana de la cota per persones i per SIM
+2019,quota_segona_ma,central,0.15,fracció del parc,Deloitte UK 2015–2019 (2013–2014 extrapolat)
+2019,quota_smartphone_vendes,central,0.91,fracció,"GfK via Ofcom: 74 % T1 2013, 89 % T4 2017 (contracte); interpolat, 2018–2019 Fermi"
+2019,durada_primer_us,central,2.24167,anys,"Kantar GB, sèrie antiga (2017–2019: sèrie nova − 1,8 mesos)"
+2019,durada_primer_us,pessimista,2.11667,anys,"Kantar EU5, sèrie antiga (més curta que GB)"
+2019,durada_primer_us,optimista,2.39167,anys,"Kantar GB, sèrie nova (+1,8 mesos); Dixons 29 mesos el 2017"
+2019,desti_calaix,central,0.445652,fracció de les deixades,"Deloitte UK 2015/2017/2018, BidGrid 2013; interpolat"
+2019,desti_familia,central,0.217391,fracció de les deixades,"Deloitte UK 2015/2017/2018, BidGrid 2013; interpolat"
+2019,desti_mercat,central,0.195652,fracció de les deixades,"Deloitte UK 2015/2017/2018, BidGrid 2013; interpolat"
+2019,desti_reciclatge,central,0.0543478,fracció de les deixades,"Deloitte UK 2015/2017/2018, BidGrid 2013; interpolat"
+2019,desti_escombraries,central,0.0543478,fracció de les deixades,"Deloitte UK 2015/2017/2018, BidGrid 2013; interpolat"
+2019,desti_perdut,central,0.0326087,fracció de les deixades,"Deloitte UK 2015/2017/2018, BidGrid 2013; interpolat"
+2019,desti_calaix,pessimista,0.472401,fracció de les deixades,central × extrem pitjor de les 4 enquestes (1.12)
+2019,desti_familia,pessimista,0.156702,fracció de les deixades,central × extrem pitjor de les 4 enquestes (0.76)
+2019,desti_mercat,pessimista,0.157292,fracció de les deixades,central × extrem pitjor de les 4 enquestes (0.85)
+2019,desti_reciclatge,pessimista,0.0485468,fracció de les deixades,central × extrem pitjor de les 4 enquestes (0.94)
+2019,desti_escombraries,pessimista,0.103162,fracció de les deixades,central × extrem pitjor de les 4 enquestes (2.00)
+2019,desti_perdut,pessimista,0.0618971,fracció de les deixades,central × extrem pitjor de les 4 enquestes (2.00)
+2019,desti_calaix,optimista,0.387464,fracció de les deixades,central × extrem millor de les 4 enquestes (0.86)
+2019,desti_familia,optimista,0.267959,fracció de les deixades,central × extrem millor de les 4 enquestes (1.22)
+2019,desti_mercat,optimista,0.252158,fracció de les deixades,central × extrem millor de les 4 enquestes (1.27)
+2019,desti_reciclatge,optimista,0.0648553,fracció de les deixades,central × extrem millor de les 4 enquestes (1.18)
+2019,desti_escombraries,optimista,0.0275635,fracció de les deixades,central × extrem millor de les 4 enquestes (0.50)
+2019,desti_perdut,optimista,0,fracció de les deixades,central × extrem millor de les 4 enquestes (0.00)
+2019,part_avaria,pessimista,0.554622,fracció de les deixades,"Eurobaròmetre 503: trencat + rendiment, normalitzat; × durada"
+2019,part_avaria,central,0.344538,fracció de les deixades,"Eurobaròmetre 503: trencat, normalitzat (0,345 el 2019); × durada"
+2019,part_avaria,optimista,0.114468,fracció de les deixades,AK Wien 2015: defecte tècnic estricte (10 %); × durada
+2019,estada_calaix,pessimista,7,anys,Fermi: calaix / entrada anual (Material Focus 2017: entrada ≈ sortida)
+2019,calaix_a_reciclatge,pessimista,0.45,fracció de les sortides del calaix,Material Focus 2017: 65 % de les descartades no reutilitzades (central); ±Fermi
+2019,estada_calaix,central,4,anys,Fermi: calaix / entrada anual (Material Focus 2017: entrada ≈ sortida)
+2019,calaix_a_reciclatge,central,0.65,fracció de les sortides del calaix,Material Focus 2017: 65 % de les descartades no reutilitzades (central); ±Fermi
+2019,estada_calaix,optimista,2.5,anys,Fermi: calaix / entrada anual (Material Focus 2017: entrada ≈ sortida)
+2019,calaix_a_reciclatge,optimista,0.8,fracció de les sortides del calaix,Material Focus 2017: 65 % de les descartades no reutilitzades (central); ±Fermi
+2019,causa_Altres,central,0.128079,fracció de les baixes per avaria,"MobiFix Regne Unit, finestra 2018–2019, n = 203"
+2019,causa_Bateria i alimentació,central,0.20197,fracció de les baixes per avaria,"MobiFix Regne Unit, finestra 2018–2019, n = 203"
+2019,causa_Botons i connectors,central,0.0591133,fracció de les baixes per avaria,"MobiFix Regne Unit, finestra 2018–2019, n = 203"
+2019,causa_Danys interns i aigua,central,0.00492611,fracció de les baixes per avaria,"MobiFix Regne Unit, finestra 2018–2019, n = 203"
+2019,causa_Desconegut,central,0.0985222,fracció de les baixes per avaria,"MobiFix Regne Unit, finestra 2018–2019, n = 203"
+2019,causa_Pantalla,central,0.325123,fracció de les baixes per avaria,"MobiFix Regne Unit, finestra 2018–2019, n = 203"
+2019,causa_Port de càrrega,central,0.0591133,fracció de les baixes per avaria,"MobiFix Regne Unit, finestra 2018–2019, n = 203"
+2019,causa_Programari i configuració,central,0.123153,fracció de les baixes per avaria,"MobiFix Regne Unit, finestra 2018–2019, n = 203"
