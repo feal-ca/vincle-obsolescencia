@@ -4,6 +4,7 @@ Implementa els passos 1 a 4 de l'apartat 4 de posts/vida-material/index.qmd.
 Cal haver executat abans scripts/01_descarrega_ora.py.
 """
 
+import re
 from pathlib import Path
 
 import pandas as pd
@@ -130,3 +131,21 @@ def carrega_mobifix():
     f["any_event"] = pd.to_numeric(f["event_date"].str[:4], errors="coerce")
     f["marca"] = f["brand"].map(normalitza_marca)
     return f
+
+
+def normalitza_text(text):
+    """Text en minúscules i sense puntuació, per creuar MobiFix amb el conjunt agregat."""
+    if pd.isna(text):
+        return ""
+    return re.sub(r"[^\w]+", " ", str(text).lower()).strip()
+
+
+def agrupa_rars(serie, minim=30, nom="Altres"):
+    """Posa a `nom` les categories amb menys de `minim` registres."""
+    freq = serie.value_counts()
+    return serie.where(~serie.isin(freq[freq < minim].index), nom)
+
+
+def carrega_classificats():
+    """Smartphones nets amb el tipus d'avaria (sortida del quadern 04)."""
+    return pd.read_csv(PROCESSADES / "mobils_classificats.csv")

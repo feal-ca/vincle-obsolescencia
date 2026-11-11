@@ -21,15 +21,15 @@ El que sí que tenim és **Open Repair Data**, el conjunt de dades obert de les 
 
 ## 2. Les preguntes
 
-- **P1. Quines variables fan que una avaria no es pugui reparar?** Volem saber com influeixen el tipus d'avaria, l'edat del mòbil, la marca, el país i l'any en la probabilitat que el mòbil acabi a "final de vida" en lloc de reparar-se.
-- **P2. Quins factors avancen o endarrereixen l'edat a la qual fallen els mòbils?** Entre els mòbils que arriben espatllats, volem saber quins ho fan més joves i quins més vells, segons el tipus d'avaria, la marca, el país i l'any.
+- **P1. A quina edat s'espatllen els mòbils que arriben a un Repair Café, i a quina edat arriben a final de vida?** Volem l'edat mediana a la reparació, la dels que acaben a final de vida, i quins factors (tipus d'avaria, marca, país i any) fan que fallin més joves o més vells.
+- **P2. Quines variables fan que una avaria no es pugui reparar?** Volem saber com influeixen el tipus d'avaria, l'edat del mòbil, la marca, el país i l'any en la probabilitat que el mòbil acabi a "final de vida" en lloc de reparar-se.
 
 ### Què podem afirmar i què no
 
 Totes dues preguntes es refereixen als **mòbils que s'espatllen i que algú porta a reparar** a un d'aquests esdeveniments. Això té tres conseqüències:
 
-- **P1 és una pregunta ben definida per a aquesta població.** Si una pantalla té una probabilitat més baixa d'acabar a final de vida que un dany intern, ho podem dir per als mòbils que arriben a un Repair Café.
-- **P2 no és la vida útil.** Que les avaries de bateria arribin a una edat mediana més alta que les de pantalla vol dir que, *entre els que fallen*, unes fallen més tard que les altres. No vol dir que els mòbils visquin de mitjana aquests anys, perquè no sabem res dels que no s'han espatllat o no s'han portat a reparar.
+- **P1 no és la vida útil.** Que les avaries de bateria arribin a una edat mediana més alta que les de pantalla vol dir que, *entre els que fallen*, unes fallen més tard que les altres. No vol dir que els mòbils visquin de mitjana aquests anys, perquè no sabem res dels que no s'han espatllat o no s'han portat a reparar.
+- **P2 és una pregunta ben definida per a aquesta població.** Si una pantalla té una probabilitat més baixa d'acabar a final de vida que un dany intern, ho podem dir per als mòbils que arriben a un Repair Café.
 - **No fem anàlisi de supervivència.** Els mètodes de supervivència (Kaplan–Meier, Cox) necessiten els dispositius que encara funcionen, encara que sigui de manera parcial, i aquí no n'hi ha cap. Modelitzem directament la distribució de l'edat a la fallada, i ho direm així a l'article.
 
 ## 3. Les dades
@@ -64,8 +64,8 @@ La unitat és la **reparació d'un mòbil** en un esdeveniment.
 
 | Variable | Tipus | D'on surt | Paper |
 |---|---|---|---|
-| Final de vida | Binària | `repair_status` | Resposta de P1 |
-| Edat a la reparació | Anys sencers | `product_age` | Resposta de P2; predictor de P1 |
+| Final de vida | Binària | `repair_status` | Resposta de P2 |
+| Edat a la reparació | Anys sencers | `product_age` | Resposta de P1; predictor de P2 |
 | Tipus d'avaria | Categòrica (7 grups) | MobiFix o classificació del text (apartat 4) | Predictor principal |
 | Marca | Categòrica (Apple, Samsung, Huawei, Xiaomi, Fairphone, altres) | `brand`, normalitzada | Predictor |
 | País | Categòrica | `country` | Control |
@@ -81,7 +81,7 @@ Els grups de tipus d'avaria, a partir de MobiFix: **pantalla**, **bateria i alim
 1. **Quedar-se amb els smartphones.** Filtrar `product_category == "Mobile"` i treure els telèfons bàsics a partir de la categoria del proveïdor ("not smartphone") i de marques de telèfons bàsics (Doro, Gigaset, Siemens...). Revisar a mà una mostra de 100 registres per comprovar el filtre.
 2. **Normalitzar les marques.** Passar a minúscules, unificar sinònims ("iphone" → Apple, "redmi" → Xiaomi, "fairphone" → Fairphone) i agrupar a "Altres" les marques amb menys de 50 registres.
 3. **Netejar l'edat.** Excloure les edats de més de 15 anys, inversemblants per a un smartphone, i informar de quantes se'n treuen. Mantenir les edats 0 (mòbils de menys d'un any).
-4. **Definir la resposta de P1.** A l'anàlisi principal, final de vida contra la resta (reparat o reparable). "Reparable" vol dir que es podia arreglar però no es va acabar aquell dia, per exemple perquè calia una peça, de manera que no és una fi de vida. A l'anàlisi de sensibilitat es treuen els reparables.
+4. **Definir la resposta de P2.** A l'anàlisi principal, final de vida contra la resta (reparat o reparable). "Reparable" vol dir que es podia arreglar però no es va acabar aquell dia, per exemple perquè calia una peça, de manera que no és una fi de vida. A l'anàlisi de sensibilitat es treuen els reparables.
 5. **Classificar el tipus d'avaria del conjunt agregat.** És el pas més delicat, perquè el tipus d'avaria és el predictor principal i el conjunt agregat no el té:
    - Entrenem un classificador de text amb les 1.540 reparacions de MobiFix que tenen tipus conegut. Com que els textos són en diversos idiomes, fem servir n-grames de caràcters (trossos de 3 a 5 lletres) i una regressió logística [@pedregosa2011], que funcionen sense traduir.
    - El validem amb un 20 % de MobiFix reservat i en mesurem la F1 per classe.
@@ -93,20 +93,7 @@ Els grups de tipus d'avaria, a partir de MobiFix: **pantalla**, **bateria i alim
 
 Tot es fa en Python amb `statsmodels` [@seabold2010] i `scikit-learn` [@pedregosa2011]. Els resultats s'exporten com a imatges a la carpeta de l'entrada, com a l'entrada de suport de programari, perquè el web es pugui generar sense executar codi.
 
-### 5.1 P1: què fa que una avaria no es pugui reparar
-
-**Model principal: regressió logística.** La resposta és si el mòbil acaba a final de vida. Els resultats es donen com a *odds ratios* amb interval de confiança del 95 %, amb errors estàndard agrupats per grup de reparació, perquè les reparacions d'un mateix grup no són independents.
-
-Fem dues versions, perquè l'edat només consta en el 30 % dels registres:
-
-- **M1a, tots els registres (sense l'edat):** tipus d'avaria, marca, any de l'esdeveniment, país i proveïdor. Com que el tipus d'avaria surt del text, només hi entren els registres que tenen descripció del problema: 4.798, amb 728 casos de final de vida, abans de treure els telèfons que no són smartphones.
-- **M1b, registres amb edat:** les mateixes variables més l'edat, que entra amb un spline de 3 nodes per si l'efecte no és lineal. Uns 1.800 registres i uns 260 casos de final de vida.
-
-No imputem l'edat que falta, perquè depèn del proveïdor: hi ha xarxes que no la registren mai, i no hi ha cap manera raonable d'inventar-la. Per veure si la submostra amb edat és diferent, ajustem M1a també només amb aquests registres i comparem els coeficients.
-
-**Mida.** La regla habitual en regressió logística és tenir com a mínim 10 casos per paràmetre [@peduzzi1996]. M1b té uns 20 paràmetres (6 tipus d'avaria, 5 marques, l'any, 3 de l'edat i els controls), de manera que amb 260 casos va just. Si cal, agruparem països o proveïdors.
-
-### 5.2 P2: què avança o endarrereix l'edat a la fallada
+### 5.1 P1: a quina edat s'espatllen i a quina arriben a final de vida
 
 **Model principal: regressió quantílica** [@koenker1978] de l'edat a la reparació, amb el tipus d'avaria, la marca, l'any de l'esdeveniment, el país i el proveïdor. N'hi ha tres motius:
 
@@ -114,31 +101,46 @@ No imputem l'edat que falta, perquè depèn del proveïdor: hi ha xarxes que no 
 - L'edat té una cua llarga (alguns mòbils de més de 10 anys), i la mediana no s'hi deixa arrossegar com la mitjana.
 - Ajustant també els quartils 25 i 75, veiem si un factor avança les fallades primerencs o endarrereix les tardanes, que no és el mateix.
 
-L'edat ve en anys sencers, i això crea molts empats. Per tractar-ho, fem servir el mètode de @machado2005, que afegeix un soroll uniforme a la variable i fa la mitjana de moltes repeticions. Els intervals de confiança s'obtenen amb *bootstrap* per grups de reparació (500 repeticions).
+L'edat ve gairebé sempre en anys sencers (85 registres tenen mitjos anys o dècimes), i això crea molts empats. Per tractar-ho, fem servir el mètode de @machado2005, que afegeix un soroll uniforme a la variable i fa la mitjana de moltes repeticions. Els intervals de confiança s'obtenen amb *bootstrap* per grups de reparació (200 repeticions).
 
 **Comprovació:** una regressió log-normal de l'edat més 0,5 (per poder incloure les edats 0), que dona l'efecte com a percentatge ("les avaries de bateria arriben un 30 % més tard").
 
-**No posem l'estat de la reparació com a predictor de P2**, perquè passa després de la fallada i no la pot causar. El fem servir només per descriure l'edat dels que acaben a final de vida.
+**Edat a final de vida.** La segona part de P1 es respon de manera descriptiva: l'edat mediana dels mòbils que acaben a final de vida, comparada amb la dels reparats, amb intervals de confiança per *bootstrap* agrupat per grup de reparació.
+
+**No posem l'estat de la reparació com a predictor del model d'edat**, perquè passa després de la fallada i no la pot causar.
+
+### 5.2 P2: què fa que una avaria no es pugui reparar
+
+**Model principal: regressió logística.** La resposta és si el mòbil acaba a final de vida. Els resultats es donen com a *odds ratios* amb interval de confiança del 95 %, amb errors estàndard agrupats per grup de reparació, perquè les reparacions d'un mateix grup no són independents.
+
+Fem dues versions, perquè l'edat només consta en el 30 % dels registres:
+
+- **M2a, tots els registres (sense l'edat):** tipus d'avaria, marca, any de l'esdeveniment, país i proveïdor. Com que el tipus d'avaria surt del text, només hi entren els registres que tenen descripció del problema: 4.798, amb 728 casos de final de vida, abans de treure els telèfons que no són smartphones.
+- **M2b, registres amb edat:** les mateixes variables més l'edat, que entra amb un spline de 3 nodes per si l'efecte no és lineal. Uns 1.800 registres i uns 260 casos de final de vida.
+
+No imputem l'edat que falta, perquè depèn del proveïdor: hi ha xarxes que no la registren mai, i no hi ha cap manera raonable d'inventar-la. Per veure si la submostra amb edat és diferent, ajustem M2a també només amb aquests registres i comparem els coeficients.
+
+**Mida.** La regla habitual en regressió logística és tenir com a mínim 10 casos per paràmetre [@peduzzi1996]. M2b té uns 20 paràmetres (6 tipus d'avaria, 5 marques, l'any, 3 de l'edat i els controls), de manera que amb 260 casos va just. Si cal, agruparem països o proveïdors.
 
 ### 5.3 Quines variables pesen més
 
 Ho decidim abans de veure els resultats:
 
-1. **Mida de l'efecte en el model principal.** Per a P1, l'*odds ratio* entre la categoria de més risc i la de menys de cada variable categòrica, i entre el percentil 25 i el 75 de l'edat i de l'any. Per a P2, la diferència en anys de l'edat mediana amb el mateix criteri.
+1. **Mida de l'efecte en el model principal.** Per a P2, l'*odds ratio* entre la categoria de més risc i la de menys de cada variable categòrica, i entre el percentil 25 i el 75 de l'edat i de l'any. Per a P1, la diferència en anys de l'edat mediana amb el mateix criteri.
 2. **Comprovació no lineal:** un bosc aleatori [@breiman2001] amb les mateixes variables, i la importància per permutació de cadascuna en una part de les dades reservada.
 3. **Criteri:** una variable "pesa més" si queda entre les tres primeres amb tots dos mètodes. Si els dos ordres no coincideixen, ho presentarem com a incertesa, no com a resultat.
 
 ### 5.4 Validació
 
-- **P1:** àrea sota la corba ROC i calibratge en validació creuada per grups de reparació (5 parts), perquè el model no s'avaluï amb grups que ja ha vist.
-- **P2:** error absolut mitjà de la predicció de la mediana amb la mateixa validació creuada.
+- **P2:** àrea sota la corba ROC i calibratge en validació creuada per grups de reparació (5 parts), perquè el model no s'avaluï amb grups que ja ha vist.
+- **P1:** error absolut mitjà de la predicció de la mediana amb la mateixa validació creuada.
 - **Proves múltiples:** les hipòtesis de l'apartat 7 es corregeixen amb el mètode de Holm.
 
 ### 5.5 Anàlisis de sensibilitat
 
 | Anàlisi | Què comprova |
 |---|---|
-| Treure els "reparables" de P1 | Si la definició de la resposta canvia el resultat |
+| Treure els "reparables" de P2 | Si la definició de la resposta canvia el resultat |
 | Només MobiFix (tipus d'avaria classificat per persones) | Si el classificador automàtic introdueix errors |
 | Només els tres proveïdors amb més dades | Si el resultat depèn de la barreja de xarxes |
 | Proveïdor com a efecte aleatori en lloc de fix | Si l'agrupament està ben tractat |
@@ -149,7 +151,7 @@ Ho decidim abans de veure els resultats:
 
 ### 6.1 Tendència de l'edat a la reparació
 
-La mediana descriptiva puja de 2 a 5 anys entre el 2017 i el 2025. El coeficient de l'any a P2 dirà si la pujada es manté un cop controlats el proveïdor, el país i el tipus d'avaria. Si es manté, és coherent amb que la gent fa durar més els mòbils, però no ho demostra: també pot ser que els Repair Cafés atreguin cada cop més gent amb mòbils vells.
+La mediana descriptiva puja de 2 a 5 anys entre el 2017 i el 2025. El coeficient de l'any a P1 dirà si la pujada es manté un cop controlats el proveïdor, el país i el tipus d'avaria. Si es manté, és coherent amb que la gent fa durar més els mòbils, però no ho demostra: també pot ser que els Repair Cafés atreguin cada cop més gent amb mòbils vells.
 
 ### 6.2 Reparabilitat del disseny
 
@@ -163,12 +165,12 @@ Els 350 casos amb el motiu de final de vida no donen per a un model, però sí p
 
 Les escrivim abans de veure les dades:
 
-- **H1.** La probabilitat que una avaria acabi a final de vida creix amb l'edat del mòbil.
-- **H2.** Els danys interns i d'aigua acaben a final de vida més sovint que les avaries de pantalla i de bateria, que tenen peces de recanvi habituals.
-- **H3.** Hi ha diferències entre marques un cop controlat el tipus d'avaria. No en fixem la direcció.
-- **H4.** Les avaries de bateria arriben a una edat mediana més alta que les de pantalla, perquè unes són desgast i les altres sovint accidents.
-- **H5.** Les avaries de programari i configuració arriben a una edat més baixa que les de maquinari.
-- **H6.** L'edat mediana a la reparació augmenta amb l'any de l'esdeveniment un cop controlats el proveïdor i el país.
+- **H1.** Les avaries de bateria arriben a una edat mediana més alta que les de pantalla, perquè unes són desgast i les altres sovint accidents.
+- **H2.** Les avaries de programari i configuració arriben a una edat més baixa que les de maquinari.
+- **H3.** L'edat mediana a la reparació augmenta amb l'any de l'esdeveniment un cop controlats el proveïdor i el país.
+- **H4.** La probabilitat que una avaria acabi a final de vida creix amb l'edat del mòbil.
+- **H5.** Els danys interns i d'aigua acaben a final de vida més sovint que les avaries de pantalla i de bateria, que tenen peces de recanvi habituals.
+- **H6.** Hi ha diferències entre marques un cop controlat el tipus d'avaria. No en fixem la direcció.
 
 ## 8. Amenaces a la validesa
 
@@ -176,7 +178,7 @@ Les escrivim abans de veure les dades:
 |---|---|---|
 | Selecció | Només hi ha qui creu que val la pena reparar i té un Repair Café a prop; els mòbils que es llencen o van al servei oficial no hi surten | Les conclusions es limiten a aquesta població, i ho diem |
 | L'edat no és la data de la fallada | És l'edat el dia de la reparació, que pot ser mesos després de fallar | L'interpretem com a edat a la reparació |
-| Edat que falta | Depèn del proveïdor; la submostra amb edat pot ser diferent | Comparar M1a amb i sense aquesta submostra |
+| Edat que falta | Depèn del proveïdor; la submostra amb edat pot ser diferent | Comparar M2a amb i sense aquesta submostra |
 | Composició per cohorts | L'edat a la fallada d'una marca depèn de quan es van vendre els seus mòbils: si una marca va deixar de vendre's a Europa, els seus mòbils reparats són cada cop més vells | Controlar l'any; interpretar els efectes de marca amb prudència |
 | Classificació de l'avaria | El classificador s'equivoca, sobretot amb textos curts | Validació, kappa i sensibilitat només amb MobiFix |
 | Diferències de registre | Cada xarxa entén diferent "reparable" o "final de vida" | Proveïdor com a control i com a efecte aleatori |
@@ -189,15 +191,15 @@ Les escrivim abans de veure les dades:
 | 0. Auditoria de dades | Descarregar i descriure Open Repair (fet) | — |
 | 1. Neteja | Filtre de smartphones, marques, edat (apartat 4, passos 1 a 4) | Nombre de registres a cada pas informat |
 | 2. Classificació de l'avaria | Entrenar i validar el classificador; classificació manual de 200 registres | F1 i kappa: decideix si es fa servir el conjunt agregat o només MobiFix |
-| 3. Models | P1 (M1a, M1b) i P2 | Comprovacions de l'apartat 5 fetes |
+| 3. Models | P1 (edat) i P2 (M2a, M2b) | Comprovacions de l'apartat 5 fetes |
 | 4. Sensibilitat i validació | Apartats 5.4 i 5.5 | Totes fetes |
 | 5. Redacció | Convertir aquesta entrada en l'article de resultats | Revisió per una altra persona del grup |
 
 ## 10. Com presentarem els resultats
 
-- Gràfic d'*odds ratios* de P1, ordenat per magnitud: respon directament "què fa que una avaria no es pugui reparar".
+- Gràfic d'*odds ratios* de P2, ordenat per magnitud: respon directament "què fa que una avaria no es pugui reparar".
 - Probabilitat prevista de final de vida segons l'edat, una línia per tipus d'avaria.
-- Gràfic de diferències en l'edat mediana de P2, amb intervals de confiança.
+- Gràfic de diferències en l'edat mediana de P1, amb intervals de confiança.
 - Distribució de l'edat a la reparació per tipus d'avaria.
 - Motius de final de vida per tipus d'avaria.
 

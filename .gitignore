@@ -4,3 +4,4 @@
 /posts/vida-material/_analisi/dades/raw/
 /posts/vida-material/_analisi/dades/processades/
 __pycache__/
+.venv/
