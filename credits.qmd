@@ -7,10 +7,10 @@ toc: false
 
 | Persona | Entrades | Visuals | Altres |
 |---|---|---|---|
-|  |  |  |  |
+| Laia Oleart | Articles "_L'obsolescència percebuda: Un dels principals motius del canvi de mòbil_" i "_L'obsolescència programada: què és i quines mesures s'estan prenent per combatre-la_" | Gràfica dels percentatges dels tipus d'obsolescència a l'article "_L'obsolescència percebuda: Un dels principals motius del canvi de mòbil_" | Búsqueda inicial i resum de fonts sobre obsolescència, marc europeu, casos judicials |
 
 ## Ús d'eines d'IA
 
 | Eina | Per a què | Com s'ha verificat |
 |---|---|---|
-|  |  |  |
+| Gemini | Escriure les citacions de la bibliografia en format bib per les referencies dels articles "_L'obsolescència percebuda: Un dels principals motius del canvi de mòbil_" i "_L'obsolescència programada: què és i quines mesures s'estan prenent per combatre-la_" | Revisant els camps donats i comprovant que es corresponen amb les fonts consultades. Observant que es llegeix bé al blog final. |
