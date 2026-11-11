@@ -1,9 +1,9 @@
 ---
 title: "Què poden arreglar els repair cafés (i què no)"
 description: "Amb l'experiència pròpia i dades de més de 200.000 reparacions, veiem què arreglen els repair cafés i on topen."
-author: "Ferran Alía"
+author: "Ferran Alía Castillejos"
 date: 2026-11-11
-categories: [reparabilitat, repair cafés, experiència pròpia]
+categories: [reparabilitat, experiència pròpia]
 execute:
   echo: false
   freeze: auto       # les gràfiques s'executen al teu ordinador; GitHub publica el resultat desat a _freeze/
