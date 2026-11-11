@@ -1,0 +1,15 @@
+# Entorn de l'anàlisi. Des de l'arrel del repositori:
+#   python3 -m venv posts/vida-material/_analisi/.venv
+#   posts/vida-material/_analisi/.venv/bin/pip install -r posts/vida-material/_analisi/requirements.txt
+pandas>=2.2
+numpy>=2.0
+matplotlib>=3.9
+scikit-learn>=1.5
+statsmodels>=0.14
+patsy>=0.5
+nbformat>=5.10
+nbclient>=0.10
+ipykernel>=6.29
+altair>=6.0
+vl-convert-python>=1.9
+colorspacious>=1.1
