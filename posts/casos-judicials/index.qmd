@@ -1,0 +1,40 @@
+---
+title: "Sancions judicials i obsolescència de mòbils"
+description: "Apple i Samsung, dos gegants tecnològics en el món dels smartphones, han anat a judici per casos d'obsolescència provocada. Analitzem els casos i les seves conseqüències."
+author: "Pau Soler"
+date: 2026-11-11
+categories: [legal, smartphones, programari, obsolescència]
+---
+
+## Introducció: El software als tribunals
+
+L'obsolescència programada és un dels grans i vells problemes nous que han aparegut amb l'auge de la tecnologia i del consumisme on, per tal de mantenir models de negoci viables, moltes empreses necessiten vendre cada vegada més i a més gent per tal de mantenir el monopoli del mercat. Programar l'obsolescència d'un producte és un dels mètodes per tal de provocar el consumisme i mantenir la renovació constant i molt sovint innecessària de tot tipus de tecnologia. L'organització francesa HOP (Halte a l’Obsolescence Programmée) és una de les pioneres en l'àmbit legal de denunciar i investigar aquests casos, i ha aconseguit que les empreses Epson i HP siguin a jutjats pendents de judici per casos d'obsolescència programada en impressores i cartutxos. Podeu veure l'article de Martí Gil Comas sobre el tema, anomenat "*HOP contra el sector de la impremta*"
+
+En el cas dels smartphones, aquesta mateixa organització i d'altres també han actuat en contra de casos denunciats per obsolescència programada de gegants tecnològics com Apple i Samsung. I en aquests casos, els tribunals ja han donat sentència, resultant en alguns casos en sancions multimilionàries. En aquest article analitzarem aquests casos jurídics i les seves repercussions, mentre reflexionem sobre què s'hi pot fer per millorar la situació actual.
+
+
+## 1. El cas Apple: L'alentiment d'iOS
+
+Aquesta dècada, Apple ha estat denunciat a França i als Estats Units per casos on, després d'actualitzacions del programari dels iPhones, aquests han perdut una gran quantitat de rendiment. Després de resolucions jurídiques, en total Apple ha pagat prop de 450 M\$ entre els dos casos [@dgccrf2020; @applebatterygate2024]. Veiem cadascun dels casos per separat.
+
+A França, el cas començà arran d'una denúncia presentada per l'associació francesa HOP, esmentada anteriorment. La fiscalia de París va començar a investigar si les actualitzacions d'iOS (versions 10.2.1 i 11.2) constituïen un delicte d'obsolescència programada en provocar una caiguda sobtada de la velocitat de dispositius com l'iPhone 6, 6s, 7 i SE [@dgccrf2020]. L'anàlisi tècnica va confirmar que la nova actualització del software reduïa la freqüència de la CPU per tal d'evitar apagades causades quan la bateria de liti estava degradada. Aquesta investigació va portar a Apple a haver de pagar 25 milions d'euros i a penjar un comunicat de rectificació a la seva web durant un mes. Cal recalcar que en aquest cas, la condemna no va ser per obsolescència programada, sinó per "pràctica comercial enganyosa per omissió (*pratique commerciale trompeuse par omission*)". És a dir, que Apple va ser sancionada per haver amagat als usuaris el fet que l'actualització alentiria el rendiment i per no informar que reemplaçant la bateria podien recuperar el rendiment del telèfon, i per tant indirectament portant als consumidors a canviar de dispositiu.
+
+Als Estats Units, el cas és també similar. En aquest cas, unes anàlisis de rendiment de *Geekbench* van demostrar que el rendiment dels telèfons queia en picat després d'instal·lar les actualitzacions d'iOS [@poole2017geekbench]. Milers d'usuaris d'iPhone van demandar Apple per frau al consumidor, enriquiment injust i alteració il·legítima del funcionament de dispositius adquirits en propietat [@applebatterygate2024]. El cas va concloure amb un acord d'indemnització d'entre 310 i 500 milions de dòlars per als afectats, sumats a uns altres 113 milions de dòlars en un pacte paral·lel amb 33 fiscals generals estatals encapçalats per Califòrnia. Al gener de 2024 Apple finalment va pagar aproximadament 65 dòlars per cada iPhone reclamat. Tot i semblar una resolució important i una gran victòria, aquestes indemnitzacions van trigar més de 6 anys en arribar, és a dir quan tots els mòbils afectats pel frau ja havien sigut retirats.
+
+
+## 2. El cas Samsung: El Galaxy Note 4
+
+Com hem mencionat, Apple no ha sigut l'única gran tecnològica que ha anat a judici per casos d'obsolescència programada. L'any 2018, l'autoritat de la competència italiana (AGCM, *AUTORITA GARANTE DELLA CONCORRENZA E DEL MERCATO*) va sancionar a Samsung per una suma de 5 milions d'euros per pràctiques comercials deslleials [@consigliostato2023]. El cas s'originava al telèfon de Samsung Galaxy Note 4, del 2014. Samsung insistia reiteradament als usuaris d'aquest dispositiu a fer una actualització del software del telèfon a Android 6.0 Marshmallow. Aquesta actualització però, provocava en el dispositiu reinicis en bucle, sobreescalfament i danys irreversibles a la placa base.
+
+El més interessant i sorprenent d'aquest cas és el desenllaç. El 19 de juny de 2023, el Consell d'Estat italià va anul·lar la multa de 5 milions d'euros a Samsung. Per què? Perquè el tribunal va dictaminar que no es podia demostrar una relació directa de causalitat entre l'actualització i els problemes dels telèfons, ni cap intent deliberat d'escurçar la vida útil dels mòbils. En part, això és degut a que el codi de Samsung és tancat, i per tant que no és possible conèixer les intencions rere l'actualització sense poder veure el codi darrere d'aquesta.
+
+
+## Conclusions i Opinió
+
+Veiem doncs que hi ha progrés en el tema de l'obsolescència programada, però que és molt lent i poc efectiu. Els processos judicials són molt lents en comparació amb un món com la tecnologia que avança a una velocitat vertiginosa. Dispositius cada vegada més capaços, amb més resolució, processament, millors càmeres, que fan semblar obsolets dispositius de 5 o més anys enrere. Una cursa seguida d'aprop pel software, que cada vegada capitalitza més aquests creixents recursos Hardware, i que cada vegada ofereix més i més prestacions. Aquesta velocitat de millora del software no pot ser seguida per tots els dispositius i la gran majoria de dispositius antics es queden enrere.
+
+Aquests dos casos judicials ens demostren que, tot i no poder anomenar-ho obsolescència programada, les grans tecnològiques segueixen impulsant aquest model de negoci frenètic, amb nous dispositius cada any, sempre més ràpids i millors que els anteriors. En la meva opinió, el cas de Samsung es podria haver tractat d'un simple error enlloc d'un intent de retirar el mòbil del mercat a la força. El cas d'Apple sí que crec que és un cas de forçar als consumidors a comprar els nous models. Tampoc crec que siguin les úniques empreses que fan aquesta pràctica, ja sigui de forma intencionada o simplement per falta de consideració pels models més antics, que al rebre les actualitzacions pels models vanguardistes no poden suportar la càrrega de processament que suposen totes les novetats que s'afegeixen.
+
+Tot això lliga molt amb un altre article meu on parlo de l'obsolescència provocada pel software, anomenat "És segur seguir usant els mòbils vells?", on destaco els problemes que té l'altre punt d'actuació, que és que el mòbil deixi de rebre actualitzacions, exposant-lo a milers de vulnerabilitats.
+
+El que m'enduc jo d'aquests casos i de la meva pròpia experiència és que la tecnologia dura molts més anys dels que ens poden fer creure, i que hem d'evitar que actualitzacions de software ens portin a deixar de fer servir els nostres telèfons. Tanmateix, confiar en els tribunals resulta insuficient. Com hem vist en el cas dels Estats Units, la resolució del cas ja no té gaire efecte 6 anys més tard de la denúncia, quan ja tots els mòbils afectats han desaparegut del mercat. Propostes com la d'Hidalgo Cerezo com són el "right to downgrade"[@hidalgocerezo2024] són bones formes de lluitar contra aquest problema, evitant que una actualització empitjori el rendiment del telèfon, o afegeixi funcionalitats indesitjades.
