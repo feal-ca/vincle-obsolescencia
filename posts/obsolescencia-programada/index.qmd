@@ -1,10 +1,10 @@
 ---
 title: "L'obsolescència programada: què és i quines mesures s'estan prenent per combatre-la"
-description: "L'obsolescència programada agreuja la crisi medioambiental, té un impacte social significatiu i representa una vulnerabilitat cap al consumidor desinformat. Quan es dona i quines mesures s'han près a Europa per combatre-la?."
+description: "L'obsolescència programada agreuja la crisi medioambiental, té un impacte social significatiu i representa una vulnerabilitat cap al consumidor desinformat. Quan es dona i quines mesures s'han près a Europa per combatre-la?"
 author: "Laia Oleart Rabanal"
 date: 2026-11-05
-categories: [obsolescència, obsolescència programada, obsolescència]
-# image: portada.jpg
+categories: [obsolescència, legislació]
+# image: EEE_logo.jpg
 ---
 
 
@@ -16,17 +16,39 @@ L’obsolescència programada és aquella que es dona quan el propi producte ja 
 
 ## Obsolescència programada als 1930s
 
-Històricament, arran de la crisi del mercat americà al 1929, Bernard London va proposar que l’obsolescència programada es fes obligatòria per llei. D’aquesta manera, es garantiria un nivell de consumició més alt que el que es tindria amb productes duradors, per tal que no es reduís la necessitat de producció que comportés una disminució dels llocs d
+Històricament, arran de la crisi del mercat americà al 1929, Bernard London va proposar que l’obsolescència programada es fes obligatòria per llei. D’aquesta manera, es garantiria un nivell de consum més alt que el que es tindria amb productes duradors, per tal que no es reduís la necessitat de producció que comportés una disminució dels llocs d
 e treball. Tot i que mai es va aprovar una llei d’aquesta mena, la idea es va anar estenent. Per tant, originalment, l’obsolescència programada estava concebuda de tal manera que les empreses poguessin llençar al mercat nous productes i garantir-ne la compra. Amb el temps, això va anar creant una tendència de tenir la versió del producte quant més nova millor [@mcveigh2019planned].
 
 ## Quins tipus d’obsolescència programada hi ha?
 Aquesta obsolescència es pot dur a terme de diverses maneres. Els principals serien:
-En primer lloc, pot succeir que el dispositiu ja no sigui compatible amb elements necessaris pel seu funcionament. Per exemple, quan el pont de càrrega que necessita ja no és l’estàndard que es fa servir i no es pot aconseguir un de nou.
-També es pot donar l’obsolescència tecnològica o funcional. Es dona quan el producte esdevé desplaçat perquè les tecnologies disponibles han millorat i altres productes disposen de millors funcionalitats que les fan més atractives.
-D’altra banda trobem el trencament del producte. És a dir, el producte està dissenyat per tal que deixi de funcionar al cap de poc temps i forçar que l’usuari l’hagi de reemplaçar, sense dependre de factors externs.
-Per últim, trobem l’obsolescència psicològica o d’estil. Aquesta està agreujada, sobretot, per campanyes de màrqueting. A mesura que van apareixen nous productes amb noves característiques, es sent que el producte antic està “antiquat” i perd atractiu.
+
+- En primer lloc, pot succeir que el dispositiu ja no sigui compatible amb elements necessaris pel seu funcionament. Per exemple, quan el pont de càrrega que necessita ja no és l’estàndard que es fa servir i no es pot aconseguir un de nou.
+
+- També es pot donar l’obsolescència tecnològica o funcional. Es dona quan el producte esdevé desplaçat perquè les tecnologies disponibles han millorat i altres productes disposen de millors funcionalitats que les fan més atractives.
+
+- D’altra banda trobem el trencament del producte. És a dir, el producte està dissenyat per tal que deixi de funcionar al cap de poc temps i forçar que l’usuari l’hagi de reemplaçar, sense dependre de factors externs.
+
+- Per últim, trobem l’obsolescència psicològica o d’estil. Aquesta està agreujada, sobretot, per campanyes de màrqueting. A mesura que van apareixen nous productes amb noves característiques, es sent que el producte antic està “antiquat” i perd atractiu.
 
 Els mòbils són molt susceptibles a aquest tipus d’obsolescència ja que es tracta d’un mercat amb canvi molt ràpid i on el temps entre llançament de nous models és molt curt, i que, a més a més, té un gran nombre de consumidors interessats. Alhora, depèn de forma important del software i de l’actualització del programari [@corrocher2025]. Entendre cadascun d’aquests tipus d’obsolescència ens pot donar una perspectiva més ample sobre els motius pels quals reemplacem els mòbil. 
 
 ## Quines mesures s’estan prenent per combatre l’obsolescència programada?
 Els primers en adoptar mesures per combatre l’obsolescència programada van ser els francesos. A l’any 2015, França incorpora a la legislació una definició d’obsolescència programada, i passa a ser un delicte castigable amb dos anys de presó i amb una multa de fins a 300.000 euros (o fins a un 5% del volum de vendes de l’empresa a França). Un any abans, França ja introduïa l’obligatorietat de comunicar durant quant de temps les peces individuals d’un producte es poden comprar a les botigues. Malgrat això, aquesta normativa era limitada ja que no obligava a res en cas que les peces ja no estiguessin disponibles a les botigues [@mcveigh2019planned].
+Al 2015 es fundava a França Halte à l’Obsolescence Programmée (HOP), una ONG amb l’objectiu de conscienciar més sobre el problema que representa l’obsolescència programada, així com promoure el compliment de la nova legislació.
+Altres països, com Itàlia i Espanya, han aplicat mesures semblants, concentrant-se en protegir el consumidor i millorant la transparència amb les actualitzacions de software [@corrocher2025].
+
+Quant a la Unió Europea, aquesta ha assumit una sèrie de mesures diferents. Al 2015, creava una estandardització per tal de generar un estàndard rellevant que es focalitzava en els aspectes principals de l’eficiència material [@mcveigh2019planned].
+S’ha instaurat els anomenats requisits de disseny Ecològic (en anglès, Ecodesign requirements). D’aquesta manera, s’estableix uns mínims que cal que cada producte compleixi quant a l’eficiència energètica. L’objectiu és reduir l’impacte mediambiental negatiu al llarg de la vida útil del dispositiu. Els requeriments poden ser específics, amb xifres i mètriques concretes que s’han de complir, o generals, que no requereixen valors sinó que es proporcioni informació sobre el manteniment del producte i fer un anàlisi del seu cicle de vida, entre d’altres [@european_commission_ecodesign].
+A més a més, al 1992 es va crear l’Etiqueta Ecològica Europea (EEE). Consisteix en una etiqueta que porten els productes i els classifica segons el seu impacte en el medi ambient. És una estratègia per tal de promoure aquells productes més ecològics, que produeixen menys efectes mediambientals adversos, disminuint així l’impacte que es té. Els criteris estan establerts per un organisme independent al mercat i que no n’intervé, i incorpora criteris al llarg de tot el cicle de vida del producte. Aquest etiquetatge no és obligatori, els fabricants poden decidir si el volen fer servir o no en els seus productes [@miteco_etiqueta_ecologica].
+
+![Logotip de l'Etiqueta Ecològica Europea. Font:[@miteco_etiqueta_ecologica_img]](EEE_logo.jpeg)
+
+Al 2019 es fundava la iniciativa Right to Repair, que consisteix en una coalició de més de 190 organitzacions, incloent ONG pel mediambient i agrupacions de reparadors [@right_to_repair_about]. Right to Repair té com a objectiu de fer les reparacions assumibles, accessibles i populars pels consumidors. Busquen fer front al problema de la creixent complexitat en el moment de reparar un dispositiu, en un món en el qual allargar la vida útil d’un dispositiu pot ser important tant a nivell propi del consumidor com a nivell de sostenibilitat.
+Finalment al 2024, es va aconseguir aprovar una legislació europea sobre la reparabilitat, que abarca preus raonables per les components separades i la prohibició de pràctiques de software que impedeixin la reparabilitat independent [@antonucci2024directive]. Tot i així, aquesta legislació és prou limitada en certs aspectes. Entre d’altres, els productes als quals s’aplica és limitat, i es pot entrar en tecnicitats legals que dificultin l’aplicació esperada de la normativa.
+
+Combinada amb la regulació per les bateries de la UE (EU Battery Regulation), s’està obligant als fabricants a fer dissenyar bateries que siguin fàcilment reemplaçables pels consumidors, de tal manera que es pugui allargar la vida útil del dispositiu. Augmentar la reparabilitat disminueix la necessitat de produir tants nous productes, fet que contribueix positivament a reduir les emissions de diòxid de carboni [@corrocher2025].
+
+Malgrat la iniciativa, portar la legislació a terme encara està costant. Avui en dia, encara 4 de 5 mòbils no compleixen aquests requeriments instaurats el 2025 [@opsomer2026smartphones]. Des del 2025 que es va implementar el requeriment a nivell europeu que tots els smartphones i tablets venuts havien de complir uns mínims de reparabilitat, així com una mètrica de reparabilitat i tenir publicada informació per reparar-los. Addicionalment, també han de proporcionar als consumidors els preus per les peces separades. 
+
+
+La lluita contra l’obsolescència programada cada cop s’està prioritzant més. Amb l’aparició en l’última dècada d’entitats i organitzacions que vetllen i advoquen pel dret a reparar, comencen a aparèixer més normatives en l’àmbit, que protegeixen al consumidor i promouen la reparabilitat. Mentre es comencen a donar aquestes primeres passes, està costant que tots els fabricants compleixin la normativa que, alhora, encara és força limitada i podria tenir un impacte major necessari. Tot i així, amb l’augment de la conscienciació sobre la reparabilitat, comencem a encaminar-nos cap a un món on la reparabilitat és realment un dret protegit i on es combat l’obsolescència programada. 
