@@ -3,7 +3,8 @@ title: "Sancions judicials i obsolescència de mòbils"
 description: "Apple i Samsung, dos gegants tecnològics en el món dels smartphones, han anat a judici per casos d'obsolescència provocada. Analitzem els casos i les seves conseqüències."
 author: "Pau Soler"
 date: 2026-11-11
-categories: [legal, smartphones, programari, obsolescència]
+categories: [obsolescència, programari, legislació]
+image: portada.png
 ---
 
 ## Introducció: El software als tribunals
@@ -11,6 +12,8 @@ categories: [legal, smartphones, programari, obsolescència]
 L'obsolescència programada és un dels grans i vells problemes nous que han aparegut amb l'auge de la tecnologia i del consumisme on, per tal de mantenir models de negoci viables, moltes empreses necessiten vendre cada vegada més i a més gent per tal de mantenir el monopoli del mercat. Programar l'obsolescència d'un producte és un dels mètodes per tal de provocar el consumisme i mantenir la renovació constant i molt sovint innecessària de tot tipus de tecnologia. L'organització francesa HOP (Halte a l’Obsolescence Programmée) és una de les pioneres en l'àmbit legal de denunciar i investigar aquests casos, i ha aconseguit que les empreses Epson i HP siguin a jutjats pendents de judici per casos d'obsolescència programada en impressores i cartutxos. Podeu veure l'article de Martí Gil Comas sobre el tema, anomenat "*HOP contra el sector de la impremta*"
 
 En el cas dels smartphones, aquesta mateixa organització i d'altres també han actuat en contra de casos denunciats per obsolescència programada de gegants tecnològics com Apple i Samsung. I en aquests casos, els tribunals ja han donat sentència, resultant en alguns casos en sancions multimilionàries. En aquest article analitzarem aquests casos jurídics i les seves repercussions, mentre reflexionem sobre què s'hi pot fer per millorar la situació actual.
+
+![Logotips d'Apple i Samsung. Fonts: [@apple_logo_img; @samsung_logo_img]. Composició d'elaboració pròpia.](portada.png){fig-align="center" width="75%"}
 
 
 ## 1. El cas Apple: L'alentiment d'iOS
