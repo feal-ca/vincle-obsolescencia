@@ -14,7 +14,7 @@ RAW = ARREL / "dades" / "raw"
 PROCESSADES = ARREL / "dades" / "processades"
 POST = ARREL.parent  # carpeta de l'entrada: hi van les figures
 
-# Còpia de GRUPS de scripts/03_sankey_mobifix.py: si en canvieu un, canvieu l'altre.
+# Còpia de GRUPS de scripts/04_causes_per_any.py: si en canvieu un, canvieu l'altre.
 GRUPS = {
     "Screen": "Pantalla",
     "Power/battery": "Bateria i alimentació",

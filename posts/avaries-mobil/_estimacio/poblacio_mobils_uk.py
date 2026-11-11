@@ -39,7 +39,7 @@ CAUSES = [  # (columna derivada, etiqueta, color), del zero cap avall
     ("resta", "Avaria: altres i desconeguda", "#F7E1DA"),
     ("sense_avaria", "Altres sortides (calaix,\nexportació, reciclatge…)", "#8CC2AF"),
 ]
-TEXT, MUTED, ESCENARI, FONS, GRID = "#333333", "#6b6b6b", "#5B6573", "#FBFAF7", "#e4e2dc"
+TEXT, MUTED, ESCENARI, FONS, GRID = "#333333", "#6b6b6b", "#5B6573", "#FFFFFF", "#e4e2dc"
 AMPLE = 0.62
 
 

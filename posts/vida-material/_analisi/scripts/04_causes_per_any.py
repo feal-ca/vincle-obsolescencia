@@ -5,9 +5,8 @@ Library: matplotlib  ·  Generated: 2026-11-10  ·  Paleta revisada: 2026-11-11
 Question: Quina és la causa d'avaria dels mòbils en cada any i com canvia, any rere any, la
 distribució de causes?
 
-Escriu posts/avaries-mobil/causes_per_any.png al costat del Sankey (que es manté). Fa servir els
-mateixos 1.842 registres i els mateixos grups d'avaria que 03_sankey_mobifix.py, així que les
-xifres de les dues imatges quadren.
+Escriu posts/avaries-mobil/causes_per_any.png a partir dels 1.842 registres de MobiFix amb
+resultat conegut i imprimeix les xifres que en cita el text de l'entrada (avaries i resultats).
 
 Ús, des de l'arrel del repositori:
     python3 posts/vida-material/_analisi/scripts/04_causes_per_any.py
@@ -39,7 +38,8 @@ PARSE = {"sep": ",", "decimal": ".", "encoding": "utf-8"}
 RESULTATS_CONEGUTS = ["Fixed", "Repairable", "End of life"]
 MIN_N = 80  # per sota, un percentatge anual són uns pocs casos: es marca amb asterisc
 
-# Mateixos grups que 03_sankey_mobifix.py i l'apartat 3 de posts/vida-material/index.qmd.
+# Mateixos grups que l'apartat 3 de posts/vida-material/index.qmd. La càmera, l'altaveu i el
+# micròfon (86 casos) van a "Altres", igual que "Other".
 GRUPS = {
     "Screen": "Pantalla",
     "Power/battery": "Bateria i alimentació",
@@ -106,7 +106,7 @@ def load(path: str) -> pd.DataFrame:
 def derive(df: pd.DataFrame) -> pd.DataFrame:
     """Reparacions per (causa, any) amb una columna 'Tot'. Es normalitza a build_chart()."""
     last = df["event_date"].max()
-    k = df[df["repair_status"].isin(RESULTATS_CONEGUTS)].copy()  # mateix filtre que el Sankey
+    k = df[df["repair_status"].isin(RESULTATS_CONEGUTS)].copy()  # només els que tenen resultat conegut
     k["any"] = k["event_date"].str[:4].astype(int).clip(lower=2013)  # 2012 només té 1 cas
     k["causa"] = k["fault_type"].map(GRUPS)
     assert k["causa"].notna().all(), "tipus d'avaria sense grup"
@@ -117,6 +117,28 @@ def derive(df: pd.DataFrame) -> pd.DataFrame:
     t.attrs["dropped"] = len(df) - len(k)
     print(f"rows after derivation: {len(k)} (sense resultat conegut: {len(df) - len(k)})")
     return t
+
+
+def xifres(df: pd.DataFrame) -> None:
+    """Imprimeix les xifres que cita el text de posts/avaries-mobil."""
+    resultats = {"Fixed": "Reparat", "Repairable": "Reparable", "End of life": "Final de vida"}
+    k = df[df["repair_status"].isin(RESULTATS_CONEGUTS)].copy()
+    k["causa"] = k["fault_type"].map(GRUPS)
+    k["resultat"] = k["repair_status"].map(resultats)
+    print(f"Reparacions de mòbil a MobiFix: {len(df):,}")
+    print(f"  sense resultat conegut (fora del gràfic): {len(df) - len(k)}")
+    print(f"  al gràfic: {len(k):,}")
+    print(f"Proveïdor The Restart Project: {(df['data_provider'] == 'The Restart Project').mean():.1%}")
+    print(f"Pantalla: {(k['causa'] == 'Pantalla').sum()} ({(k['causa'] == 'Pantalla').mean():.1%})")
+    print(f"Desconegut: {(k['causa'] == 'Desconegut').sum()} ({(k['causa'] == 'Desconegut').mean():.1%})")
+    print("Resultat:\n", k["resultat"].value_counts().to_string())
+    print(k["resultat"].value_counts(normalize=True).round(3).to_string())
+    t = pd.crosstab(k["causa"], k["resultat"])
+    t["n"] = t.sum(axis=1)
+    t["%final"] = (t["Final de vida"] / t["n"] * 100).round(1)
+    print(t.loc[ORDRE_CAUSES].to_string())
+    anys = df["event_date"].str[:4].astype(int).clip(lower=2013)  # 2012 només té 1 cas
+    print("Registres per any:\n", anys.value_counts().sort_index().to_string())
 
 
 def shares(t: pd.DataFrame) -> pd.DataFrame:
@@ -255,7 +277,9 @@ def main(argv=None):
     ap.add_argument("--out-dir", default=OUT_DIR)
     ap.add_argument("--no-show", action="store_true")
     args, _unknown = ap.parse_known_args(argv)  # tolerate a foreign argv (inspectors)
-    df = derive(load(args.data))
+    raw = load(args.data)
+    xifres(raw)
+    df = derive(raw)
     fig = build_chart(df)
     for f in save(fig, args.out_dir, SLUG):
         print("wrote", os.path.normpath(f))
