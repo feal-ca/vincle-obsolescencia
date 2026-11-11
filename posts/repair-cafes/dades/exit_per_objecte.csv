@@ -1,0 +1,25 @@
+objecte,resultat,n,total,pct,puntuacio
+Aspiradora,Reparat,7233,11869,60.9,6.5
+Aspiradora,Mig reparat,1665,11869,14.0,6.5
+Aspiradora,No reparat,2971,11869,25.0,6.5
+Cafetera,Reparat,6236,12332,50.6,6.0
+Cafetera,Mig reparat,1968,12332,16.0,6.0
+Cafetera,No reparat,4128,12332,33.5,6.0
+PC de sobretaula,Reparat,575,1048,54.9,6.6
+PC de sobretaula,Mig reparat,252,1048,24.0,6.6
+PC de sobretaula,No reparat,221,1048,21.1,6.6
+Portàtil,Reparat,1449,2863,50.6,6.6
+Portàtil,Mig reparat,779,2863,27.2,6.6
+Portàtil,No reparat,635,2863,22.2,6.6
+Smartphone,Reparat,378,727,52.0,6.4
+Smartphone,Mig reparat,185,727,25.4,6.4
+Smartphone,No reparat,164,727,22.6,6.4
+Tauleta,Reparat,361,855,42.2,6.0
+Tauleta,Mig reparat,228,855,26.7,6.0
+Tauleta,No reparat,266,855,31.1,6.0
+Impressora,Reparat,992,2612,38.0,5.7
+Impressora,Mig reparat,555,2612,21.2,5.7
+Impressora,No reparat,1065,2612,40.8,5.7
+Tots els aparells elèctrics,Reparat,69902,131962,53.0,6.3
+Tots els aparells elèctrics,Mig reparat,20346,131962,15.4,6.3
+Tots els aparells elèctrics,No reparat,41714,131962,31.6,6.3
