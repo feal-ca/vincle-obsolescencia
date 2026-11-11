@@ -1,0 +1,181 @@
+---
+title: "Quants mòbils surten d'ús i per què: dels registres de reparació a una estimació del Regne Unit"
+description: "Descrivim 1.842 reparacions de mòbils de Repair Cafés i construïm un model de balanç per estimar, per al Regne Unit del 2013 al 2019, quants mòbils hi ha en ús, quants s'hi afegeixen i quants en surten cada any."
+author: "Eki Gonzalez Flamarique"
+date: 2026-11-10
+categories: [avaries, reparabilitat, anàlisi de dades, estimació]
+image: sankey_avaries.png
+---
+
+Al Regne Unit hi havia prop de 69 milions de mòbils en ús el 2019, i aquell any se'n van vendre uns 26 milions de nous, un 28 % menys que el 2013. Cap estadística oficial no dona aquestes dues xifres: les hem estimades combinant dades de població, d'ús del mòbil i de renovació. I amaguen una paradoxa: es venen menys mòbils, però n'hi ha més en ús.
+
+En una [entrada anterior](../obsolescencia/) vam veure per què canviem de mòbil abans d'hora. Aquí volem saber quant pesen les avaries en tot això: quants mòbils deixen de fer-se servir cada any perquè s'espatllen. Cap registre no ho diu. Per acostar-nos-hi, primer mirem quines avaries arriben als Repair Cafés i com acaben, i després fem servir aquestes proporcions dins d'un model de tot el país.
+
+## 1. Quines dades de reparació tenim?
+
+MobiFix és un conjunt de reparacions de mòbils fetes als Repair Cafés i iniciatives semblants, que publica l'Open Repair Alliance [@ora2026dades]. Uns voluntaris van llegir cada registre i hi van posar un tipus d'avaria. Dels 1.916 registres que hi ha entre el 2012 i el 2020, en fem servir **1.842**, els que tenen un resultat conegut. En 360 d'aquests, el tipus d'avaria és desconegut.
+
+El resultat pot ser de tres tipus: **reparat**; **reparable**, quan es podia arreglar però aquell dia no es va acabar, per exemple perquè calia una peça; o **final de vida**, quan el mòbil no té arranjament.
+
+Abans de llegir-ne res, convé tenir presents els límits d'aquestes dades. Només hi surten els mòbils que algú ha decidit portar a reparar, no tots els que s'espatllen. Tampoc no formen una sèrie temporal comparable: més del 80 % dels registres són de The Restart Project, una organització de Londres que organitza trobades de reparació, i el nombre de casos de cada any depèn de quantes trobades es van fer i de quanta gent les va registrar. El 2020 només arriba fins a l'octubre. Finalment, no hem controlat la marca, l'edat del mòbil ni qui registra les dades, de manera que les diferències entre avaries només descriuen la mostra.
+
+## 2. Quines avaries arriben i com acaben?
+
+La pantalla és la reina de les reparacions: **1 de cada 3** (619, el 34 %). La bateria i l'alimentació en són el 12 %, i el port de càrrega, el 5 %.
+
+![Percentatge de les reparacions de mòbil de MobiFix de cada any segons el tipus d'avaria (2012–2020, n = 1.842). Cada columna suma 100 %. Els anys amb menys de 80 reparacions van marcats amb un asterisc. Font: elaboració pròpia a partir d'Open Repair Alliance (MobiFix), CC BY-SA 4.0.](causes_per_any.png)
+
+El mapa de calor ho mostra any per any: del 2014 al 2019, els anys amb prou casos, la pantalla és sempre la primera causa, amb entre el 29 % i el 37 % de les reparacions. A més, és l'avaria que arriba abans. A l'entrada sobre [la bateria del mòbil](../vida-material/) vam veure que l'edat mediana d'un mòbil que arriba a reparar amb la pantalla trencada és de 2,5 anys, davant dels 4 anys d'un mòbil amb la bateria espatllada. La bateria es va gastant; la pantalla es trenca d'un cop, a qualsevol edat. Per això la pantalla avança el moment en què un mòbil necessita una reparació.
+
+Pel que fa al resultat, la meitat dels mòbils (921) es reparen en la mateixa trobada, un 39 % (713) queden com a reparables i un 11 % (208) acaben a final de vida.
+
+![Reparacions de mòbil de MobiFix (2012–2020) segons l'any, el tipus d'avaria i el resultat. L'amplada de cada cinta és proporcional al nombre de reparacions. El pas de l'avaria al resultat agrupa tots els anys, de manera que no es pot seguir una cinta d'un any fins al resultat. Hi surten les 1.842 reparacions amb resultat conegut, de les 1.916 registrades; el 2012 (1 cas) es compta amb el 2013. Font: elaboració pròpia a partir d'Open Repair Alliance (MobiFix), CC BY-SA 4.0.](sankey_avaries.png)
+
+Les pantalles trencades gairebé sempre tenen solució: només el 4,5 % acaben a final de vida, davant de l'11 % del conjunt. On s'acumulen els mòbils sense arranjament és en les reparacions sense causa clara. Les categories «Desconegut» i «Altres» sumen 555 reparacions i aporten 117 dels 208 finals de vida. És a dir, de més de la meitat dels mòbils que no es van poder salvar no sabem quina avaria tenien.
+
+Que la pantalla acabi menys vegades a final de vida no vol dir, per si sol, que sigui més fàcil de reparar. És una de les preguntes que mirarà l'anàlisi que estem preparant sobre quines variables fan que una avaria no es pugui reparar.
+
+## 3. Com es passa de la mostra al país?
+
+Les reparacions ens donen proporcions (quina part de les avaries és la pantalla o la bateria), però no xifres de país. Al Regne Unit, MobiFix té 554 reparacions amb resultat conegut entre el 2013 i el 2019, unes 80 l'any. Com veurem, les baixes per avaria de tot el país són de l'ordre de 10 milions l'any: la mostra és unes cent mil vegades més petita, i a més la formen persones que han decidit anar a reparar.
+
+Hem triat el Regne Unit perquè és el país amb més registres a MobiFix i perquè té sèries públiques anuals de població, d'ús del mòbil i de renovació. Ens quedem en el període 2013–2019, que és el que cobreixen alhora aquestes sèries i MobiFix, abans de la distorsió de la pandèmia.
+
+Per passar a xifres de país fem servir un **balanç**, que es pot imaginar com una banyera:
+
+- l'aigua de dins és el **parc**, els mòbils que es fan servir;
+- l'aixeta són les **entrades**, els mòbils nous que es venen cada any;
+- el desguàs són les **sortides**, els que deixen de fer-se servir: perquè s'espatllen, perquè queden en un calaix, perquè es reciclen o perquè es venen a l'estranger.
+
+Les **baixes per avaria** són la part del desguàs que correspon als mòbils espatllats. El nivell de l'aigua només puja si entra més aigua de la que surt.
+
+## 4. Com es compten mòbils que ningú no compta?
+
+Al model hi ha tres menes de xifres. Algunes surten de **dades** publicades: la població, la proporció de gent que fa servir un mòbil, les subscripcions de telèfon i la part de mòbils de segona mà. Dues són **supòsits** que no coneixem bé i que fem variar entre escenaris: quant de temps es fa servir un mòbil i amb quina freqüència s'espatlla. La resta (vendes, sortides i baixes per avaria) es **calcula** perquè els comptes de la banyera quadrin.
+
+**El parc.** Ningú no compta els aparells en ús, així que fem dues estimacions, una per sota i una per sobre. La primera compta **persones**. Parteix de la població $N_t$ de l'any $t$, segons l'Oficina Nacional d'Estadística britànica (ONS) [@ons2020poblacio], i de la proporció d'adults que fan servir un mòbil, $m_t$, segons l'Ofcom, el regulador britànic de telecomunicacions [@ofcom2013cmr; @ofcom2019tracker]. Hi afegim els menors i les persones que tenen dos mòbils. Aquesta estimació es queda curta perquè no compta els telèfons d'empresa ni els segons telèfons.
+
+La segona compta **targetes SIM**: les subscripcions mòbils de telèfon que registra l'Ofcom, sense les de només dades ni les de màquines com alarmes o datàfons [@ofcom2017cmr; @ofcom2020telecoms]. Aquesta s'excedeix, perquè una persona pot tenir dues targetes en un sol aparell.
+
+Com a valor central, el parc $P_t$ és la mitjana de les dues:
+
+$$
+P_t = \tfrac{1}{2}\left(P_t^{\text{persones}} + P_t^{\text{SIM}}\right)
+$$
+
+**Les entrades.** Si cada mòbil es queda de mitjana $D_t$ anys amb el primer propietari, cada any se'n renoven $P_t / D_t$. Una part $u_t$ d'aquestes renovacions són mòbils de segona mà, que no compten com a vendes noves. Deloitte, una consultora que fa una enquesta anual de consum mòbil al Regne Unit, mesura aquesta part entre els mòbils en ús: del 10 % el 2015 al 15 % el 2019 [@deloitte2015mobil; @deloitte2022digital]. Suposem que és la mateixa entre els mòbils que es renoven:
+
+$$
+V_t = \frac{P_t}{D_t}\,(1 - u_t)
+$$
+
+La durada $D_t$ surt de Kantar, una empresa d'estudis de mercat que segueix quant de temps passa fins que es substitueix un smartphone. El 2013 eren 20 mesos [@canvi_smartphonesJRC116106]. El 2016, Kantar va canviar de mètode, però aquell any va publicar les dues mesures alhora. La diferència entre totes dues ens permet traduir la sèrie nova a l'antiga: el 2018 surten uns 26 mesos [@cnbc2019kantar]. El 2019 l'hem extrapolat, uns 27 mesos.
+
+**Les sortides.** Són el que falta perquè el parc de l'any següent quadri:
+
+$$
+S_t = P_t + V_t - P_{t+1}
+$$
+
+**Les baixes per avaria.** Suposem que els mòbils s'espatllen a un ritme constant $h$, en avaries per mòbil i any. Per estimar-lo fem servir l'Eurobaròmetre especial 503 [@eurobarometre2020_503], l'enquesta de la Comissió Europea. Al Regne Unit (n = 1.023, desembre de 2019) preguntava per què s'havia substituït l'últim dispositiu digital: mòbil, tauleta o portàtil. Cada persona podia donar fins a tres motius, i entre tots sumaven 119 respostes per cada 100 persones. D'aquestes, 41 eren «el vaig trencar», un 35 % dels motius.
+
+Si un 35 % dels mòbils acaben el primer ús trencats i aquest ús dura 2,24 anys, el ritme és 0,35 ÷ 2,24 ≈ 0,15. Dit d'una altra manera, cada any s'espatllen uns 15 de cada 100 mòbils en ús. Les renovacions de l'any per aquesta probabilitat donen les baixes per avaria:
+
+$$
+F_t = h \cdot D_t \cdot \frac{P_t}{D_t} = h \cdot P_t
+$$
+
+La durada s'anul·la: les baixes per avaria depenen de quants mòbils hi ha en ús, no de quants se'n venen. El 2019, amb el valor sense arrodonir, 0,154 × 69,2 milions ≈ 10,6 milions. Aquestes baixes es reparteixen per causa amb els percentatges de MobiFix al Regne Unit (n = 554).
+
+| Variable | Símbol | Tipus | Font | 2013 | 2019 |
+|---|---|---|---|---|---|
+| Població | $N$ | dada | ONS | 64,1 M | 66,8 M |
+| Adults que fan servir un mòbil | $m$ | dada | Ofcom | 92 % | 94 % |
+| Parc comptant persones | $P^{\text{persones}}$ | calculada | ONS i Ofcom | 54,0 M | 57,4 M |
+| Parc comptant SIM | $P^{\text{SIM}}$ | dada | Ofcom | 78,2 M | 81,0 M |
+| Parc (mitjana) | $P$ | calculada | | 66,1 M | 69,2 M |
+| Durada de primer ús | $D$ | supòsit | Kantar | 1,67 anys (20 mesos) | 2,24 anys (27 mesos) |
+| Part de segona mà | $u$ | dada | Deloitte | 0,08 | 0,15 |
+| Ritme d'avaries | $h$ | supòsit | Eurobaròmetre 503 | 0,15 | 0,15 |
+| Vendes de mòbils nous | $V$ | calculada | | 36,5 M | 26,2 M |
+| Sortides | $S$ | calculada | | 35,7 M | 25,3 M |
+| Baixes per avaria | $F$ | calculada | | 10,2 M | 10,6 M |
+
+: Variables del model, escenari central. La part de segona mà del 2013 és extrapolada; la durada del 2019, també. Elaboració pròpia.
+
+## 5. Quants mòbils hi ha, quants entren i quants surten?
+
+![Estimació del parc de mòbils en ús al Regne Unit (a dalt) i dels mòbils que hi entren i en surten cada any (a baix), escenari central. Les dues franges tenen la mateixa escala. A dalt, el bigoti va de l'estimació comptant persones a la que compta SIM; a baix, marca el rang de baixes per avaria entre l'escenari optimista i el pessimista. És una estimació, no una mesura. Font: elaboració pròpia a partir de l'ONS, l'Ofcom, Kantar, Deloitte, l'Eurobaròmetre 503 i Open Repair Alliance (MobiFix).](poblacio_mobils_uk.png)
+
+El parc és gairebé estable: passa de **66,1 milions** de mòbils el 2013 a **69,2 milions** el 2019, un 5 % més. Les entrades i les sortides, en canvi, baixen any rere any. Les vendes de mòbils nous passen de 36,5 a 26,2 milions l'any (−28 %) i les sortides, de 35,7 a 25,3 milions (−29 %): prop d'un 30 %, com arrodoneix el títol del gràfic.
+
+Cada any entren entre 0,1 i 0,9 milions de mòbils més dels que surten, i aquest saldo és exactament el que creix el parc. El 2013, per exemple, n'hi havia 66,1 milions, en van entrar 36,5 i en van sortir 35,7: 66,1 + 36,5 − 35,7 = 66,9 milions a començament del 2014.
+
+Les baixes per avaria es mantenen al voltant dels **10 milions l'any**. El 2019 se'n reparteixen així:
+
+- 3,5 milions per la pantalla;
+- 2,2 milions per la bateria;
+- 1,3 milions pel programari;
+- 1,3 milions per botons, port de càrrega o danys interns;
+- 2,4 milions sense una causa clara («Desconegut» o «Altres»).
+
+Aquest últim grup és el mateix que a la primera part acumulava els mòbils sense arranjament.
+
+## 6. Per què se'n venen menys si n'hi ha més?
+
+El parc no depèn només de quants mòbils entren, sinó també de quant de temps s'hi queden. Si cada mòbil es fa servir més temps, n'hi ha prou amb menys vendes per mantenir el mateix parc. La baixada del 28 % de les vendes es pot descompondre en tres efectes:
+
+1. La durada de primer ús creix un 34 %, de 20 a uns 27 mesos. Amb el parc constant, això sol fa baixar les vendes un 26 %.
+2. La part de mòbils de segona mà creix, i això resta un 8 % més a les vendes noves.
+3. El parc creix un 5 %, i això compensa una part de les dues baixades.
+
+El saldo positiu ve de la població. El Regne Unit va passar de 64,1 a 66,8 milions d'habitants (+4 %), i la proporció d'adults que fan servir un mòbil, del 92 % al 94 %. Això fa uns 0,5 milions de mòbils més cada any, entre el 0,3 % i el 3,4 % de les vendes. Per això, al gràfic, la barra de les entrades i la de les sortides semblen igual de llargues. I com que les sortides són el que queda per quadrar el balanç, si el parc gairebé no es mou han de baixar al mateix ritme que les vendes.
+
+Dins de les vendes també canvia què es ven. Les vendes de smartphones del model baixen menys que el total: un 15 %, de 28,1 a 23,9 milions. La resta de la baixada són sobretot mòbils bàsics, els de tecles. A començament del 2013 encara eren una quarta part dels mòbils venuts, ja que els smartphones eren el 74 % segons l'empresa d'estudis de mercat GfK [@ofcom2013cmr]. Per al 2019 hem suposat que eren menys d'un de cada deu. Amb aquest supòsit, dels 10,3 milions de vendes que es perden entre el 2013 i el 2019, uns 6 milions serien mòbils de tecles que ja no es compren.
+
+Les baixes per avaria segueixen el parc i no les vendes, perquè $F_t = h \cdot P_t$. Per això es mantenen estables mentre les sortides totals baixen, i la seva part dins les sortides passa de 3 de cada 10 el 2013 a 4 de cada 10 el 2019. Aquest resultat no és una observació: és una conseqüència del supòsit d'un ritme d'avaries constant.
+
+## 7. Ho confirmen altres fonts?
+
+Que el balanç quadri no valida el model, perquè surt del mateix càlcul. El que el reforça és que les fonts que no hem fet servir per calcular apunten en la mateixa direcció. Totes tres parlen del mateix: la gent allarga el temps que fa servir el mòbil.
+
+- **Les vendes de smartphones baixen.** Segons Canalys, una consultora que compta els aparells que els fabricants envien a les botigues, van passar de 30 milions el 2013 a 27 milions el 2017 (−10 %), amb un màxim de 32 milions el 2015 [@deloitte2018mercat]. En els mateixos anys, el nostre model dona una baixada semblant: de 28,1 a 25,6 milions (−9 %).
+- **Els mòbils en ús són més vells.** Segons Deloitte, el 2016 el 66 % dels smartphones en ús s'havien comprat en els 18 mesos anteriors, i el 2018, el 59 %. En el mateix període, els contractes només de SIM, en què l'usuari conserva el telèfon que ja té, van passar del 19 % (2015) al 32 % (2018) [@deloitte2018renovacio].
+- **Els cicles de renovació s'allarguen.** El 2017, la cadena de botigues Dixons Carphone deia que els seus clients canviaven de mòbil cada 29 mesos, quan abans ho feien cada 24 [@dixons2017cicle]. Entre els clients de l'operadora O2 amb contracte només de SIM, l'edat mitjana del telèfon va passar de 2,55 anys el 2012 a 2,93 anys el 2015 [@greenalliance2016upgrade].
+
+Una font no hi coincideix. La consultora MarketLine dona un mercat creixent, amb 36,6 milions de mòbils el 2016 i 37,6 milions el 2017 [@marketline2017mobils]. Només n'hem pogut llegir un resum públic, mesura un volum de consum que no sabem com es calcula i no coincideix amb cap de les altres fonts, de manera que no l'hem fet servir.
+
+## 8. Quant ens en podem fiar?
+
+**Són fiables l'ordre de magnitud i la tendència.** Repetint el càlcul comptant només persones o només SIM, el parc del 2019 va de 57 a 81 milions: el valor central pot estar desviat un 20 % amunt o avall. També hem provat dos escenaris extrems, que mouen alhora els dos supòsits:
+
+- el **pessimista** combina una durada més curta, la de cinc grans països europeus en lloc de la britànica, i un ritme d'avaries més alt;
+- l'**optimista** combina una durada més llarga i un ritme d'avaries més baix.
+
+En tots els casos, les vendes i les sortides baixen entre un 26 % i un 31 % i el parc creix entre un 4 % i un 6 %. No són intervals de confiança, sinó cotes: no combinen tots els extrems possibles, només els que empitjoren o milloren l'obsolescència alhora.
+
+**No ho és el nombre de baixes per avaria.** Depèn de què es compta com a avaria. Si s'hi afegeixen els mòbils substituïts perquè anaven lents (el 25 % de l'Eurobaròmetre), surten 18 milions el 2019. Si només es compten els defectes tècnics estrictes, que en una enquesta austríaca (n = 1.009) eren un 10 % de les substitucions [@wieser2015akwien], en surten 3 milions. Entre un extrem i l'altre hi ha un factor 5. A més, la pregunta de l'Eurobaròmetre parlava de qualsevol dispositiu digital, no només de mòbils.
+
+**Tampoc no ho és la mida del saldo de cada any.** El signe és sòlid, perquè el parc creix en tots els escenaris. Però que el saldo sigui de 0,1 milions el 2015 i de 0,9 el 2018 depèn de petites variacions de les fonts, com el milió i mig de SIM de més que compta l'Ofcom el 2019. Aquestes variacions queden dins de la banda entre l'estimació per persones i la de SIM.
+
+**El repartiment per causes depèn de quins registres es fan servir.** Amb totes les reparacions de MobiFix al Regne Unit, la pantalla és el 27,8 % de les avaries; si només es compten les que van acabar a final de vida (n = 87), és el 12,6 %. Hem fet servir el primer valor perquè té més casos, però el segon s'assembla més a un mòbil que surt del parc perquè no té arranjament.
+
+## 9. I ara, què?
+
+Tornem a la paradoxa del principi: es venen menys mòbils, però n'hi ha més en ús. Segons la nostra estimació, la gent els fa servir més temps, n'hi ha més de segona mà i el parc creix poc a poc amb la població. Les fonts independents confirmen sobretot el primer: els cicles de renovació s'allarguen.
+
+La pregunta del principi era quants mòbils deixen de fer-se servir per una avaria. La resposta és uns 10 milions l'any al Regne Unit, entre 3 i 18 segons què comptem com a avaria. Si el ritme d'avaries es manté constant, com suposa el model, una part cada vegada més gran dels mòbils que surten d'ús ho fan perquè s'espatllen, i una de més petita per altres motius, com renovar-lo, guardar-lo al calaix o vendre'l. És una hipòtesi del model, però és coherent amb la tesi d'aquest blog vista des de l'altra banda: quan la renovació perd pes, el que decideix quan es jubila un mòbil és cada vegada més si l'avaria té arranjament.
+
+Per a VINCLE DIGITAL, això vol dir que la reparació és cada vegada més central. Cada pantalla o bateria que es pot canviar és un mòbil que torna al parc en lloc d'anar al calaix. I la primera part de l'entrada indica on és la dificultat: no tant a la pantalla, que gairebé sempre té solució, com a les avaries que els registres ni tan sols saben anomenar.
+
+Queden dues feines per fer. La primera és l'anàlisi que estem preparant sobre quines variables fan que una avaria no es pugui reparar. La segona és afinar el ritme d'avaries amb una enquesta que pregunti només per mòbils, perquè és la font principal d'incertesa del model.
+
+::: {.callout-note collapse="true"}
+## Com ho hem fet
+
+- **Parc comptant persones.** Població × (0,81 × 1,05 × $m_t$ + 0,06). El 0,81 és la part de la població que té 16 anys o més; el 1,05 suma el 6 % d'usuaris amb dos números (Ofcom, 2019); el 0,06 són els mòbils de menors per habitant (uns 4 milions de nens de 8 a 15 anys), un ordre de magnitud.
+- **Durada.** La sèrie antiga de Kantar per a la Gran Bretanya dona 20,0, 22,0, 23,5 i 23,4 mesos (2013–2016). La nova dona 27,7 mesos el 2018; li restem la diferència entre les dues sèries que Kantar dona per a cinc països europeus el 2016 (1,8 mesos). El 2017 és interpolat i el 2019 suma un mes.
+- **Causes.** Percentatges de MobiFix al Regne Unit en finestres de tres anys: cada any es calcula amb el de davant i el de darrere, per tenir prou casos.
+- **Moment de la mesura.** Cada font mesura en un moment diferent (l'Ofcom, al gener i el febrer; l'ONS, a mitjan any; les vendes, l'any sencer), i ho hem tractat tot com si fos el mateix any. El parc del 2020, necessari per a les sortides del 2019, s'extrapola amb la tendència del 2018 al 2019.
+- **Codi i dades.** El gràfic de reparacions es reprodueix amb `posts/vida-material/_analisi/scripts/03_sankey_mobifix.py`. El model és a la carpeta `_estimacio/` d'aquesta entrada: `escenaris_uk.py` el calcula, `balanc_escenaris_uk.csv` en guarda el resultat i `poblacio_mobils_uk.py` dibuixa el gràfic. Les fonts de cada xifra són a `fonts_externes_uk.md` i els supòsits, a `ordres_de_magnitud_uk.md`. Les dades d'Open Repair tenen llicència CC BY-SA 4.0.
+:::

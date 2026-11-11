@@ -4,6 +4,7 @@ description: "Amb l'experiència pròpia i dades de més de 200.000 reparacions,
 author: "Ferran Alía Castillejos"
 date: 2026-11-11
 categories: [reparabilitat, experiència pròpia]
+image: portada.png
 execute:
   echo: false
   freeze: auto       # les gràfiques s'executen al teu ordinador; GitHub publica el resultat desat a _freeze/
@@ -31,11 +32,11 @@ Hi ha formats semblants. Les restart parties, que va començar The Restart Proje
 
 El que vaig viure jo era una barreja de tot això. Tot va ser força informal, qui portava el punt multimèdia havia estat el meu professor de robòtica de petit, i em va avisar per si m'interessava. La gent portava un munt d'ordinadors vells (i en tenien un altre munt de donats), i la idea era arreglar-los o veure si s'hi podia fer res, mentre en paral·lel es feia una install party per posar-los un Linux lleuger perquè tornessin a ser útils. Un cop arreglats, els que algú havia portat propis se'ls van endur, i els que s'havien donat van anar a parar a entitats o persones que els necessitessin.
 
-El moviment ha crescut de pressa. D'aquell primer repair café d'Amsterdam s'ha passat a més de 1.000 el 2016, més de 2.000 el 2021 [@moalem2021] i més de 3.800 el 2025 [@wikipedia2025repaircafe]. La Open Repair Alliance calcula que al món hi ha almenys 4.000 grups de reparació comunitària actius [@ora2024].
+El moviment ha crescut de pressa. D'aquell primer repair café d'Amsterdam s'ha passat a més de 1.000 el 2016, més de 2.000 el 2021 i més de 3.500 el 2025 [@rci2016visita; @moalem2021; @rci2025visita]. La Open Repair Alliance calcula que al món hi ha almenys 4.000 grups de reparació comunitària actius [@ora2024].
 
 ```{python}
 #| label: fig-creixement
-#| fig-cap: "Font: elaboració pròpia a partir de Repair Café International, Wikipedia, Moalem i Mosgaard (2021) i Open Repair Alliance (2024)."
+#| fig-cap: "Font: elaboració pròpia a partir de Repair Café International (2016 i 2025), Moalem i Mosgaard (2021) i Open Repair Alliance (2024)."
 g.estil(g.creixement())
 ```
 
@@ -85,7 +86,7 @@ En mòbils i tauletes les proporcions canvien. Les peces pesen menys (19 %), i e
 
 ### El repair café
 
-Els mateixos repair cafés també tenen els seus límits. En una enquesta del 2016 a 317 repair cafés, pocs veien obstacles greus, però més de la meitat deien que costava trobar voluntaris i visitants, i un 20 % també en deia el mateix del finançament. A més, no solen tenir les peces a mà. El 71 % compra els recanvis per internet, així que sovint la reparació no es pot acabar el mateix dia, i això explica en part tants casos a mitges. També depenen del que publiqui el fabricant, perquè el 77 % en consulta el web durant les sessions. Una revisió de 44 estudis hi afegeix que molts organitzadors són jubilats i que corren el risc de cremar-se, perquè mantenir la iniciativa és una feina constant i voluntària.
+Els mateixos repair cafés també tenen els seus límits. En una enquesta del 2016 a 317 repair cafés, pocs veien obstacles greus, però més de la meitat deien que costava trobar voluntaris i visitants. A més, no solen tenir les peces a mà. El 71 % compra els recanvis per internet, així que sovint la reparació no es pot acabar el mateix dia, i això explica en part tants casos a mitges. També depenen del que publiqui el fabricant, perquè el 77 % en consulta el web durant les sessions. Una revisió de 44 estudis hi afegeix que molts voluntaris són jubilats i que els organitzadors corren el risc de cremar-se, perquè mantenir la iniciativa és una feina constant i voluntària.
 
 En el meu cas hi havia un local, algú conegut que s'encarrega de tota l'organització i un munt d'ordinadors donats amb què treballar. Si falta qualsevol d'aquestes coses, és difícil que una iniciativa així arrenqui, i potser per això a Espanya n'hi ha tan poques, no es gens fàcil.
 

@@ -1,0 +1,113 @@
+{
+ "title": "Parc estimat de mòbils del Regne Unit i fluxos anuals (2013–2019)",
+ "language": "es",
+ "problem": {
+  "archetype": "category-breakdown-over-time",
+  "catalog_functions": [
+   "data-over-time",
+   "comparisons",
+   "proportions"
+  ],
+  "statement": "¿Cómo evoluciona cada año la población estimada de móviles en uso del Reino Unido, cuántos entran y cuántos salen (por causa), con su incertidumbre?",
+  "mode": "explanatory"
+ },
+ "user": {
+  "profile": "general-public",
+  "modifiers": [
+   "cvd"
+  ]
+ },
+ "tasks": {
+  "why": {
+   "goal": "present",
+   "search": "browse",
+   "query": "compare"
+  },
+  "low_level": [
+   "trend",
+   "compare",
+   "gist",
+   "determine-range"
+  ],
+  "temporal": [
+   "pattern",
+   "rate-of-change"
+  ],
+  "shneiderman": [
+   "overview"
+  ]
+ },
+ "data": {
+  "dataset_type": "table",
+  "source_file": "../balanc_escenaris_uk.csv",
+  "keys": [
+   {
+    "role": "time",
+    "type": "temporal",
+    "cardinality": 7,
+    "grain": "year",
+    "source_column": "any"
+   },
+   {
+    "role": "category",
+    "type": "categorical",
+    "cardinality": 5,
+    "source_column": "causa de sortida (avaria_*, sortides_sense_avaria)"
+   }
+  ],
+  "values": [
+   {
+    "role": "measure",
+    "type": "quantitative",
+    "semantics": "count",
+    "derived": true,
+    "derivation": "parc en ús (escenaris_uk.py)",
+    "unit": "milions de mòbils"
+   },
+   {
+    "role": "measure2",
+    "type": "quantitative",
+    "semantics": "count",
+    "derived": true,
+    "derivation": "vendes i sortides per causa",
+    "unit": "milions de mòbils per any"
+   },
+   {
+    "role": "lower",
+    "type": "quantitative",
+    "semantics": "count",
+    "derived": true,
+    "derivation": "banda baixa del parc; escenari optimista de les baixes per avaria",
+    "unit": "milions"
+   },
+   {
+    "role": "upper",
+    "type": "quantitative",
+    "semantics": "count",
+    "derived": true,
+    "derivation": "banda alta del parc; escenari pessimista de les baixes per avaria",
+    "unit": "milions"
+   }
+  ],
+  "items": "tiny",
+  "filters": [
+   "escenari in central, pessimista, optimista"
+  ],
+  "normalization": null,
+  "parse": {
+   "delimiter": ",",
+   "decimal": "."
+  }
+ },
+ "constraints": [
+  "static-only",
+  "uncertainty"
+ ],
+ "library": "matplotlib",
+ "host": "script",
+ "stage_validation": {
+  "stage1": "confirmed",
+  "stage2": "confirmed"
+ },
+ "history": "v1 (two side-by-side panels by route and by cause) failed stage-1 validation by the user: duplicated inflows, no stock."
+}
