@@ -1,0 +1,125 @@
+---
+title: "Ecodisseny, reparabilitat i durabilitat"
+description: "Repàs breu de les mesures i els estàndards dissenyats a la UE i a França per 
+a afavorir la fabricació de productes electrònics sostenibles"
+author: "Martí Gil Comas"
+date: 2026-11-11
+categories: [reparabilitat, unió europea]
+# image: etiqueta_energetica.png
+---
+
+En aquests últims anys, a la Unió Europea (i, sobretot, a França) s'han dissenyat un seguit de
+mesures que afecten als productes electrònics. El seu objectiu és promoure el disseny de productes
+sostenibles i informar als consumidors del grau de sostenibilitat d'allò que consumeixen.
+En aquest article expliquem breument aquestes mesures, des dels requeriments d'ecodisseny que
+imposa la Unió Europea sobre mòbils i tablets, fins als índexs de reparabilitat i durabilitat
+que s'han dissenyat per a quantificar la sostenibilitat dels productes electrònics.
+
+## Requirements d’ecodisseny imposats per la Unió Europea
+
+L’ecodisseny consisteix en un disseny i desenvolupament de productes que considera els efectes
+ambientals a cada fase del seu cicle de vida, des de l’extracció de matèria prima fins a la
+fabricació, distribució, ús i el fi de la vida útil. La Unió Europea ha establert un marc europeu
+d’ecodisseny que obliga als fabricants i/o proveïdors a complir uns mínims en el disseny dels seus
+productes.
+
+Per al cas dels telèfons mòbils i les tablets, per exemple, des de 2025 que la Unió Europea
+estableix els següents requisits:
+
+- Han de **resistir caigudes accidentals** i rascades a la seva pantalla, i han d’estar protegits
+contra la pols i l’aigua.
+
+- Les bateries han d’aguantar almenys **800 cicles de càrrega i descàrrega** i alhora mantenir
+almenys un 80% de la seva capacitat inicial.
+
+- Han de complir unes normes concretes sobre la seva **reparabilitat i desmuntatge**, obligant als
+proveïdors a ser capaços de proveir els components crítics per a la reparació en 5-10 dies
+laborables, i que aquests components estiguin disponibles durant 7 anys després de la venta del
+model de producte en el mercat europeu.
+
+- Almenys **5 anys d’actualitzacions** per als sistemes operatius, després d’haver posat en mercat
+l’última unitat del model de producte.
+
+- **Accés no-discriminatori a reparació professional** per a qualsevol software / firmware que es
+necessiti reemplaçar.
+
+A més, els telèfons mòbils ara han de tenir informació disponible sobre la seva eficiència energètica,
+longevitat de la bateria i altres característiques, entre les quals hi ha un índex de reparabilitat
+similar al francès (del qual parlarem a la següent secció).
+
+![Esquema de l'etiqueta energètica que han de mostrar els telèfons mòbils en els llocs de venta.
+1. L'escala d'eficiència energètica (classificació de A a G).
+2. La classe d'eficiència energètica a la que pertany el producte.
+3. La durada de cada cicle de la bateria.
+4. La classe de fiabilitat contra repetides caigudes accidentals.
+5. Durada de la bateria en cicles de càrrega i descàrrega. 6. Classe o índex de reparabilitat.
+7. Índex de protecció contra partícules externes (pols, aigua...). Font: [@ue_smartphones]](etiqueta_energetica.png){fig-align="center" width="75%"}
+ 
+## L’índex de reparabilitat francès
+
+El 2019, el govern francès va aprovar una llei que obliga als proveïdors a mostrar informació
+clara als consumidors sobre la reparabilitat d’equips electrònics. A partir del gener de 2021 es
+va introduir l’índex de reparabilitat, i avui dia aquest índex existeix per a telèfons mòbils,
+ordinadors portàtils, televisors, electrodomèstics, el sector automobilístic, etc.
+
+L’índex té en compte 5 criteris principals per a avaluar la reparabilitat dels productes:
+
+- La **claredat de la documentació**, per a que permeti a professionals i a usuaris reparar el producte
+sense coneixement expert.
+
+- La complexitat del procés de **desmuntatge**, i les eines especialitzades que
+es necessiten per fer-ho. Quantes menys eines i quant més disponibles siguin, més reparable es
+considera el producte.
+
+- La **disponibilitat** (a llarg termini, després de la compra del producte) **dels components
+necessaris** per a la seva reparació.
+
+- El **preu** de tals components.
+
+- Aspectes específics per a cada tipus de producte. Per exemple, per a telèfons mòbils, aspectes
+a tenir en compte són: que hi hagi informació sobre la natura de les actualitzacions de software,
+que s’ofereixi assistència en línia al client i que es permeti restablir el programari.
+
+![Una taula amb el càlcul de l'índex de reparabilitat d'un smartphone *Fairphone*. Font: [@indicereparabilite_spareka].](index_reparabilitat_fairphone.png){fig-align="center" width="75%"}
+
+Els proveïdors estan obligats a mostrar l’índex als consumidors, i el fabricant està obligat a
+proveir aquest índex. L’índex s’ha de mostrar juntament amb el producte a les botigues, tant
+físiques com en línia.
+
+![Si visiteu la web francesa de Amazon (amazon.fr) trobareu sota alguns articles electrònics una etiqueta oficial mostrant l'índex de reparabilitat. Per a aquest portàtil, és un índex de 6.0. Font: [@amazonfr].](amazon_fr.png){fig-align="center" width="75%"}
+
+Aquest índex de reparabilitat també s’ha implementat a Bèlgica [@belgium_repair] i Espanya [@spain_repair].
+L’existència d’aquest índex de reparabilitat suposa un pas important en la lluita contra
+l’obsolescència programada. L’índex de reparabilitat encoratja als fabricants a millorar els
+dissenys dels seus productes per a que siguin fàcilment reparables, millorant la seva vida útil
+i generant menys residus electrònics, per tal de fer els productes més atractius per als
+consumidors.
+
+Algunes fonts rellevants: [@frenchreparabilityindex], [@righttorepair_frenchindex].
+
+## L'índex de durabilitat
+
+Un producte pot ser fàcilment reparable i, tot i això, tenir una vida útil reduïda, o requerir
+masses reparacions com per a que valgui la pena. A partir del 2025, a França es va començar a
+implementar l’índex de durabilitat, que es centra en quantificar la longevitat i robustesa dels
+productes. Entre les característiques que s’avaluen, s’inclou:
+
+- La seva **resistència al desgast** sota ús regular.
+
+- La **disponibilitat dels components** necessaris per a reparar el producte (que també és un criteri
+que es té en compte per a l’índex de reparabilitat).
+
+- La **fiabilitat dels components més crítics** del producte (motors, pantalles de televisors…).
+Parlem de components que són imprescindibles i difícilment substituïbles.
+
+- **Longevitat de suport** al software (actualitzacions de funcionalitat i seguretat).
+
+![L'etiqueta oficial de l'índex de durabilitat. Font: [@enviropass]](index_durabilitat.png){fig-align="center" width="75%"}
+
+L’índex de durabilitat és complementari de l’índex de reparabilitat i no pretén substituir
+l’anterior. Essencialment, compleix un propòsit similar al del seu antecessor, fent que les
+empreses optin per dissenyar productes amb una vida útil elevada.
+
+Fonts rellevants: [@enviropass]
+
+
