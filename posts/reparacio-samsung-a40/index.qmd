@@ -124,4 +124,4 @@ On l'A40 ha quedat realment antic és en el _software_. Es va quedar a Android 1
 
 Ara que torna a funcionar, la idea és fer-lo servir per experimentar amb la part de _software_: rootejar-lo, provar LineageOS i coses per l'estil. Si me'n surto, potser li podré donar les actualitzacions que Samsung ja no li dona.
 
-En una altra entrada faré servir aquesta experiència per proposar una fitxa de criteris de reparabilitat pensada per als mòbils que arriben com a donació a VINCLE DIGITAL.
+Aquesta experiència m'ha servit per proposar una [fitxa de criteris de reparabilitat](../fitxa-reparabilitat/) pensada per als mòbils que arriben com a donació a VINCLE DIGITAL.

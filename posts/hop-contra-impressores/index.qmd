@@ -9,8 +9,8 @@ categories: [obsolescència, normativa]
 ---
 
 Halte a l’Obsolescence Programmée (HOP) és una organització francesa sense ànim de lucre fundada
-el 2015, el mateix any que França es convertí en el primer país en prohibir l’obsolescència
-programada com a pràctica de negoci. És oficialment reconeguda com una organització nacional
+el 2015, el mateix any que França es convertí en el primer país en [prohibir l’obsolescència
+programada](../obsolescencia-programada/) com a pràctica de negoci. És oficialment reconeguda com una organització nacional
 per a la protecció del medi ambient. El seu objectiu és combatre l’obsolescència programada i
 garantir l’existència de productes duradors i reparables. Això ho fan tant per defensar els
 interessos dels consumidors com per a lluitar contra la destrucció del medi ambient.
