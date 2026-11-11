@@ -21,10 +21,14 @@ e treball. Tot i que mai es va aprovar una llei d’aquesta mena, la idea es va 
 
 ## Quins tipus d’obsolescència programada hi ha?
 Aquesta obsolescència es pot dur a terme de diverses maneres. Els principals serien:
-En primer lloc, pot succeir que el dispositiu ja no sigui compatible amb elements necessaris pel seu funcionament. Per exemple, quan el pont de càrrega que necessita ja no és l’estàndard que es fa servir i no es pot aconseguir un de nou.
-També es pot donar l’obsolescència tecnològica o funcional. Es dona quan el producte esdevé desplaçat perquè les tecnologies disponibles han millorat i altres productes disposen de millors funcionalitats que les fan més atractives.
-D’altra banda trobem el trencament del producte. És a dir, el producte està dissenyat per tal que deixi de funcionar al cap de poc temps i forçar que l’usuari l’hagi de reemplaçar, sense dependre de factors externs.
-Per últim, trobem l’obsolescència psicològica o d’estil. Aquesta està agreujada, sobretot, per campanyes de màrqueting. A mesura que van apareixen nous productes amb noves característiques, es sent que el producte antic està “antiquat” i perd atractiu.
+
+- En primer lloc, pot succeir que el dispositiu ja no sigui compatible amb elements necessaris pel seu funcionament. Per exemple, quan el pont de càrrega que necessita ja no és l’estàndard que es fa servir i no es pot aconseguir un de nou.
+
+- També es pot donar l’obsolescència tecnològica o funcional. Es dona quan el producte esdevé desplaçat perquè les tecnologies disponibles han millorat i altres productes disposen de millors funcionalitats que les fan més atractives.
+
+- D’altra banda trobem el trencament del producte. És a dir, el producte està dissenyat per tal que deixi de funcionar al cap de poc temps i forçar que l’usuari l’hagi de reemplaçar, sense dependre de factors externs.
+
+- Per últim, trobem l’obsolescència psicològica o d’estil. Aquesta està agreujada, sobretot, per campanyes de màrqueting. A mesura que van apareixen nous productes amb noves característiques, es sent que el producte antic està “antiquat” i perd atractiu.
 
 Els mòbils són molt susceptibles a aquest tipus d’obsolescència ja que es tracta d’un mercat amb canvi molt ràpid i on el temps entre llançament de nous models és molt curt, i que, a més a més, té un gran nombre de consumidors interessats. Alhora, depèn de forma important del software i de l’actualització del programari [@corrocher2025]. Entendre cadascun d’aquests tipus d’obsolescència ens pot donar una perspectiva més ample sobre els motius pels quals reemplacem els mòbil. 
 
