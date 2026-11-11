@@ -12,6 +12,7 @@ import pandas as pd
 ARREL = Path(__file__).resolve().parent
 RAW = ARREL / "dades" / "raw"
 PROCESSADES = ARREL / "dades" / "processades"
+POST = ARREL.parent  # carpeta de l'entrada: hi van les figures
 
 # Còpia de GRUPS de scripts/03_sankey_mobifix.py: si en canvieu un, canvieu l'altre.
 GRUPS = {
