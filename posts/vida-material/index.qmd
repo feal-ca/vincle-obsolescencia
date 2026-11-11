@@ -1,0 +1,106 @@
+---
+title: "La bateria del mòbil: quan és ella, quan falla i per què no s'arregla"
+description: "Amb les reparacions de mòbils dels Repair Cafés, mirem si els símptomes de bateria són realment la bateria, a quina edat falla comparada amb el reglament europeu i per què costa tant d'arreglar."
+author: "Eki Gonzalez Flamarique"
+date: 2026-11-11
+categories: [bateria, reparabilitat, anàlisi de dades]
+image: b3_resultat.png
+draft: true
+---
+
+En entrades anteriors hem vist que un mòbil no deixa de servir només perquè s'espatlli: hi pesen [la percepció](../obsolescencia/), [el programari](../suport-programari/) i les dificultats per [arreglar-lo en un repair café](../repair-cafes/). Però hi ha una peça que, faci el que faci l'usuari, acaba fallant: la bateria. Cada cicle de càrrega li treu una mica de capacitat, i la calor o tenir-la sempre plena ho acceleren [@batteryuniversity2021]. I té un llindar legal de durabilitat propi: des del 20 de juny de 2025, ha de conservar el 80 % de la capacitat després de 800 cicles complets [@ue2023ecodisseny].
+
+En aquesta entrada mirem tres coses. Quan un mòbil sembla que té la bateria morta, ho és de veritat? A quina edat es porta el mòbil a reparar per la bateria, i com queda al costat del que exigeix el reglament? I per què, quan s'espatlla, acaba sense solució més sovint que una pantalla?
+
+## D'on surten les dades
+
+Fem servir les reparacions que registren els Repair Cafés i iniciatives semblants de diversos països i que publica l'Open Repair Alliance [@ora2026dades]. Dins d'aquestes dades hi ha **MobiFix**, un conjunt de reparacions de mòbils de fins al 2020 en què uns voluntaris van llegir cada registre i van anotar quina avaria era. Aquestes etiquetes, posades per persones, són la base de l'anàlisi.
+
+| | Reparacions |
+|---|---|
+| Reparacions de mòbils de MobiFix amb descripció | 1.664 |
+| Amb un símptoma de bateria a la descripció | 114 |
+| «No carrega» o «no s'encén», sense la paraula «bateria» (figura 1) | 42 i 42 |
+| Classificades pels voluntaris com a avaria de bateria (figura 3) | 200 |
+| D'aquestes, amb l'edat del mòbil (figura 2) | 52 |
+
+: Elaboració pròpia a partir d'Open Repair Data, versió de juliol de 2026. Les files no són un embut. Les tres primeres es compten sobre les 1.664 reparacions. La quarta es compta sobre les 1.407 que es troben al conjunt de *smartphones*, d'on surten l'edat i el resultat, i l'última, sobre les 200 de bateria. Un mateix text pot tenir més d'un símptoma.
+
+També hem fet servir un programa que classifica automàticament la resta de reparacions, fins al 2026, a partir del text. Aquestes xifres surten com a complement i les marquem com a **no validades**, perquè el classificador només s'ha pogut comprovar amb les dades de MobiFix.
+
+::: {.callout-warning}
+## Què diuen i què no diuen aquestes dades
+
+Només hi surten mòbils que s'han espatllat i que algú ha portat a un repair café, i els *smartphones* són una part molt petita del que hi arriba. L'edat és la del dia de la reparació, no la del dia que la bateria va començar a fallar. I la bateria que es canvia perquè «dura poc», sense cap avaria, gairebé no hi arriba. Per tant, aquestes dades no diuen quant dura una bateria en general: diuen què passa amb les que es porten a reparar.
+:::
+
+## Quan diem «és la bateria», ho és?
+
+Hem buscat a les descripcions els símptomes típics de bateria (que no carrega, que no s'encén, que dura poc o que s'ha inflat) i els hem comparat amb l'avaria que hi van trobar els voluntaris. Molts textos ja porten el diagnòstic («bateria canviada»), així que per no fer trampa ens hem quedat amb els que no diuen la paraula «bateria».
+
+![Avaria trobada pels voluntaris segons el símptoma descrit, en reparacions de MobiFix que no esmenten la bateria. «Altres o desconegut» agrupa el *software*, la pantalla, altres avaries i els casos sense tipus. Font: elaboració pròpia a partir d'Open Repair Data (MobiFix), CC BY-SA 4.0.](b1_simptomes.png)
+
+Dels 42 mòbils que **no carregaven**, la bateria va ser la causa més freqüent, però només en la **meitat** (21). En **16**, gairebé 4 de cada 10, el problema era el port de càrrega o el carregador. Dels 42 que **no s'encenien**, un 57 % (24) eren la bateria, i gairebé tota la resta es repartia entre el *software*, la pantalla, altres avaries i casos sense tipus.
+
+Que un mòbil no carregui, doncs, no vol dir que la bateria estigui morta. Sovint és una avaria més barata i fàcil d'arreglar, com un port brut o espatllat, que és exactament el que va passar amb el [Samsung Galaxy A40](../reparacio-samsung-a40/). Les mostres són petites i cal llegir-ho com un indici. A més, el símptoma «dura poc» gairebé sempre surt al costat de la paraula «bateria», així que aquest no l'hem pogut separar del diagnòstic.
+
+## Quant aguanta una bateria a la pràctica?
+
+L'edat mediana d'un mòbil que arriba a MobiFix amb una avaria de bateria és de **4 anys** (52 reparacions; amb un interval de confiança del 95 %, el marge on és probable que hi hagi el valor real, de 3,5 a 5 anys). La d'un mòbil amb una avaria de pantalla és de 2,5 anys (160 reparacions amb edat coneguda). La pantalla sol trencar-se per un cop, i això pot passar a qualsevol edat; la bateria, en canvi, es va gastant.
+
+Per comparar-ho amb el reglament cal un pas més, perquè el reglament parla de cicles i nosaltres tenim anys. No sabem quants cicles fa cada mòbil, així que hem fet servir tres escenaris: mig cicle complet al dia, tres quarts i un. Amb aquests supòsits, els 800 cicles del reglament equivalen a entre **2,2 i 4,4 anys**.
+
+![Proporció de reparacions de MobiFix fetes a cada edat o abans, per a la bateria i la pantalla, amb la mediana i el seu interval de confiança. La franja grisa són els 800 cicles convertits en anys amb els escenaris d'ús. La línia discontínua és el conjunt classificat automàticament (2017–2026), no validat, que inclou també les 52 bateries de MobiFix. Font: elaboració pròpia a partir d'Open Repair Data (MobiFix), CC BY-SA 4.0.](b2_edat_bateria.png)
+
+Cada corba es llegeix així: a cada edat, quin percentatge de les reparacions d'aquell tipus ja s'havien fet. No compta quantes n'hi ha, sinó quan arriben. La blava (pantalla) puja de seguida, entre el primer i el tercer any. La taronja (bateria) va un any i mig per darrere i no arriba a la meitat fins als 4 anys.
+
+Un **23 %** de les bateries es porten a reparar abans dels 2,2 anys i un **33 %** després dels 4,4 (on la corba marca el 67 %). La resta, gairebé la meitat, cau dins de la franja. Com que la franja depèn de quants cicles fa cada mòbil, que no sabem, aquestes dades no diuen si les bateries fallen abans o després del punt que marca el reglament.
+
+A més, la comparació té dos límits. Són mòbils reparats entre el 2017 i el 2019, comprats anys abans que el reglament s'apliqués, i per tant no l'havien de complir. I els 800 cicles no marquen quan s'espatlla una bateria, sinó quanta capacitat ha de conservar: al 80 %, una bateria encara funciona.
+
+La bateria es porta a reparar quan el mòbil ja té uns quants anys. Hi ha dues explicacions possibles, i aquestes dades no permeten triar-ne cap:
+
+- **Les bateries aguanten anys.** És el que va trobar un estudi de camp amb bateries de mòbils i tauletes, que després de diversos anys i centenars de cicles encara conservaven força capacitat [@clemm2016].
+- **La gent conviu anys amb una bateria degradada** abans de fer-hi res, i només la porta a reparar quan ja no aguanta.
+
+El conjunt classificat automàticament, que arriba fins al 2026, apunta en la mateixa direcció. Les 161 reparacions de bateria que hi afegeix el classificador, gairebé totes del 2021 al 2026, tenen una edat mediana de 5 anys, un any més que les de MobiFix (2017–2019). A la figura, la línia discontínua les suma totes dues (213). Són èpoques i mètodes diferents, i per això no es pot dir si l'edat ha pujat. A més, les pantalles que hi afegeix el classificador també són més velles (mediana de 4 anys), així que la distància entre bateria i pantalla no creix. Les reparacions en què el text parla d'una bateria inflada, buscades per paraules clau a totes les dades, arriben encara més tard, amb una mediana de 6,5 anys, però només són 11 casos. Com que aquestes xifres no estan validades, són una pista, no un resultat.
+
+## Per què no s'arregla?
+
+![Com acaben les reparacions de bateria i de pantalla a MobiFix (2013–2020). «Pendent» vol dir que es podia arreglar però no es va acabar aquell dia, per exemple perquè calia una peça. Font: elaboració pròpia a partir d'Open Repair Data (MobiFix), CC BY-SA 4.0.](b3_resultat.png)
+
+Una bateria espatllada acaba sense solució (a «final de vida») el **13 %** de les vegades (26 de 200), unes dues vegades i mitja més que una pantalla (5 %, 29 de 584). El mateix dia es reparen el **55 %** de les pantalles i només el **39 %** de les bateries. Aquests 16 punts de diferència es reparteixen a parts iguals: la meitat són més bateries pendents (48 % davant de 40 %) i l'altra meitat, més finals de vida. Al conjunt classificat, no validat, la diferència es manté però és més petita: només amb les reparacions que hi afegeix el classificador, un 21 % de finals de vida a la bateria davant d'un 15 % a la pantalla.
+
+El que hem intentat saber és per què, i la resposta curta és que els registres no ho diuen. Dels 89 finals de vida de bateria que hi ha comptant MobiFix i el classificador junts, els voluntaris només n'han anotat el motiu en 32; en els altres **57**, no consta. A les pantalles passa el mateix: 56 de 87 sense motiu. I quan el motiu consta, és gairebé el mateix en tots dos casos: sobretot les peces, perquè són massa cares o no n'hi ha. L'única diferència és que la bateria «no es pot obrir» una mica més sovint (6 casos davant de 3), massa pocs per treure'n conclusions.
+
+Hem passat també les descripcions per una classificació automàtica per paraules clau, i en el 75 % dels casos el text tampoc no diu per què no s'ha pogut arreglar. Quan ho diu, els motius més freqüents són que hi tenia part la placa o el port (7 casos: en alguns, al costat de la bateria; en altres, en lloc seu) i que la bateria estava inflada o vessada (6). Aquests 7 casos són tots del classificador, així que alguns dels finals de vida que ha agrupat com a bateria no ho són del tot: una raó més per llegir-ne les xifres amb prudència.
+
+Hi ha una pista més. Entre els mòbils de MobiFix amb edat coneguda, els de 3 anys o menys acaben a final de vida igual de sovint si és la bateria que si és la pantalla (un 5 %). La diferència apareix en els més vells: un 16 % de les bateries (5 de 32) davant d'un 3 % de les pantalles. No és l'edat sola, perquè les pantalles dels mòbils vells gairebé mai no acaben a final de vida. El que acaba més sovint sense solució és la bateria d'un mòbil vell. Amb tan pocs casos, però, és només un indici.
+
+Amb aquests registres, doncs, no es pot saber si el que falla és la peça, el disseny del mòbil, l'edat o el temps dels voluntaris.
+
+## Què diu la llei i què canviarà?
+
+El reglament (UE) 2023/1670 no només demana 800 cicles amb el 80 % de capacitat. També obliga que l'usuari pugui canviar la bateria, amb una excepció: el fabricant pot reservar aquest canvi als reparadors professionals si la bateria conserva el 83 % després de 500 cicles i el 80 % després de 1.000, i si el mòbil és resistent a l'aigua i la pols (IP67) [@ue2023ecodisseny]. El mateix reglament recull que la millor tecnologia disponible ja arriba als 1.200 cicles.
+
+A més, el reglament de bateries (UE) 2023/1542 exigeix bateries que pugui extreure l'usuari a partir del 18 de febrer de 2027 [@ue2023bateries]. Per als *smartphones*, però, manen els requisits del reglament d'ecodisseny [@comissio2025bateries]. És a dir, molts mòbils podran seguir sense una bateria que l'usuari canviï sol, sempre que sigui prou duradora.
+
+Amb els nostres escenaris, 1.000 cicles són entre 2,7 i 5,5 anys. Les nostres dades no diuen si això n'hi ha prou, perquè l'edat a la reparació no és la durada de la bateria. El que sí hem vist és que, quan finalment falla, la bateria acaba sense solució més sovint que una pantalla, i que en dos de cada tres casos el motiu no consta.
+
+## I ara, què?
+
+La bateria és la peça que posa més clara la tesi d'aquest blog: un mòbil no es jubila només per motius tècnics, però tampoc en té prou amb la bona voluntat. La bateria es gasta segur, sovint es confon amb avaries més barates i, quan s'espatlla, acaba sense solució més sovint que una pantalla. El reglament europeu apunta en la bona direcció, però exigeix durabilitat més que no pas facilitat per canviar-la.
+
+Per a VINCLE DIGITAL, això té una conseqüència pràctica. Davant d'un mòbil donat que «no carrega», abans de donar la bateria per morta cal mirar el port. I quan sí que és la bateria, la [fitxa de reparabilitat](../fitxa-reparabilitat/) ja valora si es troba recanvi i si hi ha guia per canviar-la, que és on topen moltes reparacions dels repair cafés quan el motiu consta.
+
+::: {.callout-note collapse="true"}
+## Com ho hem fet
+
+- **Dades.** Open Repair Data, versió de juliol de 2026, filtrada a *smartphones* amb resultat conegut (5.652 reparacions). MobiFix aporta les etiquetes d'avaria posades per persones fins al 2020.
+- **Símptomes (primer apartat).** Paraules clau en anglès, alemany, neerlandès, francès, castellà i danès. Només MobiFix. Les paraules clau no s'han revisat a mà i se'n poden escapar alguns textos; l'avaria, en canvi, és la que van anotar els voluntaris.
+- **Edat (segon apartat).** Mediana amb interval de confiança per *bootstrap* agrupat per grup de reparació (1.000 repeticions). Els cicles es converteixen en anys amb escenaris de 0,5, 0,75 i 1 cicle complet al dia, que són supòsits nostres.
+- **Classificador (complement).** Regressió logística sobre fragments de text [@pedregosa2011], entrenada amb MobiFix. F1 macro de 0,76 en validació creuada. No validat fora de MobiFix.
+- **Bateria.** Als apartats segon i tercer, «avaria de bateria» és el grup de bateria i alimentació de MobiFix, que inclou 7 carregadors de 200. Treure'ls no canvia les xifres.
+- **Motius (tercer apartat).** Que el motiu no consta surt del camp que omplen els voluntaris. La lectura del text és una classificació automàtica per paraules clau, sense revisió manual, i les seves xifres són orientatives.
+- **Codi.** Quaderns a la carpeta `_analisi/notebooks/` d'aquesta entrada. Les dades d'Open Repair tenen llicència CC BY-SA 4.0.
+:::
