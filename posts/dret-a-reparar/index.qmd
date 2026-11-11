@@ -3,7 +3,7 @@ title: "De les bombetes de mil hores al dret a reparar"
 description: "Un recorregut d'un segle per la història del moviment pel dret a reparar, des del càrtel Phoebus fins a la directiva europea que Espanya encara no ha transposat."
 author: "Eki Gonzalez Flamarique"
 date: 2026-11-11
-categories: [dret a reparar, història, normativa, opinió]
+categories: [reparabilitat, normativa]
 image: portada.jpg
 ---
 

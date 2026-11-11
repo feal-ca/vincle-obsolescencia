@@ -3,7 +3,7 @@ title: "La bateria del mòbil: quan és ella, quan falla i per què no s'arregla
 description: "Amb les reparacions de mòbils dels Repair Cafés, mirem si els símptomes de bateria són realment la bateria, a quina edat falla comparada amb el reglament europeu i per què costa tant d'arreglar."
 author: "Eki Gonzalez Flamarique"
 date: 2026-11-11
-categories: [bateria, reparabilitat, anàlisi de dades]
+categories: [reparabilitat, anàlisi de dades]
 image: b3_resultat.png
 ---
 
