@@ -3,7 +3,7 @@ title: "L'obsolescència programada: què és i quines mesures s'estan prenent p
 description: "L'obsolescència programada agreuja la crisi medioambiental, té un impacte social significatiu i representa una vulnerabilitat cap al consumidor desinformat. Quan es dona i quines mesures s'han près a Europa per combatre-la?."
 author: "Laia Oleart Rabanal"
 date: 2026-11-05
-categories: [obsolescència, obsolescència programada, obsolescència]
+categories: [obsolescència, legislació]
 # image: portada.jpg
 ---
 
