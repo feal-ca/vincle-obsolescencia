@@ -48,7 +48,7 @@ La fitxa distingeix entre peces principals (pantalla i bateria) i secundàries (
 | C3 | Quantes peces secundàries es troben? | Totes (4) · La majoria (3) · Algunes (2) · Només de segona mà (1) · Cap (0) |
 | C4 | Quant costa la peça principal més cara, comparada amb el valor del mòbil de segona mà? | Menys d'una quarta part (4) · Fins a la meitat (3) · Fins a tres quartes parts (2) · Fins al valor del mòbil (1) · Més que el mòbil (0) |
 
-: Elaboració pròpia. La comparació de preus ve de l'índex de reparabilitat francès [@ministere2026indice].
+: Elaboració pròpia. La comparació de preus ve de l'[índex de reparabilitat francès](../index_reparabilitat/) [@ministere2026indice].
 
 ## D. Informació de reparació (15 %)
 

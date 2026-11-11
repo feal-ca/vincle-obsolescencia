@@ -9,7 +9,7 @@ image: poblacio_mobils_uk.png
 
 Al Regne Unit hi havia prop de 69 milions de mòbils en ús el 2019, i aquell any se'n van vendre uns 26 milions de nous, un 28 % menys que el 2013. Cap estadística oficial no dona aquestes dues xifres: les hem estimades combinant dades de població, d'ús del mòbil i de renovació. I amaguen una paradoxa: es venen menys mòbils, però n'hi ha més en ús.
 
-En una [entrada anterior](../obsolescencia/) vam veure per què canviem de mòbil abans d'hora. Aquí volem saber quant pesen les avaries en tot això: quants mòbils deixen de fer-se servir cada any perquè s'espatllen. Cap registre no ho diu. Per acostar-nos-hi, primer mirem quines avaries arriben als Repair Cafés i com acaben, i després fem servir aquestes proporcions dins d'un model de tot el país.
+En una [entrada anterior](../obsolescencia/) vam veure per què canviem de mòbil abans d'hora. Aquí volem saber quant pesen les avaries en tot això: quants mòbils deixen de fer-se servir cada any perquè s'espatllen. Cap registre no ho diu. Per acostar-nos-hi, primer mirem quines avaries arriben als [Repair Cafés](../repair-cafes/) i com acaben, i després fem servir aquestes proporcions dins d'un model de tot el país.
 
 ## Quines avaries arriben als Repair Cafés i com acaben?
 
