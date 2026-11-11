@@ -71,7 +71,9 @@ Se han recalculado todas las cifras desde `dades/raw/ora_mobifix.csv` y `dades/p
 3. **Baterías hinchadas (11 casos, mediana 6,5).** No salen del clasificador sino de buscar palabras clave en todos los registros con edad, e incluyen uno que no está en el grupo de batería. Solo con el grupo de batería son 10 y la mediana es 6,25. Ahora el texto dice de dónde salen.
 4. **«el motiu gairebé mai no consta»** exageraba: falta en 57 de 89 (64 %). Ahora dice «en dos de cada tres casos».
 
-## Propuestas de redacción (no aplicadas, decisión del autor)
+## Propuestas de redacción
+
+A y B **aplicadas** en `index.qmd` (A, reformulada como «la distància entre bateria i pantalla no creix» y colocada después de «no es pot dir si l'edat ha pujat», para no contradecirla). C y D **descartadas por ahora** (decisión del autor).
 
 **A. Edad en el conjunto clasificado (apartado 2).** Las pantallas del clasificador también son más viejas (mediana 4 años frente a 2,5 en MobiFix). La batería sube 1 año y la pantalla 1,5, así que la distancia entre las dos se *reduce*. Propuesta, después de «un any més que les de MobiFix (2017–2019)»: «Però les pantalles que hi afegeix també són més velles (mediana de 4 anys), així que el que ha canviat és sobretot l'edat de tots els mòbils que arriben, no només la de les bateries.»
 
