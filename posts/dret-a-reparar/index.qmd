@@ -1,0 +1,47 @@
+---
+title: "De les bombetes de mil hores al dret a reparar"
+description: "Un recorregut d'un segle per la història del moviment pel dret a reparar, des del càrtel Phoebus fins a la directiva europea que Espanya encara no ha transposat."
+author: "Eki Gonzalez Flamarique"
+date: 2026-11-11
+categories: [dret a reparar, història, normativa, opinió]
+---
+
+Molts de nosaltres tenim al calaix un mòbil que «encara anava bé» fins que la bateria va dir prou. En articles anteriors hem vist [per què canviem de mòbil abans d'hora](../obsolescencia/) i [quines avaries arriben als Repair Cafés](../avaries-mobil/). En aquesta entrada repassem d'on surt el dret a reparar: quines lleis obliguen els fabricants a facilitar la reparació, des dels cotxes i els tractors fins a la directiva europea del 2024, i com s'hi va arribar. En els casos que expliquem, la llei va arribar després d'anys de pressió de tallers, pagesos i associacions.
+
+## D'on venim?
+
+La història comença abans que el mòbil existís. El 1924, els grans fabricants de bombetes del món (Osram, Philips o General Electric, entre altres) es van reunir a Ginebra i van crear el càrtel Phoebus. Un dels seus acords va ser limitar la vida de les bombetes incandescents a 1.000 hores, quan abans era habitual que en duressin entre 1.500 i 2.500, i multar els membres que les fessin durar més [@ecm2014phoebus]. Pels mateixos anys, General Motors popularitzava el canvi anual de model: retocar l'aspecte del cotxe perquè l'anterior semblés antiquat, encara que la mecànica fos la mateixa [@blank2012tailfins]. La primera és un cas d'obsolescència programada i la segona, d'obsolescència percebuda, de la qual vam parlar a [l'entrada anterior](../obsolescencia/).
+
+## Primer els cotxes, després els tractors
+
+La primera llei de reparació va ser per als cotxes. A mesura que els vehicles s'omplien d'electrònica, els tallers independents es quedaven sense les dades de diagnòstic que sí que tenien els concessionaris oficials. El 2012, Massachusetts va aprovar una llei de reparació d'automòbils i, en un referèndum el mateix any, la proposta va obtenir un suport aclaparador, d'entre el 86 i el 88 % segons la font [@ballotpedia2012massachusetts]. Va ser el primer estat dels Estats Units a reconèixer legalment un dret a reparar.
+
+El cas més conegut és el dels tractors de John Deere. Els tractors moderns depenen del *software*, i Deere reservava les eines de diagnòstic completes als seus concessionaris. Després d'anys de pressió de les organitzacions agràries, la Comissió Federal de Comerç (FTC) va demandar Deere el gener de 2025. El 2026, l'empresa va acceptar un acord de 99 milions de dòlars amb els pagesos i un altre amb la FTC i cinc estats: durant deu anys haurà d'oferir als tallers independents els mateixos recursos de reparació que als concessionaris, *software* inclòs [@ftc2026deere; @eff2026farmers].
+
+## La reparació com a cultura
+
+Al mateix temps, la reparació també s'organitzava fora dels tribunals. A principis dels anys 2000 va néixer iFixit, una plataforma de manuals de reparació oberts. El 2009, la periodista Martine Postma va organitzar el primer Repair Café a Amsterdam, una trobada on voluntaris que saben reparar ajuden veïns amb objectes trencats. Avui n'hi ha més de 2.000 grups a desenes de països [@repaircafe2026about]. Les reparacions que vam analitzar a [l'entrada sobre avaries](../avaries-mobil/) vénen d'aquest tipus de trobades.
+
+## I Apple?
+
+En l'electrònica de consum, Apple ha estat durant anys una de les empreses més criticades pel moviment, pels seus dissenys difícils d'obrir i per les peces serialitzades. L'episodi més sonat va ser el *Batterygate*: algunes actualitzacions d'iOS alentien iPhones amb bateries gastades. A França, arran d'una denúncia de l'associació HOP, Apple va acceptar el 2020 una multa de 25 milions d'euros, però per pràctiques comercials enganyoses, no per obsolescència programada [@eurojuris2020apple].
+
+Després, Apple va canviar de posició. El 2021 va anunciar el *Self Service Repair*, que ven peces i manuals originals als clients, i el 2023 va donar suport públic a la llei de reparació de Califòrnia, la SB 244 [@grist2023apple]. Tot i així, el *parts pairing*, que vincula cada peça a un aparell concret perquè una pantalla o una bateria noves, fins i tot originals, no funcionin del tot si el fabricant no les «autoritza», continua sent un obstacle per reparar un mòbil.
+
+## Què ha fet Europa?
+
+El 2015 França va tipificar l'obsolescència programada com a delicte, però en deu anys no hi ha hagut cap condemna [@reporterre2025delit]. El 2021 va provar una altra via: l'índex de reparabilitat, una nota sobre 10 obligatòria en el punt de venda. Per als mòbils, ara l'ha substituït l'etiqueta europea [@ministere2026indice]. Aquest índex el vam fer servir per construir la nostra [fitxa de criteris de reparabilitat](../fitxa-reparabilitat/).
+
+La Unió Europea va seguir aquesta línia. El 2019 va aprovar els primers requisits de reparabilitat d'ecodisseny per a electrodomèstics, i aquell mateix any va néixer la coalició Right to Repair Europe [@ecos2019ecodesign]. Per als mòbils, el canvi més visible va arribar el 20 de juny de 2025, amb el reglament (UE) 2023/1670 d'ecodisseny i el reglament (UE) 2023/1669 d'etiquetatge [@ue2023ecodisseny; @ue2023etiquetatge]: peces crítiques disponibles durant set anys, una etiqueta amb la classe de reparabilitat i almenys cinc anys d'actualitzacions de *software*. Finalment, la directiva (UE) 2024/1799 obliga els fabricants a oferir reparació fora de garantia, a un preu raonable, per a uns quants productes, entre els quals hi ha els mòbils. També allarga un any la garantia legal quan el consumidor tria reparar en lloc de substituir [@repaireu2026directiva].
+
+Un any després de l'entrada en vigor de l'etiqueta, una anàlisi d'iFixit va trobar que al voltant del 80 % dels anuncis de mòbils encara no mostraven la informació de reparació obligatòria [@repaireu2026]. A més, la puntuació la declara el mateix fabricant.
+
+## I Espanya?
+
+El termini per incorporar la directiva a la llei de cada país va vèncer el 31 de juliol de 2026. Alemanya hi va arribar a temps [@ebnerstolz2026alemanya]. Espanya no hi va arribar. El juliol de 2025 el Consell de Ministres havia aprovat en primera volta l'avantprojecte de Llei de consum sostenible [@osborneclarke2025consum], però quan va vèncer el termini no s'havia publicat cap norma de transposició. El 25 de setembre de 2026, la Comissió Europea va obrir procediments d'infracció contra 18 estats, entre els quals hi ha Espanya [@pillitteri2026europa].
+
+## I ara, què?
+
+La directiva europea té tres límits que afecten directament els mòbils. Només obliga a reparar unes poques categories de productes. No defineix què és un «preu raonable» per a una peça. I no impedeix el *parts pairing*: si una peça nova no funciona sense el permís del fabricant, l'obligació de reparar serveix de poc.
+
+A VINCLE DIGITAL, això es tradueix en preguntes concretes quan arriba un mòbil donat: si es troba una bateria de recanvi, si el preu surt a compte i si el mòbil l'accepta sense avisos. Són les preguntes C1, C4 i A7 de la nostra [fitxa de reparabilitat](../fitxa-reparabilitat/), i les lleis que hem repassat decideixen bona part de les respostes.
